@@ -1,0 +1,156 @@
+$_back_size: 40px;
+$_arrow_size: 20px;
+$_font_size: 28px;
+
+.g1-nav-single {
+    margin: 2rem auto 1rem;
+
+    font-family: $important_font_family;
+}
+
+.g1-single-nav-label {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.g1-nav-single-links {
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+}
+
+.g1-nav-single-prev,
+.g1-nav-single-next {
+    margin-bottom: 1rem;
+
+    //
+    > a {
+        display: block;
+        padding-#{$left}: 30px;
+        padding-#{$right}: 30px;
+        color: inherit;
+
+        > strong {
+            display: block;
+            margin-bottom: 0.5em;
+            font-size: 13px;
+            line-height: 16px;
+            font-family: $meta_font_family;
+            font-weight: normal;
+
+            @if ( 'hardcore' == $stack ) {
+                font-family: "Rajdhani", "Roboto", sans-serif;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+            }
+
+            opacity: 0.666;
+        }
+
+        > span {
+            display: block;
+            position: relative;
+        }
+    }
+
+}
+
+
+.g1-nav-single-prev {
+    > a {
+        > span {
+            margin-#{$left}: auto;
+            margin-#{$right}: 0;
+
+            @if ( 'bunchy' != $stack ) {
+                &:before {
+                    display: inline-block;
+                    position: absolute;
+                    top: -3px;
+                    width: 30px;
+                    margin-#{$left}: -30px;
+
+                    font-size: #{$_font_size};
+
+                    font-family: "bimber";
+                    font-weight: normal;
+
+                    content: "\e00d";
+
+                    text-align: #{$left};
+                }
+            }
+
+        }
+    }
+
+}
+
+.g1-nav-single-next {
+    > a {
+        > span {
+            margin-#{$left}: 0;
+            margin-#{$right}: auto;
+            @if ( 'bunchy' != $stack ) {
+                &:after {
+                    display: inline-block;
+                    position: absolute;
+                    top: -3px;
+                    #{$left}: auto;
+                    #{$right}: 100%;
+                    width: 30px;
+
+                    font-size: $_font_size;
+
+                    font-family: "bimber";
+                    font-weight: normal;
+                    content:"\e00b";
+
+                    text-align: #{$left};
+                }
+            }
+        }
+    }
+}
+
+.g1-nav-single-back {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .g1-nav-single-prev {
+        float: #{$left};
+        width: 50%;
+        text-align: #{$left};
+    }
+
+    .g1-nav-single-next {
+        float: #{$right};
+        width: 50%;
+        text-align: #{$right};
+
+        & > a > span:after {
+            #{$left}: 100%;
+            #{$right}: auto;
+            text-align: #{$right};
+        }
+    }
+}
+
+

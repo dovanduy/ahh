@@ -1,0 +1,147 @@
+.adsbygoogle {
+    color: inherit;
+    background: transparent;
+}
+
+.g1-advertisement {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    img {
+        display: block;
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+    }
+
+    .adace-align-left{
+        img{
+            margin-left: 0;
+        }
+        ins{
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+    .adace-align-right{
+        img{
+            margin-right: 0;
+        }
+        ins{
+            margin-left: 0;
+            margin-right: auto;
+        }
+    }
+    .adace-align-center{
+        ins{
+            margin:0 auto;
+        }
+    }
+
+    .g1-fluid-wrapper {
+        margin: 0 auto;
+    }
+}
+
+.adace-align-center{
+    ins{
+        margin:0 auto;
+    }
+}
+
+.g1-advertisement-before-header-theme-area {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    > .g1-row-background {
+        background-color: #252525 !important;
+    }
+
+    .adace-slot div{
+        padding: side-values( 10px 0 );
+    }
+
+}
+
+.g1-advertisement-before-content-theme-area {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @if ( 'hardcore' == $stack ) {
+        background-color: #ededed;
+    } @elseif ( 'minimal' == $stack ) {
+    } @else {
+        border-width: side-values( 0 0 1px 0 );
+        border-style: solid;
+        border-color: $skin_border_color;
+    }
+
+    .quads-location {
+        padding: 10px 0;
+    }
+}
+
+.g1-advertisement-after-featured-content {
+    width: 100%;
+    max-width: $grid_width - $grid_gutter_width;
+    padding: 10px 0;
+    margin: 20px auto 0;
+
+    @if ( 'music' == $stack ) {
+        > .adace-slot-wrapper {
+            padding: 10px 0;
+            background-color: $skin_background_tone_color;
+        }
+    }
+}
+
+
+.g1-advertisement-inside-list {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.g1-advertisement-inside-grid,
+.g1-advertisement-inside-stream {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.g1-advertisement-left-stream,
+.g1-advertisement-right-stream {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+
+.widget {
+    .g1-advertisement {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .g1-advertisement-inside-grid,
+    .g1-advertisement-inside-stream {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .g1-advertisement-inside-grid,
+    .g1-advertisement-inside-stream {
+        margin-bottom: 30px;
+    }
+}
+
+.adace-sponsor{
+    margin-bottom:0px;
+    margin-top:15px;
+}
+
+.g1-featured-row + .g1-advertisement{
+    margin-top:-10px;
+}

@@ -1,0 +1,163 @@
+#buddypress {
+    // latest activity, like "active 3 days, 3 hours ago".
+    span.activity {
+        display: inline-block;
+
+        font-size: 13px;
+        line-height: 1.25;
+        font-family: $meta_font_family;
+
+        color: #999;
+    }
+}
+
+
+
+#buddypress {
+    // Member | Group | Activity list - <ul>
+    .item-list {
+        clear: both;
+        margin: 0;
+
+        list-style: none;
+
+        .item-title,
+        h4 {
+            margin: 0;
+            width: 75%;
+
+            a {
+                color: $skin_important_text_color;
+            }
+        }
+
+        .item-title {
+            font-size: 1.17em;
+            line-height: 1.2;
+            font-family: $important_font_family;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+
+
+        li {
+            padding: 15px 0;
+            border-width: 1px 0 0;
+            margin: 0;
+
+            position: relative;
+
+            list-style: none;
+            border-style: solid;
+
+            border-color: #e6e6e6;
+
+            &:first-child {
+                border-width: 0;
+            }
+
+            .item-avatar {
+                float: #{$left};
+                margin: side-values( 0 10px 0 0 );
+            }
+
+
+
+
+            h5 span.small {
+                float: #{$right};
+                font-size: 0.83em;
+                font-weight: normal;
+            }
+
+            .item-title {
+                span {
+                    font-size: 13px;
+                }
+            }
+
+            .item-desc {
+                margin: side-values( 10px 0 0 60px );
+                width: 50%;
+            }
+
+            .action {
+                position: absolute;
+                top: 15px;
+                #{$right}: 0;
+                #{$left}: auto;
+                text-align: $right;
+            }
+
+            .meta {
+                margin-top: 10px;
+                font: 300 0.83em/#{1.2} $meta_font_family;
+
+                color: #999;
+            }
+        }
+
+        li.group-no-avatar {
+            div.item-desc {
+                margin-#{$left}: 0;
+            }
+        }
+    }
+}
+
+#buddypress {
+    #admins-list,
+    #mods-list,
+    #members-list {
+        overflow: auto;
+        margin-bottom: 3rem;
+        list-style: none;
+
+        li {
+            overflow: auto;
+            list-style: none;
+        }
+    }
+
+
+    #item-buttons:empty {
+        display: none;
+    }
+}
+
+
+
+#buddypress #item-nav ul li.loading a {
+    background-position: 88% 50%;
+}
+
+#buddypress #item-nav {
+    .g1-tab{
+        position: relative;
+    }
+    .g1-tabs{
+    white-space: nowrap;
+        .g1-tab-item:not(.g1-drop){
+            .sub-menu{
+                display:none;
+            }
+        }
+    }
+    .g1-drop-toggle{
+        font-size: 14px;
+    }
+    .count {
+        position: absolute;
+        #{$left}: 50%;
+        #{$right}: auto;
+        top: 0;
+    }
+}
+
+/* No JavaScript */
+body.no-js #buddypress {
+    #item-header .js-self-profile-button {
+        display: none;
+    }
+}

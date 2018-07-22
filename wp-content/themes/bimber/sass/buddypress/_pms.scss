@@ -1,0 +1,103 @@
+#buddypress {
+    .message-search {
+        float: $right;
+        margin: side-values( 0 20px 0 0 );
+    }
+
+
+    /* Threads */
+    table#message-threads {
+        tr.unread td {
+            background: #fff9db;
+            border-top: 1px solid #ffe8c4;
+            border-bottom: 1px solid #ffe8c4;
+            font-weight: bold;
+        }
+
+        tr.unread td .thread-excerpt,
+        tr.unread td .activity,
+        tr.unread td.thread-options {
+            font-weight: normal;
+        }
+    }
+
+
+
+    /* Single thread */
+    #message-thread {
+        .message-box {
+            margin: 0;
+            padding: 15px;
+        }
+
+        //.message-box-alt
+        .alt {
+            background: #f2f2f2;
+        }
+
+        #message-recipients {
+        }
+
+        .message-metadata {
+            &:after {
+                display: table;
+                clear: both;
+                content: "";
+            }
+        }
+
+        img.avatar {
+            float: $left;
+            margin: 0 10px 0 0;
+            vertical-align: middle;
+        }
+
+        .message-content {
+            margin-#{$left}: 40px;
+        }
+    }
+}
+
+
+
+#buddypress {
+    .message-metadata {
+        position: relative;
+    }
+
+    .message-star-actions {
+        position: absolute;
+        #{$right}: 0;
+        #{$left}: auto;
+        top: 0;
+    }
+
+    // <span> or <a>
+    .message-action-star,
+    .message-action-unstar {
+        span.icon:before,
+        span.icon:before {
+            font-family: dashicons;
+            font-size: 18px;
+        }
+    }
+
+    .message-action-star span.icon:before {
+        content: "\f154";
+    }
+    .message-action-unstar span.icon:before {
+        content: "\f155";
+    }
+
+    a.message-action-star,
+    a.message-action-unstar {
+        opacity: 0.666;
+        color: inherit;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+

@@ -1,0 +1,137 @@
+.g1-sharebar {
+    //display: none;
+    position: fixed;
+    z-index: 99;
+    top: auto;
+    bottom: 0;
+    #{$left}: 0;
+    #{$right}: 0;
+
+    > div.g1-row-background {
+        @if ( 'hardcore' == $stack ) {
+            background: #333333;
+        } @else {
+            background: $skin_background_color;
+        }
+    }
+
+    .mashsb-main {
+        border-top-width: 0;
+    }
+
+    @include box-shadow( 0 0 10px rgba(0,0,0, 0.2) );
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .g1-sharebar {
+        > .g1-row-inner {
+            max-width: 100%;
+
+            > .g1-column {
+                padding: 0;
+            }
+        }
+
+        .mashsb-container {
+            padding: 0;
+            border-width: 0;
+        }
+
+        .mashsb-count {
+            margin: 0;
+            padding: 5px 10px;
+        }
+
+        .mashsb-buttons {
+            margin: 0;
+
+            a,
+            .onoffswitch,
+            .onoffswitch2 {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .g1-sharebar {
+        top: 0;
+        bottom: auto;
+
+        body.admin-bar & {
+            top: 46px;
+        }
+
+        .mashsb-container {
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+    }
+
+    .g1-sharebar-on {
+        display: block;
+    }
+
+    .g1-sharebar-off {
+        display: none;
+    }
+
+    /* CSS3 animations */
+    $_duration: 0.375s;
+    $_delay: 0.125s;
+    .cssanimations {
+        .g1-sharebar {
+            display: block;
+            @include transition(
+                    visibility 0s,
+                    opacity $_duration ease-in-out,
+                    transform $_duration ease-in-out
+            );
+
+            -webkit-backface-visibility: hidden;
+            -moz-backface-visibility: hidden;
+        }
+
+        .g1-sharebar-off {
+            visibility: hidden;
+            @include translate( 0px, -100% );
+
+            @include transition(
+                    visibility 0s $_duration,
+                    opacity $_duration ease-in-out,
+                    transform $_duration ease-in-out
+            );
+        }
+
+        .g1-sharebar-on {
+            visibility: visible;
+            @include translate( 0px, 0px );
+        }
+    }
+}
+
+
+
+
+
+
+
+.g1-sharebar {
+    .mashsb-count {
+        color: inherit;
+    }
+
+    .mashsbcount,
+    .mashpv .count {
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .mashsb-sharetext {
+        display: block;
+    }
+}

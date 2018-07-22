@@ -1,0 +1,85 @@
+/* WPML integration */
+.wpml-ls {
+    float: $right;
+
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+}
+
+.wpml-ls-item {
+    position: relative;
+
+    font-size: 13px;
+    line-height: 18px;
+    font-family: "Poppins", "Roboto", sans-serif;
+
+    > a {
+        display: block;
+        padding: 7px 0;
+
+        color: inherit;
+    }
+}
+
+.wpml-ls-flag {
+    display: inline-block;
+    max-width: none;
+    margin-#{$right}: 8px;
+
+    position: absolute;
+    #{$left}: 0;
+    #{$right}: auto;
+    top: 50%;
+    @include translateY( -50% );
+
+    &:last-child {
+        position: static;
+        margin: 0;
+
+        @include translateY(0);
+    }
+}
+
+.wpml-ls-flag + .wpml-ls-display,
+.wpml-ls-flag + .wpml-ls-native {
+    padding-#{$left}: 26px;
+}
+
+.wpml-ls-sub-menu {
+    display: none;
+    padding: 8px 0;
+
+    position: absolute;
+    top: 100%;
+    #{$left}: auto;
+    #{$right}: 0;
+
+    background-color: $skin_background_color;
+
+    .wpml-ls-item {
+        > a {
+            padding-#{$left}: 20px;
+            padding-#{$right}: 20px;
+            white-space: nowrap;
+        }
+    }
+
+    .wpml-ls-flag {
+        #{$left}: 20px;
+    }
+}
+
+.wpml-ls-item:hover {
+    .wpml-ls-sub-menu {
+        display: block;
+    }
+}
+
+.wpml-ls-legacy-list-horizontal {
+    .wpml-ls-item {
+        display: inline-block;
+        margin-#{$right}: 20px;
+    }
+}

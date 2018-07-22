@@ -1,0 +1,411 @@
+/**
+ * Standard heading sizes:
+ * .g1-alpha        -> h1
+ * .g1-beta         -> h2
+ * .g1-gamma        -> h3
+ * .g1-delta        -> h4
+ * .g1-epsilon      -> h5
+ * .g1-zeta         -> h6
+ *
+ * This way we can alter the size of any heading or even paragraph without changing its tag.
+ * Good for SEO and proper heading hierarchy.
+ *
+ * Extra heading sizes:
+ * .g1-mega
+ * .g1-giga
+ *
+ * Purpose modifiers:
+ * .g1-beta-1st     -> Regular headings
+ * .g1-beta-2nd     -> Section titles (e.g. "YOU MAY ALSO LIKE")
+ * .g1-beta-3rd     -> Subtitles
+ */
+
+
+@import 'modular-scale';
+
+html {
+    font-size: 15px;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+    line-height: 1.5;
+    font-family: $regular_font_family;
+    font-weight: 400;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+@if ( 'bunchy' != $stack ) {
+    label {
+        font-size: 13px;
+        line-height: 20px;
+        font-family: $button_font_family;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+
+
+
+$_typo_small_size: 1rem;
+$_typo_small_ratio: 1.125;
+
+$_typo_large_size: 1rem;
+$_typo_large_ratio: 1.175;
+
+
+.g1-giga {
+    font-size: ms(5, $_typo_small_size, $_typo_small_ratio);
+    line-height: $giga_line_height;
+
+    font-family: $important_font_family;
+    font-weight: $giga_font_weight;
+    letter-spacing: $giga_letter_spacing;
+
+    color: $skin_important_text_color;
+
+    @if ( 'hardcore' == $stack ) {
+        text-transform: uppercase;
+    }
+    @if ( 'original' == $stack ) {
+        word-spacing: 0.05em;
+    }
+}
+
+.g1-mega {
+    font-size: ms(5, $_typo_small_size, $_typo_small_ratio);
+    line-height: $mega_line_height;
+
+    font-family: $important_font_family;
+    font-weight: $mega_font_weight;
+    letter-spacing: $mega_letter_spacing;
+
+    color: $skin_important_text_color;
+
+    @if ( 'hardcore' == $stack ) {
+        text-transform: uppercase;
+    }
+}
+
+h1,
+.g1-alpha {
+    font-size: ms(4, $_typo_small_size, $_typo_small_ratio);
+    line-height: 1.067;
+    font-family: $important_font_family;
+    font-weight: $alpha_font_weight;
+
+    letter-spacing: $alpha_letter_spacing;
+
+    color: $skin_important_text_color;
+}
+
+h2,
+.g1-beta {
+    font-size: ms(3, $_typo_small_size, $_typo_small_ratio);
+    line-height: $beta_line_height;
+    font-family: $important_font_family;
+    font-weight: $beta_font_weight;
+    letter-spacing: $beta_letter_spacing;
+
+    color: $skin_important_text_color;
+}
+
+
+h3,
+.g1-gamma {
+    font-size: ms(2, $_typo_small_size, $_typo_small_ratio);
+    line-height: $gamma_line_height;
+    font-family: $important_font_family;
+    letter-spacing: $gamma_letter_spacing;
+    font-weight: $gamma_font_weight;
+
+    color: $skin_important_text_color;
+}
+
+h4,
+.g1-delta {
+    font-size: ms(1, $_typo_small_size, $_typo_small_ratio);
+    line-height: $delta_line_height;
+    font-family: $important_font_family;
+    letter-spacing: $delta_letter_spacing;
+    font-weight: $delta_font_weight;
+
+    color: $skin_important_text_color;
+}
+
+h5,
+.g1-epsilon,
+.item-title {
+    font-size: 14px;
+    line-height: 18px;
+    font-family: $important_font_family;
+    letter-spacing: $epsilon_letter_spacing;
+    font-weight: $epsilon_font_weight;
+
+    color: $skin_important_text_color;
+}
+
+
+h6,
+.g1-zeta {
+    font-size: $zeta_font_size;
+    line-height: $zeta_line_height;
+    font-family: $important_font_family;
+
+    letter-spacing: $zeta_letter_spacing;
+    font-weight: $zeta_font_weight;
+
+    text-transform: uppercase;
+
+    color: $skin_important_text_color;
+}
+
+/* Large screen typography */
+@media only screen and ( min-width: 1025px ) {
+    h6,
+    .g1-zeta {
+        font-size: $zeta_font_size;
+    }
+
+    h5,
+    .g1-epsilon,
+    .item-title {
+        font-size: 14px;
+    }
+
+    h4,
+    .g1-delta {
+        font-size: $delta_font_size;
+    }
+
+    h3,
+    .g1-gamma {
+        font-size: $gamma_font_size;
+    }
+
+    h2,
+    .g1-beta,
+    .g1lg-beta {
+        font-size: $beta_font_size;
+    }
+
+    h1,
+    .g1-alpha,
+    .g1lg-alpha {
+        font-size: $alpha_font_size;
+        line-height: $alpha_line_height;
+    }
+
+    .g1-mega {
+        font-size: $mega_font_size;
+    }
+
+    .g1-giga {
+        font-size: $giga_font_size;
+    }
+}
+
+.g1-giga-2nd,
+.g1-mega-2nd,
+.g1-alpha-2nd,
+.g1-beta-2nd,
+.g1-gamma-2nd,
+.g1-delta-2nd,
+.g1-epsilon-2nd,
+.g1-zeta-2nd {
+    font-family: $important_2nd_font_family;
+    font-weight: $typo_2nd_font_weight;
+    text-transform: uppercase;
+    letter-spacing: $typo_2nd_letter_spacing;
+}
+
+@if ( 'original-2018' == $stack ) {
+    .g1-mega-2nd,
+    .g1-giga-2nd,
+    .g1-alpha-2nd,
+    .g1-beta-2nd,
+    .g1-gamma-2nd,
+    .g1-delta-2nd,
+    .g1-epsilon-2nd,
+    .g1-zeta-2nd {
+        margin-bottom: 15px;
+
+        > span {
+            display: block;
+            padding-bottom: 15px;
+
+            position: relative;
+
+            text-align: center;
+
+            &:after {
+                display: block;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                bottom: 0;
+
+                border-width: 0 0 1px;
+                border-style: solid;
+                border-color: currentColor;
+
+                content: "";
+
+                opacity: 0.1667;
+            }
+        }
+
+    }
+}
+
+@if ( 'music' == $stack ) {
+    .g1-mega-2nd,
+    .g1-giga-2nd,
+    .g1-alpha-2nd,
+    .g1-beta-2nd,
+    .g1-gamma-2nd,
+    .g1-delta-2nd,
+    .g1-epsilon-2nd,
+    .g1-zeta-2nd {
+        margin-bottom: 20px;
+
+        > span {
+            display: block;
+            padding-bottom: 20px;
+
+            position: relative;
+
+            text-align: center;
+
+            &:before {
+                display: block;
+                width: 60px;
+                margin: 0 auto;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                bottom: 1px;
+
+                border-width: 0 0 2px;
+                border-style: solid;
+                border-color: currentColor;
+
+                content: "";
+            }
+
+            &:after {
+                display: block;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                bottom: 0;
+
+                border-width: 0 0 1px;
+                border-style: solid;
+                border-color: currentColor;
+
+                content: "";
+
+                opacity: 0.1667;
+            }
+        }
+    }
+}
+
+@if ( 'carmania' == $stack ) {
+    .g1-mega-2nd,
+    .g1-giga-2nd,
+    .g1-alpha-2nd,
+    .g1-beta-2nd,
+    .g1-gamma-2nd,
+    .g1-delta-2nd,
+    .g1-epsilon-2nd,
+    .g1-zeta-2nd {
+        font-weight:900;
+        position:relative;
+        &:before{
+            content:" ";
+            width:30px;
+            height:3px;
+            display:block;
+            position:absolute;
+            top:-66.66666%;
+            left:0px;
+            background:#000000;
+        }
+    }
+}
+
+
+
+
+.g1-giga-3rd,
+.g1-mega-3rd,
+.g1-alpha-3rd,
+.g1-beta-3rd,
+.g1-gamma-3rd,
+.g1-delta-3rd,
+.g1-epsilon-3rd,
+.g1-zeta-3rd {
+    font-weight: $typo_3rd_font_weight;
+    letter-spacing: $typo_3rd_letter_spacing;
+
+    opacity: 0.5;
+}
+
+
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, address,
+dl, ol, ul, table,
+legend, hr, figure {
+    margin-bottom: 21px;
+    margin-bottom: 1.5rem;
+}
+
+
+.g1-typography-xl {
+    font-size: $xl_font_size;
+    line-height: $xl_line_height;
+
+    h1,
+    h2 {
+        margin-top: 3rem;
+    }
+
+    h1:first-child,
+    h2:first-child {
+        margin-top: 0;
+    }
+}
+
+
+// Meta
+.g1-meta {
+    font-size: $meta_font_size;
+    line-height: $meta_line_height;
+    font-family: $meta_font_family;
+    text-transform: $meta_text_transform;
+
+    color: $skin_meta_text_color;
+
+    a {
+        color: $skin_important_text_color;
+    }
+
+    strong {
+        font-weight: 400;
+    }
+}
+
+.g1-meta-m {
+    font-size: $meta_font_size + 2px;
+    line-height: $meta_line_height + 2px;
+}

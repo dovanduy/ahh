@@ -1,0 +1,97 @@
+#buddypress {
+    .activity-comments {
+        clear: both;
+        overflow: hidden; /* IE fix */
+
+        background-color: #f6f6f6;
+
+
+        ul {
+            clear: both;
+            margin: 0 30px 0 40px;
+
+            li {
+                border-top: 1px solid #eee;
+                padding: 1.5rem 0 0;
+            }
+        }
+
+        .acomment-avatar {
+            float: #{$left};
+            width: 30px;
+            margin-#{$right}: 10px;
+        }
+
+        .acomment-meta {
+            color: #999; //@todo
+            font: 300 13px/1.25 $menu_font_family;
+
+            a {
+                color: #000; //@todo
+                font-weight: 500;
+            }
+
+            .activity-time-since {
+                display: block;
+                font-weight: 300;
+            }
+        }
+
+        .acomment-content {
+            clear: both;
+            margin-#{$left}: 40px;
+
+            > p {
+                margin: 1rem 0;
+            }
+        }
+
+        .acomment-options {
+            margin-#{$left}: 40px;
+
+            .bp-primary-action,
+            .bp-secondary-action {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+}
+
+
+
+/* Single activity page */
+body.activity-permalink #buddypress {
+}
+
+
+
+#buddypress {
+    .activity-comments {
+        .ac-form {
+            clear: both;
+            padding: 20px 30px;
+            display: none;
+        }
+
+        // Textarea
+        .ac-input {
+            margin-bottom: 6px;
+        }
+
+        #message {
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .ac-reply-avatar {
+            float: $left;
+            width: 40px;
+            margin-#{$right}: 10px;
+        }
+
+        .ac-reply-content {
+            margin-#{$left}: 50px;
+        }
+    }
+}

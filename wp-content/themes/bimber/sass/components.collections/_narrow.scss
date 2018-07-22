@@ -1,0 +1,8 @@
+.g1-collection-narrow {
+    .g1-collection-title,
+    .g1-collection-more {
+        max-width: 608px;
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+    }
+}

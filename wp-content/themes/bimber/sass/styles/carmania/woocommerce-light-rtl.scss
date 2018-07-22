@@ -1,0 +1,6 @@
+// Set RTL (Right to Left) direction
+$dir: rtl;
+$stack: 'carmania';
+@import "../../lib.directional";
+
+@import "../../base_woocommerce";

@@ -1,0 +1,4 @@
+body#tinymce.wp-editor {
+    max-width: 710px;
+    font-family: sans-serif;
+}

@@ -1,0 +1,103 @@
+$_width: 40px;
+$_height: 40px;
+$_border_width: 1px;
+$_mobile_width: 32px;
+$_mobile_height: 32px;
+$_anim_duration:0.35s;
+
+
+
+.g1-back-to-top {
+    display: block;
+    visibility: hidden;
+    width: $_mobile_width - 2*$_border_width;
+    height: $_mobile_height - 2*$_border_width;
+    border-width: $_border_width;
+    overflow: hidden;
+
+    position: fixed;
+    #{$right}: 10px;
+    #{$left}: auto;
+    bottom: 10px;
+    z-index: 999;
+
+    text-indent: 100%;
+    white-space: nowrap;
+    border-style: solid;
+
+    @if ( 'bunchy' == $stack ) {
+        border-color: #bebebe;
+        background-color: $skin_background_color;
+        color: #808080;
+    } @else {
+        border-color: transparent;
+        background-color: invert( $skin_background_color );
+        color: $skin_background_color;
+
+        @include opacity(0.5);
+    }
+
+    @include border-radius( $ui_border_radius );
+    @include transition( opacity 0.375s ease-in-out );
+
+    //
+    &:before {
+        display: block;
+        position: absolute;
+        top: 50%;
+        #{$left}: 0;
+        #{$right}: auto;
+        width: 100%;
+        margin-top: -0.5em;
+
+        text-indent: 0;
+        text-align: center;
+        font: #{$back_to_top_font_size}/1 'bimber';
+        content: "\e00f";
+    }
+
+    &:hover {
+        @if ( 'bunchy' == $stack ) {
+            border-color: #808080;
+            background-color: #808080;
+            color: #fff;
+        } @else {
+            background-color: #000000;
+            color: #ffffff;
+
+            @include opacity(0.75);
+        }
+    }
+}
+
+// Adjust bottom position if sticky sharebar is fixed to the bottom.
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .g1-sharebar-on ~ .g1-back-to-top {
+        bottom: 54px;
+    }
+}
+
+
+@media only screen and (min-width: $mobile_breakpoint + 1px ) {
+    .g1-back-to-top {
+        width: $_width - 2*$_border_width;
+        height: $_height - 2*$_border_width;
+    }
+}
+
+
+.cssanimations {
+    .g1-back-to-top-on {
+        display: block;
+        visibility: visible;
+        @include transform(translate(0px, 0px));
+        @include transition(transform $_anim_duration ease-in-out);
+        -webkit-backface-visibility: hidden;
+    }
+
+    .g1-back-to-top-off {
+        visibility: hidden;
+        @include transform(translate(0px, 2*$_width));
+        @include transition(visibility 0s $_anim_duration, transform $_anim_duration ease-in-out);
+    }
+}

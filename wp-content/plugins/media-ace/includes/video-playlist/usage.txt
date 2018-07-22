@@ -1,0 +1,10 @@
+Example playlist
+----------------
+
+For quick start, add this shortcode to your post content:
+
+[mace_video_playlist]
+    [mace_video_item]http://www.youtube.com/watch?v=Lt6CUH9bVzI[/mace_video_item]
+    [mace_video_item]//player.vimeo.com/video/196482932[/mace_video_item]
+    [mace_video_item]http://bimber.snaps/main/wp-content/uploads/sites/14/2018/03/small.mp4[/mace_video_item]
+[/mace_video_playlist]

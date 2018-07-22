@@ -1,0 +1,26 @@
+.g1-footer-nav {
+    @include box-sizing( border-box );
+    margin-bottom: 15px;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    > ul {
+        margin: 0 -10px;
+        list-style: none;
+
+        > .menu-item {
+            display: inline-block;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 0 10px;
+
+        color: inherit;
+    }
+}

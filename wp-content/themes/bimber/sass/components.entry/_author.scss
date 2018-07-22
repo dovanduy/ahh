@@ -1,0 +1,14 @@
+.entry-author {
+    @if ( 'bunchy' == $stack ) {
+        display:inline-block;
+        float:none;   
+    }   @else {
+        display: block;
+    }
+    margin-#{$right}: 10px;
+
+    .avatar {
+        float: #{$left};
+        margin-#{$right}: 10px;
+    }
+}

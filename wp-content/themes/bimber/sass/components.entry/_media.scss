@@ -1,0 +1,30 @@
+.entry-featured-media {
+    img {
+        width: 100%;
+    }
+}
+
+.entry-media-with-ellipsis {
+    position: relative;
+    max-height: 500px;
+    overflow: hidden;
+}
+.entry-media-ellipsis {
+    padding: 10px 20px 10px;
+
+    position: absolute;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: auto;
+    bottom: 0;
+
+    text-align: center;
+
+    background-color: #454545;
+
+    .g1-button {
+        border-color: #fff;
+        background-color: #fff;
+        color: #000;
+    }
+}

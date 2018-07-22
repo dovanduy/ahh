@@ -1,0 +1,93 @@
+$_centered: 'music' == $stack;
+
+.entry-tpl-classic-v3 {
+    > .entry-header {
+        @if ( $_centered ) {
+            text-align: center;
+        }
+
+        .entry-meta-bunchy {
+
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(center);
+
+            float: none;
+
+            position: relative;
+
+            min-width: 240px;
+            min-height: 30px;
+            padding-#{$left}: 40px;
+
+            .entry-categories {
+                margin-bottom: 0;
+            }
+
+            .avatar {
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+                top: 0;
+            }
+        }
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .g1-indent {
+        padding-#{$left}: 120px;
+
+        blockquote,
+        .snax-message,
+        .snax-items,
+        .mashsb-container {
+            margin-#{$left}: -120px;
+        }
+
+    }
+
+    .g1-indent-both {
+        @include box-sizing( border-box );
+
+        max-width: 758px + 120px;
+        padding-#{$left}: 120px;
+        padding-#{$right}: 120px;
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-bunchy{
+        .entry-tpl-index {
+            padding-#{$left}: 120px;
+        }
+
+        .entry-tpl-index-stickies {
+            &:after {
+                display: table;
+                clear: both;
+                content: "";
+            }
+
+            .entry-box {
+                width: 100%;
+                float: $right;
+            }
+
+            .entry-actions {
+                position: -webkit-sticky;
+                position: sticky;
+                float: #{$left};
+
+                width: 110px;
+                border-width: 0;
+                margin-#{$left}: -120px;
+
+                top: 10px
+            }
+        }
+    }
+
+}

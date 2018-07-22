@@ -1,0 +1,17 @@
+$skin: 'dark';
+
+@import "../../settings";
+@import "settings";
+
+
+$support_media_queries: true;
+$use_mobile_first: true;
+$stack: 'hardcore';
+
+
+// Set LTR (Left to Right) direction
+$dir: ltr;
+@import "../../lib.directional";
+
+
+@import "../../base_amp";

@@ -1,0 +1,6 @@
+// Set RTL (Right to Left) direction
+$dir: rtl;
+$stack: 'hardcore';
+@import "../../lib.directional";
+
+@import "../../base_woocommerce";

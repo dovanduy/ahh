@@ -1,0 +1,581 @@
+.g1-mycred-notice-overlay:not(:first-child) {
+    display: none;
+}
+
+.g1-mycred-notice-overlay-standard:not(:first-child) {
+    display: none;
+}
+
+.g1-mycred-notice-overlay {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    position: fixed;
+    z-index: 1;
+    top: 0px;
+    #{$left}: 0;
+    #{$right}: auto;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    .g1-mycred-notice {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        #{$left}: 0;
+        #{$right}: 0;
+        bottom: 0;
+
+
+        margin: auto;
+        width: 480px;
+        height: 470px;
+        text-align: center;
+        background: $skin_background_color;
+        border-radius: 5px;
+        overflow: hidden;
+        max-width: 90%;
+        .g1-mycred-notice-close {
+            z-index: 1;
+            cursor: pointer;
+            &:before {
+                font: 16px/1 "bimber";
+                content: "\e01b";
+                position: absolute;
+                right: 10px;
+                top: 10px;
+            }
+        }
+        .g1-mycred-notice-title {
+            margin-top: 40px;
+            margin-bottom: 36px;
+            z-index: 1;
+
+            @if ( 'original-2018' == $stack ) {
+                .g1-epsilon-2nd {
+                    padding-bottom: 0;
+                    margin-bottom: 0;
+                    opacity: 0.5;
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            } @else {
+                .g1-epsilon-2nd {
+                    margin-bottom: 0;
+                    opacity: 0.5;
+                }
+            }
+        }
+        .g1-mycred-notice-name {
+            margin-top: 32px;
+            margin-bottom: 30px;
+            z-index: 1;
+        }
+        .g1-mycred-notice-image {
+            z-index: -1;
+            .g1-mycred-notice-suburst {
+                top: 0px;
+                left: 0px;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                transform-origin: center;
+                animation: g1-anim-spin 10s infinite linear;
+                .g1-mycred-notice-suburst-rays:before {
+                    content: "\e034";
+                    font: 340px/470px "bimber";
+                    position: absolute;
+                    top: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    margin: auto;
+                    z-index: 1;
+                    color: #c4edfe;
+                }
+                .g1-mycred-notice-suburst-overlay {
+                    top: 0px;
+                    bottom: 0px;
+                    left: 0px;
+                    right: 0px;
+                    margin: auto;
+                    position: absolute;
+                    width: 350px;
+                    height: 350px;
+                    z-index: 2;
+                    background: -moz-radial-gradient(center, ellipse cover, rgba($skin_background_color, 0) 0%, rgba($skin_background_color, 1) 66%);
+                    /* FF3.6-15 */
+                    background: -webkit-radial-gradient(center, ellipse cover, rgba($skin_background_color, 0) 0%, rgba($skin_background_color, 1) 66%);
+                    /* Chrome10-25,Safari5.1-6 */
+                    background: radial-gradient(ellipse at center, rgba($skin_background_color, 0) 0%, rgba($skin_background_color, 1) 66%, rgba($skin_background_color, 1) 100%);
+                    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00fcfcfc', endColorstr='#{$skin_background_color}', GradientType=1);
+                    /* IE6-9 fallback on horizontal gradient */
+                }
+            }
+            img {
+                height: 185px;
+                width: auto;
+                display: block;
+                margin: 0 auto;
+                z-index: 1;
+            }
+        }
+        .g1-mycred-notice-shares {
+            @include display(flex);
+            padding: 0 56px;
+            @include justify-content(center);
+            .g1-mycred-notice-share {
+                font-size: 12px;
+                font-family: $important_font_family;
+                font-weight: 500;
+                letter-spacing: -0.025em;
+                padding: 5px 20px;
+                border-width: 2px;
+                color: white;
+                display: inline-block;
+                border-radius: 4px;
+                &:before {
+                    display: inline-block;
+                    margin-#{$right}: 8px;
+                    vertical-align: middle;
+                    color: inherit;
+                    /* Just in case (Avada styles pseudo elements) */
+                    font: 14px/1 "bimber";
+                }
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+            .g1-mycred-notice-share-facebook {
+                border-color: #2d5f9a;
+                background-color: #2d5f9a;
+                &:before {
+                    content: "\e040"
+                }
+            }
+            .g1-mycred-notice-share-twitter {
+                border-color: #00c3f3;
+                background-color: #00c3f3;
+                margin: 0 5px;
+                &:before {
+                    content: "\e041"
+                }
+            }
+            .g1-mycred-notice-share-pinterest {
+                border-color: #bd081c;
+                background-color: #bd081c;
+                &:before {
+                    content: "\e042"
+                }
+            }
+        }
+    }
+}
+
+.g1-mycred-notice-overlay-standard {
+    height: 100%;
+
+    position: fixed;
+    z-index: 1;
+    top: 10px;
+    #{$right}: 10px;
+    #{$left}: auto;
+
+    .g1-notification-standard {
+        display: block;
+        @include box-sizing(border-box);
+
+        width: 300px;
+        padding: side-values(20px 30px 20px 20px);
+        margin-bottom: 5px;
+
+        position: relative;
+        z-index: 1;
+
+        @include box-shadow(0 12px 24px rgba(0, 0, 0, 0.1));
+        @include border-radius(4px);
+
+        background: $skin_reverse_background_color;
+        color: $skin_reverse_important_text_color;
+
+
+        .g1-notification-standard-close {
+            display: block;
+            width: 20px;
+            height: 16px;
+            padding: 2px 0;
+
+            position: absolute;
+            top: 5px;
+            #{$right}: 5px;
+            #{$left}: auto;
+
+            text-align: center;
+
+            @include border-radius(50%);
+            cursor: pointer;
+
+            @include transition(
+                border-color 0.375s ease-in-out,
+                background-color 0.375s ease-in-out,
+                color 0.375s ease-in-out
+            );
+
+            background-color: $skin_reverse_border_color;
+            color: $skin_reverse_regular_text_color;
+
+            &:hover {
+                background-color: $skin_background_color;
+                color: $skin_important_text_color;
+            }
+
+            &:before {
+                font: 16px/1 "bimber";
+
+                content: "\e01b";
+            }
+        }
+    }
+}
+
+#buddypress {
+    .mycred-table {
+        min-width: 100%;
+    }
+}
+
+.bimber-badges-badge {
+    text-align: center;
+    margin-bottom: 3rem;
+    .bimber-badges-requirements strong small em {
+        display: none;
+    }
+    .bimber-badges-title {
+        margin: 0;
+    }
+    .bimber-badges-image img {
+        max-width: 120px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .mycred-badge-requirement-list {
+        list-style-type: none;
+        margin: 0;
+        font-size: 14px;
+        color: #666;
+    }
+}
+
+.bimber-badges-badge-single-level .bimber-badges-requirements strong {
+    visibility: hidden;
+}
+
+.member-header {
+    .the-badge {
+        display: inline;
+    }
+    .mycred-my-rank {
+        margin-left: 30px;
+        font-size: 30px;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        position: relative;
+        &:after {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            left: 0;
+            text-align: center;
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.6;
+            font-family: "Roboto", "Arial", sans-serif;
+            margin-top: -5px;
+        }
+        @media only screen and ( max-width: $mobile_breakpoint ) {
+            margin-bottom:20px;
+            margin-left:0px;
+        }
+    }
+    .mycred-balance {
+        order: 3;
+        margin-left: 30px;
+        font-size: 30px;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+        position: relative;
+        display: inline-table;
+        text-align: center;
+        &:after {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            @include display(flex);
+            @include justify-content(center);
+            font-size: 16px;
+            font-weight: 300;
+            opacity: 0.6;
+            font-family: "Roboto", "Arial", sans-serif;
+            margin-top: -5px;
+        }
+        @media only screen and ( max-width: $mobile_breakpoint ) {
+            margin-left:0px;
+            margin-bottom:20px;
+        }
+    }
+}
+
+.author-info-inner {
+    #mycred-users-badges {
+        margin-bottom: .5rem;
+        @include flex-grow(1);
+        order:3;
+    }
+    .mycred-badge-image {
+        max-height: 40px;
+        max-width: 40px;
+        margin: 0 5px 5px 0;
+    }
+}
+
+.widget_bimber_mycred{
+    width:100%;
+    .bimber-mycred-widget {
+        @include display(flex);
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+        text-align: center;
+        .bimber-mycred-widget-total{
+            @include flex-grow(1);
+            @include flex-basis(100%);
+            margin-bottom:25px
+        }
+        .bimber-mycred-widget-today{
+            @include flex-grow(1);
+        }
+        .bimber-mycred-widget-best{
+            @include flex-grow(1);
+        }
+        .g1-more-results {
+            margin-top: 3rem;
+            @include flex-basis(100%);
+            text-align: right;
+        }
+    }
+}
+
+.widget {
+    .bimber-mycred-leaderboard {
+        list-style-type: none;
+        margin-left: 0px;
+        li {
+            @include display(flex);
+            @include flex-direction(row);
+            @include justify-content(middle);
+            margin: 10px 0;
+            img {
+                margin-right: 12px;
+                @include flex-grow(0);
+            }
+        }
+        .bimber-mycred-leaderboard-widget-avatar {
+            position: relative;
+            @include display(flex);
+            @include align-items(center);
+            .bimber-mycred-leaderboard-widget-rank {
+                display: none;
+            }
+        }
+        .bimber-mycred-leaderboard-pos {
+            margin-right: 16px;
+            text-align: center;
+            @include flex-grow(0);
+            width: 20px;
+            @include display(flex);
+            @include align-items(center);
+        }
+        .bimber-mycred-leaderboard-user {
+            @include flex-grow(1);
+            @include display(flex);
+            @include flex-direction(column);
+            @include justify-content(center);
+            margin-bottom: 0px;
+            a {
+                color: inherit;
+            }
+        }
+        .bimber-mycred-leaderboard-balance {
+            @include flex-grow(0);
+            text-align: right;
+            @include display(flex);
+            @include flex-direction(column);
+            @include justify-content(center);
+            font-size: 16px;
+        }
+    }
+}
+
+.mycred-rank-list {
+    margin-#{$left}: 0;
+    list-style: none;
+
+    li {
+        @include display(flex);
+        @include align-items(center);
+
+        padding: 10px 0;
+        border-width: 1px 0 0;
+
+        border-style: solid;
+        border-color: $skin_border_color;
+
+
+        img {
+            height: 80px;
+            margin-#{$right}: 20px;
+        }
+        h3 {
+            margin-bottom: 0px;
+        }
+        .g1-mycred-ranks-range {
+            @include flex-grow(1);
+            text-align: right;
+        }
+    }
+
+    li:first-child {
+        border-top-width: 0;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .mycred-rank-list {
+        li {
+            @include flex-direction(column);
+            position: relative;
+
+            padding: 10px 0 10px 120px;
+            min-height: 80px;
+            @include justify-content(center);
+            @include align-items(flex-start);
+            margin-top:0px;
+            img {
+                position:absolute;
+                top: 50%;
+                margin-top: -40px;
+                left:0px;
+            }
+            .g1-mycred-ranks-range {
+                @include flex-grow(0);
+                text-align: left;
+            }
+        }
+    }
+}
+
+.entry-content{
+    .bimber-mycred-leaderboard {
+        margin-#{$left}: 0;
+        list-style: none;
+
+        li {
+            @include display(flex);
+            @include flex-direction(column);
+            @include align-items(center);
+            @include justify-content(center);
+
+            min-height: 80px;
+            padding: 10px 0 10px 120px;
+            border-top-width: 1px;
+
+            position: relative;
+
+            border-style: solid;
+            border-color: $skin_border_color;
+
+            > a {
+                margin-top: -40px;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+                top: 50%;
+
+                > span {
+                    img {
+                        display: block;
+                    }
+                    img+img {
+                        display: block;
+                        height: 40px;
+                        width: auto;
+                        position: absolute;
+                        right: -20px;
+                        bottom: 0;
+                    }
+                }
+            }
+
+            >h3 {
+                margin-bottom: 0;
+                a {
+                    color: inherit;
+                }
+            }
+        }
+
+        li:first-child {
+            border-top-width: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .entry-content{
+        .bimber-mycred-leaderboard {
+            li {
+                padding: 10px 0;
+
+                @include flex-direction(row);
+                @include justify-content(flex-start);
+
+
+                >a {
+                    position: relative;
+                    margin-top: 0;
+                    top:auto;
+                    >span {
+                        position: initial;
+                        img+img {
+                            display: block;
+                            height: 40px;
+                            width:40px;
+                            position: absolute;
+                            right: -20px;
+                            bottom: 0;
+                            max-width:40px;
+                        }
+                    }
+                }
+                .bimber-mycred-leaderboard-pos{
+                    width: 40px;
+                    text-align:center;
+                }
+                .bimber-mycred-leaderboard-user{
+                    @include flex-grow(1);
+                    margin-left:30px;
+                }
+                .bimber-mycred-leaderboard-balance{
+                    font-size:21px;
+                }
+            }
+        }
+    }
+}

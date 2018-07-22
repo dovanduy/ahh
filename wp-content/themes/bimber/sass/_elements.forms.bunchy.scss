@@ -1,0 +1,170 @@
+@if ( 'bunchy' == $stack ) {
+
+    /* Remove the inner border and padding in Firefox. */
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    /* Hide the clear button of a text input control */
+    input::-ms-clear {
+        display:none;
+    }
+
+
+
+    input,
+    button,
+    select,
+    textarea {
+        @include box-sizing( border-box );
+        max-width: 100%;
+        padding: 8px;
+        border-width: 1px;
+
+        font-size: 16px;
+        font-size: 1rem;
+
+        border-style: solid;
+        border-color: #e6e6e6;
+        background-color: #fff;
+        color: inherit;
+
+        @include border-radius( $ui_border_radius );
+
+        @include transition(
+            border-color 0.375s ease-in-out,
+            background-color 0.375s ease-in-out,
+            color 0.375s ease-in-out
+        );
+    }
+
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type="reset"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="url"] {
+        height: 42px;
+    }
+
+    [type=checkbox],
+    [type=radio] {
+        height: auto;
+    }
+
+    input[type=search] {
+        // Remove rounded buttons (iOS)
+        -webkit-appearance: none;
+    }
+
+
+
+    button,
+    [type=submit],
+    [type=reset],
+    [type=button] {
+        width: auto;
+        padding: 8px 28px;
+
+        cursor: pointer;
+
+        // Remove rounded buttons (iOS)
+        -webkit-appearance: none;
+        -moz-appearance: none;
+                appearance: none;
+    }
+
+
+
+    select {
+        padding: side-values( 8px 24px 8px 8px );
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+                appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        // data URI
+        // background-image: url( ./../images/select-arrow.png );
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAECAYAAACUY/8YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADxJREFUeNpi+P//PwM2DAXyQHwPiP9jwfeh8gy4zACbQ8ACXJbADaeGBeiWoBhOLQtgluxFN5yQBQABBgDqaatIvFzXQwAAAABJRU5ErkJggg==);
+
+        background-repeat: no-repeat;
+        background-position: $right center;
+    }
+
+    html.lt-ie10 {
+        select {
+            padding: 8px;
+            background-image: none;
+        }
+    }
+
+    optgroup {
+        font-weight: bold;
+    }
+
+
+
+    textarea {
+        width: 100%;
+    }
+
+
+
+    /* Focus */
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type="reset"],
+    [type="search"],
+    [type="submit"],
+    [type="tel"],
+    [type="text"],
+    [type="url"],
+    button,
+    select,
+    textarea {
+        &:focus {
+            border-color: currentColor;
+            background-color: transparent;
+            color: inherit;
+        }
+    }
+
+
+    /* Disabled */
+    [disabled],
+    [disabled] {
+        cursor: default;
+        opacity: 0.333;
+    }
+
+
+
+
+    /* Placeholder text - selectors need to be separate to work. */
+    ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.666;
+    }
+
+    ::-moz-placeholder {
+        color: inherit;
+        opacity: 0.666;
+    }
+
+    :-ms-input-placeholder {
+        color: inherit;
+        opacity: 0.666;
+    }
+
+}

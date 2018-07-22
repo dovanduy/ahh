@@ -1,0 +1,28 @@
+.woocommerce-tabs {
+    margin-bottom: 4.5rem;
+}
+
+.wc-tab {
+    #comments {
+        margin-#{$left}: 0;
+    }
+
+    .commentlist {
+        clear: both;
+        margin: side-values( 0 0 1.5rem );
+        list-style: none;
+
+        .avatar {
+            width: 40px;
+            height: 40px;
+
+            position: absolute;
+            #{$left}: 0;
+            top: 0;
+        }
+
+        .meta {
+            margin-bottom: 0.75rem;
+        }
+    }
+}

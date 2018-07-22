@@ -1,0 +1,302 @@
+
+    .g1-quick-nav {
+        clear: both;
+    }
+
+    .g1-quick-nav-menu {
+        @include display(flex);
+
+        margin: 0;
+        list-style: none;
+
+        text-align: center;
+
+        > .menu-item {
+            display: inline-block;
+            margin: 6px 0;
+
+            // We need "0%" instead of "0" to fix IE10, IE11
+            @include flex(1 0 auto);
+
+            > a {
+                display: block;
+                padding: 0 5px;
+                text-transform: uppercase;
+
+                font-size: 11px;
+                line-height: 1.125;
+
+                font-family: $menu_font_family;
+                font-weight: $menu_font_weight;
+            }
+        }
+    }
+
+    .g1-quick-nav-short {
+        .menu-item {
+            .entry-flag {
+                width: 1em;
+                height: 1em;
+                margin-bottom: 0.2em;
+                font-size: 18px;
+                line-height: 1;
+                border-color: transparent;
+                background-color: transparent;
+                color: currentColor;
+
+                &:before {
+                    font-size: inherit;
+                    opacity: 0.25;
+
+                    @include transition( opacity 0.375s ease-in-out );
+                }
+            }
+        }
+
+        .menu-item:hover,
+        .current-menu-item {
+            .entry-flag {
+                &:before {
+                    opacity: 0.99;
+                }
+            }
+        }
+    }
+
+
+    .g1-quick-nav-long {
+        .g1-quick-nav-menu {
+            @include flex-wrap(wrap);
+        }
+    }
+
+
+    @media only screen and ( min-width: 1025px ) {
+        .g1-quick-nav {
+            display: block;
+            clear: none;
+            float: #{$right};
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .g1-quick-nav-menu {
+                display: block;
+
+                > .menu-item {
+                    > a {
+                        padding: 0 10px;
+
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+
+        .g1-quick-nav-short {
+            .menu-item {
+                .entry-flag {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+
+    .g1-quick-nav-without-labels {
+        .g1-quick-nav-menu {
+            > .menu-item {
+                > a {
+                    font-size: 0;
+                }
+            }
+        }
+
+        .menu-item {
+            > a {
+                .wyr-reaction-icon,
+                .entry-flag {
+                    margin-top: 0;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+
+    .g1-quick-nav-tabs {
+        float: none;
+        margin-top: 0;
+        margin-bottom: 30px;
+
+        .g1-quick-nav-menu {
+            @include display(flex);
+            @include align-items(flex-end);
+
+            font-size: 0;
+        }
+
+        .menu-item {
+            margin: 0 !important;
+            font-size: 1rem;
+
+            > a {
+                padding: 10px 10px !important;
+
+                .entry-flag {
+                    display: none;
+                }
+            }
+        }
+
+        .current-menu-item {
+            > a {
+                .entry-flag {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    //csstodo
+.g1-hb-row {
+    .g1-quick-nav-top {
+        //csstodo
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+
+        .menu-item {
+            //csstodo
+            margin: 0;
+
+            > a {
+                font-size: 13px;
+                line-height: 15px;
+                font-family: inherit;
+                font-weight: inherit;
+                text-transform: none;
+            }
+
+            .entry-flag {
+                height: 20px;
+                width: 20px;
+                margin: 7px auto;
+
+                line-height: 20px;
+
+                border-color: transparent;
+                background-color: transparent;
+                color: inherit;
+
+                &:before {
+                    font-size: 20px;
+                    color: inherit;
+                }
+            }
+        }
+    }
+}
+
+    .g1-quick-nav-small-icons{
+        clear: both;
+        @include display(flex);
+        @include align-items(center);
+
+        .g1-quick-nav-menu {
+
+            > .menu-item {
+                margin: 0;
+
+                // We need "0%" instead of "0" to fix IE10, IE11
+                @include flex(1 0 0%);
+
+                > a {
+                    display: block;
+                    padding: 5px 5px;
+                    text-transform: none;
+
+                    font-size: 13px;
+                    line-height: 14px;
+
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+
+                    color: inherit;
+
+                    &:before {
+                        display: block;
+                        margin-bottom: 0.1em;
+
+                        font: 17px/1 "bimber";
+                        opacity: 0.666;
+
+                        @include transition( opacity 0.375s ease-in-out );
+                    }
+                }
+            }
+
+            > .current-menu-item,
+            > .menu-item:hover {
+                > a {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+
+        .menu-item-type-g1-latest > a:before {
+            // Pixel-perfect mentality
+            position: relative;
+            top: -1px;
+
+            content: "\e017";
+        }
+        .menu-item-type-g1-popular > a:before {
+            // Pixel-perfect mentality
+            position: relative;
+            top: -2px;
+
+            content: "\e015";
+        }
+        .menu-item-type-g1-hot > a:before {
+            content: "\e01c";
+        }
+        .menu-item-type-g1-trending > a:before {
+            content: "\e030";
+        }
+
+        @media only screen and ( min-width: 1024px ) {
+                @include display(flex);
+                @include align-items(center);
+                clear: none;
+                float: #{$left};
+                margin-#{$left}: -10px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+
+                .g1-quick-nav-menu {
+                    display: block;
+
+                    > .menu-item {
+                        > a {
+                            padding: 9px 10px;
+
+                            font-size: 14px;
+
+                            &:before {
+                                display: inline-block;
+                                margin-#{$right}: 0.5em;
+                                margin-bottom: 0;
+
+                                font-size: 18px;
+                                line-height: 1px;
+
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+        }
+    }

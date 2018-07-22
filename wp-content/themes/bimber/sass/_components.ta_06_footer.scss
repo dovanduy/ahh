@@ -1,0 +1,106 @@
+.g1-prefooter {
+    z-index: 0;
+    padding-top: 3rem;
+
+    .widget {
+        margin-bottom: 3rem;
+    }
+}
+
+.g1-footer {
+    padding-top: 15px;
+    font-family: $meta_font_family;
+
+    .g1-column {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+.g1-prefooter + .g1-footer {
+
+    // Dynamic border color.
+    &:before {
+        display: block;
+
+        position: absolute;
+        z-index: 1;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: 0;
+        height: 0;
+        border-width: 1px 0 0;
+
+        border-style: solid;
+
+        content: "";
+
+        border-color: currentColor;
+        opacity: 0.1667;
+    }
+}
+
+
+.g1-footer-stamp {
+    display: table;
+    clear: both;
+    margin-#{$left}: auto;
+    margin-#{$right}: auto;
+
+    font-size: 12px;
+    line-height: 14px;
+
+    color: inherit;
+
+    @include transition(
+        border-color 0.375s ease-in-out,
+        background-color 0.375s ease-in-out,
+        color 0.375s ease-in-out,
+        opacity 0.375s ease-in-out
+    );
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.g1-footer-stamp-icon {
+    display: block;
+    margin-#{$left}: auto;
+    margin-#{$right}: auto;
+}
+
+.g1-footer-stamp-label {
+    display: block;
+    margin: 0.75em 0;
+}
+
+.g1-footer-text {
+    @include box-sizing( border-box );
+    margin-bottom: 15px;
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .g1-footer {
+        text-align: center;
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .g1-footer-text {
+        width: 50%;
+        padding-#{$right}: 15px;
+        float: #{$left};
+    }
+
+    .g1-footer-nav {
+        width: 50%;
+        padding-#{$left}: 15px;
+        float: #{$right};
+
+        > ul {
+            float: #{$right};
+        }
+    }
+}

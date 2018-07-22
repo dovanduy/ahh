@@ -1,0 +1,139 @@
+.entry-media-row-04 {
+        max-width: $grid_width;
+
+    > .g1-row-inner {
+        max-width: none;
+
+        > .g1-column {
+            padding-#{$left}: 0;
+            padding-#{$right}: 0;
+        }
+    }
+
+    > .g1-row-background {
+        background-color: $skin_background_color;
+
+        > .g1-row-background-media {
+            max-width: 100%;
+            width: 1152px;
+
+            top: 0;
+            bottom: auto;
+            height: 400px;
+        }
+    }
+
+    .g1-row-1 {
+        height: 400px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 0 auto;
+    }
+
+    .g1-row-2 {
+        max-width: $grid_width + $grid_gutter_width*2;
+        margin: 0 auto;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        > .g1-row-inner {
+            > .g1-column-2of3 {
+                margin-#{$left}: 0;
+                margin-#{$right}: 0;
+            }
+        }
+
+        > .g1-row-background {
+            max-width: $grid_width - $grid_gutter_width;
+        }
+    }
+
+    // csstodo vars
+    .entry-categories:first-child {
+        .entry-category {
+            padding-#{$left}: 8px;
+        }
+    }
+
+    .entry-header {
+        padding-bottom: 1.5rem;
+    }
+
+    .entry-media-credit {
+        padding: 0.333em 0;
+    }
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .entry-media-row-04 {
+        .g1-row-2 {
+            background: $skin_dark_background_color;
+        }
+    }
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .entry-media-row-04 {
+        > .g1-row-inner {
+            min-height: 66vh;
+
+            > .g1-column {
+                position: static;
+            }
+        }
+
+        > .g1-row-background {
+            > .g1-row-background-media {
+                top: 0;
+                bottom: 0;
+                height: auto;
+            }
+        }
+
+        .g1-row-1 {
+            .g1-breadcrumbs {
+                padding-#{$left}: 15px;
+                padding-#{$right}: 15px;
+            }
+        }
+
+        .g1-row-2 {
+            padding-top: 120px;
+
+            position: absolute;
+            z-index: 2;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: auto;
+            bottom: 0;
+
+            .g1-column-2of3 {
+                width: calc( 66.666% + 45px );
+                padding-#{$left}: 60px;
+            }
+
+            .g1-column-1of3 {
+                width: calc( 33.333% - 45px );
+                position: absolute;
+                z-index: 3;
+                bottom: 0;
+                #{$left}: auto;
+                #{$right}: 15px;
+
+                text-align: $right;
+
+                background-color: rgba(0, 0, 0, 0.333);
+                color: #fff;
+            }
+
+            > .g1-row-background {
+                @include background-image(linear-gradient(to bottom, rgba(0,0,0, 0) 0px, rgba(0,0,0, 0.333) 120px, rgba(0,0,0, 0.666) 100%));
+            }
+        }
+    }
+}
+

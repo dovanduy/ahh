@@ -1,0 +1,71 @@
+$_centered: 'music' == $stack;
+
+.entry-header-02 {
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    .entry-meta {
+        padding-top: 10px;
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: $skin_border_color;
+    }
+}
+
+@if ( $_centered ) {
+    @media only screen and ( min-width: 601px ) {
+        .entry-header-02 {
+            margin-#{$left}: 86px;
+        }
+    }
+
+    @media only screen and ( min-width: 1025px ) {
+        .entry-header-02 {
+            margin-#{$left}: 96px;
+        }
+    }
+}
+
+
+
+@media only screen and ( min-width: 601px ) {
+    .g1-wrapper-with-stickies {
+        padding-#{$left}: 86px;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        .entry-essentials {
+            width: 100%;
+            float: $right;
+        }
+
+        .entry-actions {
+            width: 66px;
+            float: $left;
+
+            margin-#{$left}: -86px;
+
+            position: -webkit-sticky;
+            position: sticky;
+            top: 10px;
+        }
+
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .g1-wrapper-with-stickies {
+        padding-#{$left}: 96px;
+
+        .entry-actions {
+            margin-#{$left}: -96px;
+        }
+    }
+}
+
+

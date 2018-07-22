@@ -1,0 +1,22 @@
+// Facebook delayed loading
+.g1-fb-page-loading-indicator { display: none; }
+.g1-fb-page-loading {
+  width: 100%;
+
+  // Chrome fix.
+  // The sticky header has got a rendering glitche without it.
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: scale(1);
+
+  &:before {
+    display: block;
+    width: 1em;
+    margin: 0 auto;
+    font: 24px/1 "bimber";
+    content: "\e01d";
+
+    -webkit-animation: g1-anim-spin 2s infinite linear;
+    animation: g1-anim-spin 2s infinite linear;
+  }
+}

@@ -1,0 +1,300 @@
+.g1-box {
+    @include box-sizing(border-box);
+    position: relative;
+
+    @if ( 'miami' == $stack or 'music' == $stack ) {
+        padding: 0 30px 1px 30px;
+    } @else {
+        padding: 45px 30px 1px 30px;
+    }
+
+    border-radius: $box_border_radius;
+
+    @if ( 'original' == $stack or 'minimal' == $stack ) {
+        /* Dynamic border color */
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            border-width: 6px;
+            border-style: solid;
+
+            opacity: 0.1667;
+
+            content: "";
+        }
+    }
+
+    @if ( 'original-2018' == $stack ) {
+        .g1-box-background {
+            position: absolute;
+            z-index: -1;
+
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            background-color: $skin_background_color;
+
+            /* Dynamic border color */
+            &:before {
+                display: block;
+
+                position: absolute;
+                z-index: 1;
+                #{$left}: 0;
+                #{$right}: 0;
+                top: 0;
+                bottom: 0;
+
+                background-color: currentColor;
+                opacity: 0.1;
+
+                content: "";
+            }
+
+            &:after {
+                display: block;
+
+                position: absolute;
+                z-index: 2;
+                #{$left}: 10px;
+                #{$right}: 10px;
+                top: 10px;
+                bottom: 10px;
+
+                @include border-radius(3px);
+                @include box-shadow( 0 3px 7px rgba(0,0,0, 0.07));
+
+                background-color: inherit;
+
+                content: "";
+            }
+        }
+    }
+
+    @if ( 'cards' == $stack ) {
+        background-color: #fff;
+        //box-shadow: 0 0 30px rgba(0,0,0, 0.1);
+        //box-shadow: 0 7px 16px rgba(0,0,0,.1);
+        box-shadow: 0 40px 80px rgba(0,0,0,.1);
+    }
+
+    @if ( 'hardcore' == $stack ) {
+        /* Dynamic border color */
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            background-color: currentColor;
+
+            opacity: 0.1;
+
+            content: "";
+        }
+    }
+
+    @if ( 'bunchy' == $stack ) {
+        /* Dynamic border color */
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            content: "";
+
+            background-color: currentColor;
+            opacity: 0.0833;;
+        }
+    }
+
+    /* Tricky bottom padding */
+    &:after {
+        display: block;
+        width: 100%;
+        height: 0;
+        margin-top: 30px + 6px - 1px;
+        content: "";
+    }
+}
+
+
+@include if-stack( 'miami' ) {
+    aside.g1-box {
+        //color: #fff;
+
+        .g1-mega,
+        .g1-alpha {
+            font-family: "Rubik", sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            word-spacing: 0.2em;
+            color: #fff;
+        }
+
+        //.g1-delta {
+        //    opacity: 1;
+        //    color: #fff;
+        //}
+        //
+        //.g1-meta {
+        //    color: rgba(255, 255, 255, 0.6);
+        //}
+
+        input {
+            font-size: 18px;
+            border-color: transparent transparent #fff;
+
+            opacity: 1;
+        }
+
+        ::-webkit-input-placeholder {
+            opacity: 0.666;
+        }
+
+        ::-moz-placeholder {
+            opacity: 0.666;
+        }
+
+        :-ms-input-placeholder {
+            opacity: 0.666;
+        }
+
+        input[type=submit] {
+            font-size: 14px;
+
+            border-color: #fff;
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}
+
+
+
+
+@if ( 'miami' == $stack or 'bunchy' == $stack ) {
+    .g1-box-icon {
+        display: none;
+    }
+} @else {
+    .g1-box-icon {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+
+        position: absolute;
+        top: -10px;
+        #{$left}: 0;
+        #{$right}: 0;
+
+        pointer-events: none;
+
+        text-align: center;
+        font: 24px/40px "bimber";
+
+        @include border-radius( 50% );
+
+        &:before {
+            content: "\e012";
+        }
+    }
+}
+
+
+
+.g1-box {
+    @if ( 'miami' == $stack ) {
+        > header {
+            display: inline-block;
+            margin-bottom: 40px;
+            background-color: $skin_background_color;
+
+            .g1-delta {
+                padding: 6px 30px;
+                margin: 0;
+                font-size: 14px;
+                line-height: 1;
+
+                color: $skin_important_text_color;
+            }
+
+        }
+    } @else if ( 'music' == $stack ) {
+        > header {
+            margin-#{$left}: -30px;
+            margin-#{$right}: -30px;
+
+
+            // csstodo selector
+            > h2 > span {
+                padding-top: 20px;
+                padding-#{$left}: 30px;
+                padding-#{$right}: 30px;
+
+                &:before {
+                    top: 0;
+                    bottom: auto;
+                }
+            }
+        }
+    } @else {
+        > header {
+            overflow: hidden;
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            clip: rect(1px, 1px, 1px, 1px );
+        }
+    }
+}
+
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .g1-box {
+        padding-#{$left}: 34px;
+        padding-#{$right}: 34px;
+
+        @if ('music' == $stack) {
+            > header {
+                margin-#{$left}: -34px;
+                margin-#{$right}: -34px;
+
+                // csstodo selector
+                > h2 > span {
+                    padding-#{$left}: 34px;
+                    padding-#{$right}: 34px;
+                }
+            }
+        }
+    }
+}
+
+
+@if ( 'music' == $stack ) {
+    .g1-box {
+        background-color: #202020;
+    }
+
+    .g1-box-icon {
+        display: none;
+    }
+}

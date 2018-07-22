@@ -1,0 +1,133 @@
+.entry-tpl-grid-fancy {
+    position: relative;
+    margin-bottom: 10px;
+    width:100%;
+
+    counter-increment: g1-collection-item-counter;
+
+    @if ( 'cards' == $stack ) {
+        background-color: $skin_background_color;
+    }
+
+    @if ( 'hardcore' != $stack ) {
+        text-align: center;
+    }
+
+
+    .entry-counter {
+        @if ( 'original' == $stack or 'cards' == $stack or 'minimal' == $stack ) {
+            display: block;
+
+            #{$left}: 0;
+            #{$right}: 0;
+            top: -6px;
+
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+
+            &:before {
+                width: 20px;
+                height: 20px;
+            }
+        } @else if ( 'original-2018' == $stack or 'music' == $stack ) {
+            display: block;
+
+            #{$left}: 0;
+            #{$right}: 0;
+            top: -8px;
+
+            font-size: 14px;
+            line-height: 24px;
+            text-align: center;
+
+            &:before {
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+
+
+    .entry-featured-media {
+        margin-bottom: 0;
+    }
+
+    .entry-header {
+        position: relative;
+    }
+
+    .entry-before-title {
+        font-size: 0;
+    }
+
+    .entry-featured-media + .entry-body .entry-header .entry-before-title {
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: auto;
+        bottom: 100%;
+    }
+
+    .entry-stats {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .entry-categories {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        font-size: 13px;
+        line-height: 13px;
+    }
+
+    .entry-title {
+        padding-top: 0.75em;
+        margin-bottom: 0.75em;
+    }
+}
+
+@if ( 'cards' == $stack ) {
+    .entry-tpl-grid-fancy {
+        margin-bottom: 10px;
+
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+
+        @if $box_border_radius {
+            border-radius: $box_border_radius;
+
+            .entry-featured-media {
+                overflow: hidden;
+                border-top-#{$left}-radius: inherit;
+                border-top-#{$right}-radius: inherit;
+            }
+        }
+
+        .entry-before-title {
+            padding-#{$left}: 30px;
+            #{$left}: -30px !important;
+            background: #fff !important;
+        }
+
+        .entry-meta {
+            background: $skin_background_color !important;
+        }
+
+        .entry-body {
+            padding-#{$left}: 30px;
+            padding-#{$right}: 30px;
+        }
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    @if ( 'original' == $stack or 'minimal' == $stack ) {
+        .entry-tpl-grid-fancy {
+            margin-bottom: 20px;
+        }
+    }
+}

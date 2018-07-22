@@ -1,0 +1,107 @@
+.bbp-login-form {
+    legend {
+        display: none;
+    }
+
+    .bbp-username,
+    .bbp-email,
+    .bbp-password {
+        margin-bottom: 18px;
+
+        label {
+            display: block;
+            padding-bottom: 0;
+        }
+
+        input {
+            max-width: 100%;
+            width: 470px;
+        }
+    }
+
+
+
+    .bbp-login-links {
+        margin: -0.75rem 0 1.5rem;
+
+        .bbp-register-link {
+            margin-#{$right}: 1em;
+        }
+
+        .bbp-lostpass-link {
+        }
+    }
+}
+
+#secondary {
+    .bbp-login-form {
+        .bbp-submit-wrapper {
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+.g1-box {
+    .bbp-logged-in {
+        .user-submit {
+            display: block;
+            width: 40px;
+            height: 40px;
+            margin-#{$left}: -20px;
+
+            position: absolute;
+            #{$left}: 50%;
+            #{$right}: auto;
+            top: -10px;
+
+        }
+    }
+}
+
+
+
+section.widget_display_topics {
+    li {
+        position: relative;
+        padding-#{$left}: 28px;
+    }
+
+    .bbp-author-avatar {
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: auto;
+        top: 5px;
+    }
+}
+
+
+section.widget_display_replies {
+    ul {
+        overflow: hidden;
+        margin-#{$left}: 0;
+        list-style: none;
+
+    }
+
+    li {
+        display: block;
+        position: relative;
+        margin-top: -1px;
+        padding: 5px 0 5px 28px;
+        border-width: 1px 0 0;
+
+        > div {
+            font-size: 0.83em;
+        }
+    }
+
+    .bbp-author-avatar {
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: auto;
+        top: 5px;
+    }
+}

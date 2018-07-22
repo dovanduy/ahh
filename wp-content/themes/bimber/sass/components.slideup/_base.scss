@@ -1,0 +1,50 @@
+/*
+ * Slideup styles. Loads all specific slideups.
+ */
+ .g1-slideup-wrap{
+ 	position: fixed;
+ 	display: none;
+ 	pointer-events: none;
+ 	z-index: 1100;
+ 	#{$left}: 0%;
+	#{$right}: 0%;
+	bottom: 0%;
+ 	@include opacity(0);
+ 	@include transition(.375s);
+	@include translate(0%, 100%);
+	[type=text],
+	[type=email]{
+		border-color: transparent;
+	}
+ }
+
+.g1-slideup-base{
+ 	display: block;
+
+	position: absolute;
+	z-index: -1;
+ 	#{$left}: 0;
+ 	#{$right}: 0;
+	top: 40px;
+	bottom: 0;
+
+ 	background-color: rgba(0, 0, 0, 0.4);
+ 	@include opacity(0);
+ 	@include transition(.375s);
+ }
+ html.g1-slideup-visible{
+	.g1-slideup-base{
+ 		@include opacity(1);
+	}
+ 	.g1-slideup-wrap{
+ 		pointer-events: all;
+ 		@include opacity(1);
+		@include translate(0%, 0%);
+ 	}
+ }
+ @media only screen and ( min-width: 1025px ){
+ 	.g1-slideup-wrap{
+ 		display: block;
+ 	}
+ }
+ @import "newsletter";

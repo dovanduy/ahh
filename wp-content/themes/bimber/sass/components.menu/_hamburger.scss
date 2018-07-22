@@ -1,0 +1,63 @@
+$_hamburger_width: 30px;
+$_hamburger_height: 20px;
+$_hamburger_line: 2px;
+
+.g1-hamburger {
+    display: block;
+    float: $left;
+    padding: 4px 0;
+    margin-#{$right}: 20px;
+
+    z-index: 1;
+
+    cursor: pointer;
+    color: inherit;
+}
+
+.g1-hamburger-icon {
+    display: block;
+
+    font-size: 32px;
+    line-height: 32px;
+    font-family: "bimber";
+
+    text-align: center;
+
+    &:before {
+        display: inline;
+        content: "\e018";
+    }
+}
+
+.g1-hamburger-label {
+    display: none;
+
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.g1-hb-row-normal {
+    .g1-hamburger-label {
+        display: block;
+    }
+
+    .g1-hamburger-label-hidden {
+        display:none;
+    }
+}
+
+.g1-hamburger-m {
+    .g1-hamburger-icon {
+        width: 32px;
+        font-size: 24px;
+        line-height: 24px;
+
+    }
+}
+.g1-hamburger-s {
+    .g1-hamburger-icon {
+        width: 32px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+}

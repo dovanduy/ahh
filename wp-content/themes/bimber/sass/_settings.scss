@@ -1,0 +1,190 @@
+$grid_width:            1182px;
+$grid_gutter_width:     30px;
+$layout_boxed_width:    1290px;
+
+
+$has_mq_1025: true;
+
+// Skin.
+$skin_light_background_color: #fff;
+$skin_light_background_tone_color: #f2f2f2;
+$skin_light_border_color: #e6e6e6;
+$skin_light_important_text_color: #000;
+$skin_light_regular_text_color: #666;
+$skin_light_meta_text_color: #999;
+
+$skin_dark_background_color: #1a1a1a;
+$skin_dark_background_tone_color: #262626;
+$skin_dark_border_color: #333;
+$skin_dark_important_text_color: #fff;
+$skin_dark_regular_text_color: #999;
+$skin_dark_meta_text_color: #666;
+
+$skin: 'light' !default;
+$skin_background_color:         if( 'light' == $skin, $skin_light_background_color, $skin_dark_background_color );
+$skin_background_tone_color:    if( 'light' == $skin, $skin_light_background_tone_color, $skin_dark_background_tone_color );
+$skin_border_color:             if( 'light' == $skin, $skin_light_border_color, $skin_dark_border_color );
+$skin_important_text_color:     if( 'light' == $skin, $skin_light_important_text_color, $skin_dark_important_text_color );
+$skin_regular_text_color:       if( 'light' == $skin, $skin_light_regular_text_color, $skin_dark_regular_text_color );
+$skin_meta_text_color:          if( 'light' == $skin, $skin_light_meta_text_color, $skin_dark_meta_text_color );
+
+$skin_reverse_background_color:         if( 'dark' == $skin, $skin_light_background_color, $skin_dark_background_color );
+$skin_reverse_background_tone_color:    if( 'dark' == $skin, $skin_light_background_tone_color, $skin_dark_background_tone_color );
+$skin_reverse_border_color:             if( 'dark' == $skin, $skin_light_border_color, $skin_dark_border_color );
+$skin_reverse_important_text_color:     if( 'dark' == $skin, $skin_light_important_text_color, $skin_dark_important_text_color );
+$skin_reverse_regular_text_color:       if( 'dark' == $skin, $skin_light_regular_text_color, $skin_dark_regular_text_color );
+$skin_reverse_meta_text_color:          if( 'dark' == $skin, $skin_light_meta_text_color, $skin_dark_meta_text_color );
+
+$color_sections_bg: $skin_background_color;
+
+// Typography.
+$giga_font_size: 48px;
+$giga_line_height: 1.067;
+$giga_font_weight: 700;
+$giga_letter_spacing: -0.05em;
+
+
+$mega_font_size: 40px;
+$mega_line_height: 1.067;
+$mega_font_weight: 700;
+$mega_letter_spacing: -0.05em;
+
+$alpha_font_size: 29px;
+$alpha_line_height: 1.067;;
+$alpha_letter_spacing: -0.05em;
+$alpha_font_weight: 600;
+
+$beta_font_size: 24px;
+$beta_line_height: 1.125;
+$beta_letter_spacing: -0.025em;
+$beta_font_weight: 600;
+
+$gamma_font_size: 21px;
+$gamma_line_height: 1.125;
+$gamma_letter_spacing: -0.025em;
+$gamma_font_weight: 600;
+
+$delta_font_size: 18px;
+$delta_line_height: 1.2;
+$delta_letter_spacing: -0.025em;
+$delta_font_weight: 600;
+
+$epsilon_letter_spacing: -0.025em;
+$epsilon_font_weight: 500;
+
+$zeta_font_size: 11px;
+$zeta_line_height: 12px;
+$zeta_letter_spacing: 0em;
+$zeta_font_weight: 500;
+
+$xl_font_size: 18px;
+$xl_line_height: 30px;
+
+$typo_2nd_font_weight: 700;
+$typo_2nd_letter_spacing: normal;
+
+// Heading-3rd text classes.
+$typo_3rd_font_weight: 300;
+$typo_3rd_letter_spacing: -0.025em;
+
+
+
+
+// Meta
+$meta_font_size: 13px;
+$meta_line_height: 16px;
+$meta_text_transform: none;
+
+
+
+// Menu.
+$menu_font_size: 14px;
+$menu_font_weight: 700;
+$menu_letter_spacing: normal;
+
+$submenu_font_size: 13px;
+$submenu_font_family: "Roboto", "Arial", sans-serif;
+$submenu_font_weight: 400;
+$submenu_text_transform: uppercase;
+$submenu_letter_spacing: normal;
+$submenu_padding_horizontal: 20px;
+
+
+// Buttons.
+$button_font_family: "Poppins", "Roboto", "Arial", sans-serif;
+$button_xs_font_size:   10px;
+$button_s_font_size:    12px;
+$button_m_font_size:    14px;
+$button_l_font_size:    16px;
+$button_xl_font_size:   18px;
+
+
+// Categories.
+$categories_padding: 2px 9px;
+$categories_border_width: 1px;
+
+
+$categories_font_size: 13px;
+$categories_line_height: 16px;
+$categories_font_family: "Poppins", "Roboto", "Arial", sans-serif;
+$categories_font_weight: 600;
+$categories_text_transform: uppercase;
+
+$categories_border_color: $skin_border_color;
+$categories_background_color: $skin_border_color;
+$categories_text_color: $skin_important_text_color;
+
+
+
+
+// Entry counters.
+$entry_counter_font_size: 18px;
+$entry_counter_font_family: "Poppins", "Roboto", sans-serif;
+$entry_counter_font_weight: 300;
+$entry_counter_border_radius: 50%;
+
+// Tabs
+$tabs_font_size:        14px;
+$tabs_line_height:      16px;
+$tabs_font_family:      "Poppins", "Roboto", sans-serif;
+$tabs_font_weight:      700;
+$tabs_text_transform:   uppercase;
+$tabs_letter_spacing:   normal;
+
+
+$button_letter_spacing: 0em;
+$button_font_weight: 700;
+
+
+$mobile_breakpoint: 800px;
+$mobile_grid_width: 708px;
+
+
+$ui_border_radius: 4px;
+$button_border_radius: 4px;
+
+
+
+$badge_size: 40px;
+$badge_position: 'top';
+$badge_border_radius: 50%;
+$badge_border_width: 1px;
+$badge_font_size: 24px;
+
+// MashShare
+$mash_gutter: 6px;
+
+
+// Frame icons
+$frame_icon_large_size: 60px;
+$frame_icon_large_font_size: 18px;
+
+$frame_icon_medium_size: 60px;
+$frame_icon_medium_font_size: 18px;
+
+$frame_icon_small_size: 40px;
+$frame_icon_small_font_size: 14px;
+
+
+// Back to top.
+$back_to_top_font_size: 24px;

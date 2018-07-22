@@ -1,0 +1,133 @@
+@if ( 'bunchy' == $stack ) {
+
+    $_arrow_height: 80px;
+    $_arrow_helper_size: 60px;
+    $_badge_width: 100px;
+    $_badge_height: 48px;
+    $_badge_s_width: 100px;
+    $_badge_s_height: 24px;
+    $_badge_margin_right: 20px;
+
+
+    .g1-arrow {
+        display: inline-block;
+        @include box-sizing( border-box );
+        height: $_badge_s_height;
+        padding: 0 10px;
+
+        position: relative;
+
+        text-align: center;
+        font-size: 16px;
+        line-height: $_badge_s_height;
+
+        font-family: "Roboto Condensed", sans-serif;
+
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        border-color: #b2b2b2;
+        background-color: #b2b2b2;
+        color: #fff;
+
+        &:after {
+            display: block;
+            border-width: $_badge_s_height/2 5px;
+
+            position: absolute;
+            #{$left}: 100%;
+            top: 0;
+
+            border-style: solid;
+
+            border-color: inherit;
+            border-top-color: transparent !important;
+            border-#{$right}-color: transparent !important;
+            border-bottom-color: transparent !important;
+
+            content: "";
+        }
+
+        > span {
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+
+    .g1-arrow-left {
+        &:before {
+            display: block;
+            border-width: $_badge_s_height/2 10px;
+
+            position: absolute;
+            #{$right}: 100%;
+            top: 0;
+
+            border-style: solid;
+
+            border-color: inherit;
+            border-top-color: transparent !important;
+            border-#{$left}-color: transparent !important;
+            border-bottom-color: transparent !important;
+
+            content: "";
+
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    @media only screen and ( min-width: 601px ) {
+        .g1-arrow {
+            width: $_badge_width;
+            height: $_badge_height;
+
+            line-height: 1.125;
+            line-height: 48px;
+            line-height: 46px;
+
+            &:before,
+            &:after {
+                border-width: $_badge_height/2 10px;
+            }
+
+            > span {
+                line-height: 18px;
+                word-spacing: 666px; // To ensure every word is in its own line
+            }
+        }
+    }
+
+    .g1-arrow-xl {
+        height: 80px;
+
+        &:before {
+            @if ( 'hardcore' == $stack ) {
+                border-width: 39px 20px;
+            } @else {
+                border-width: 35px 20px;
+            }
+        }
+    }
+
+
+
+    a.g1-arrow {
+        &:hover {
+            box-shadow: 0 3px 6px -3px rgba(0,0,0, 0.333);
+        }
+    }
+
+    span.g1-arrow-simple {
+        color: #999;
+    }
+
+    .g1-arrow-disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+}
+

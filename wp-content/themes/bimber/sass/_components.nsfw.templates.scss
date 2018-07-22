@@ -1,0 +1,38 @@
+.entry-tpl-stream,
+.entry-tpl-index {
+    .g1-nsfw-icon{
+        font-size: 48px;
+    }
+
+    .g1-nsfw-title {
+        font-size: 1.5em;
+    }
+
+    .g1-nsfw-desc {
+        font-size: 1em;
+    }
+}
+
+.entry-tpl-gridxs {
+    .g1-nsfw-title {
+        clip: rect( 1px, 1px, 1px, 1px);
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+}
+
+
+.entry-tpl-gridxs,
+.entry-tpl-grid-fancy,
+.entry-tpl-list-fancy {
+    .g1-nsfw-desc {
+        clip: rect( 1px, 1px, 1px, 1px);
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+}
+

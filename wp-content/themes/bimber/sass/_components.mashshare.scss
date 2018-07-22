@@ -1,0 +1,229 @@
+/**
+ * MashShare LTR | RTL
+ */
+.mashsb-count {
+    float: #{$left};
+}
+
+[class*=" mashicon-"] .icon::before,
+[class^="mashicon-"] .icon::before {
+    margin-#{$right}: 0;
+
+    @media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+        & {
+            margin-#{$right}: 0.7em;
+        }
+    }
+}
+
+
+
+
+/**
+ * Change the yellow subscribe icon
+ */
+.mashicon-subscribe {
+    border-color: #808080;
+    background-color: #808080;
+
+    .icon,
+    .text {
+        color: #fff;
+    }
+}
+
+/* Change the yellow subscribe icon */
+.mashsb-toggle-container {
+    position: relative;
+    margin-top: 15px;
+    padding: 1.5rem 1.5rem 0;
+    border-width: 0;
+    border-color: currentColor;
+
+    &:before {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: 0;
+        bottom: 0;
+
+        border-width: 6px;
+        border-style: solid;
+
+        content: "";
+
+        opacity: 0.1667;
+    }
+
+    &:after {
+        display: block;
+        overflow: hidden;
+        height: 0;
+        margin-top: 1.5rem;
+
+        content: " ";
+    }
+}
+
+
+// Change the "+" icon
+.onoffswitch:before {
+    font-family: bimber;
+    font-size: 32px;
+    font-weight: normal;
+
+    content: "\e01f";
+}
+
+// Change the "-" icon
+.onoffswitch2:before {
+    font-family: bimber;
+    font-size: 24px;
+    font-weight: normal;
+
+    content: "\e01b";
+}
+
+
+
+.mashsb-box {
+    .text {
+        font-family: $important_font_family;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+    }
+}
+
+.mashsbcount,
+.mashpv .count {
+    letter-spacing: -0.05em;
+}
+
+
+.mashsb-count {
+    margin-top: $mash_gutter;
+    margin-#{$right}: 15px;
+}
+
+.mashsb-buttons .mashsb-count {
+    margin-#{$right}: 0;
+    margin-#{$left}: 15px;
+}
+
+.mashsb-buttons .mashsb-count:first-child {
+    margin-#{$right}: 15px;
+    margin-#{$left}: 0;
+}
+
+.mashsb-sharetext {
+    font-family: $meta_font_family;
+    font-weight: 300;
+}
+
+
+.mashsb-main {
+    padding-top: 12px;
+    padding-bottom: 24px;
+    @if ( 'bunchy' == $stack ) {
+        border-width: 0;
+    } @else {
+        border-width: 1px 0 0;
+    }
+    border-style: solid;
+
+    border-color: $skin_border_color;
+
+    .mashsbcount,
+    .mashpv .count {
+        font-size: 36px;
+        line-height: 1;
+        font-family: $important_font_family;
+        font-weight: 700;
+        letter-spacing: -0.05em;
+    }
+
+    .mashsb-sharetext {
+        display: block;
+        //margin-top: 0.5em;
+        font-size: 13px;
+        line-height: 1;
+        font-family: $meta_font_family;
+        font-weight: 300;
+    }
+}
+
+
+
+
+.mashsb-buttons {
+    // Clearfix
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    a {
+        @include border-radius( $ui_border_radius );
+    }
+
+    .onoffswitch,
+    .onoffswitch2 {
+        border-color: $skin_border_color;
+        background-color: $skin_border_color;
+        color: $skin_meta_text_color;
+
+        @include border-radius( $ui_border_radius );
+
+        &:before {
+            font-weight: normal;
+        }
+    }
+}
+
+.mashsb-box {
+    .mashsb-buttons {
+        margin-top: -$mash_gutter;
+
+        a,
+        .onoffswitch,
+        .onoffswitch2 {
+            margin: side-values( $mash_gutter 0 0 $mash_gutter );
+        }
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .mashsb-main {
+        .mashsbcount,
+        .mashpv .count {
+            font-size: 42px;
+            line-height: 42px;
+        }
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .mashsb-main {
+        .mashsbcount,
+        .mashpv .count {
+            @if ( 'original-2018' == $stack ) {
+                font-size: 42px;
+                line-height: 42px;
+            } @else {
+                font-size: 56px;
+                line-height: 42px;
+            }
+
+        }
+    }
+}
+
+
+
+@import "components.mashshare/micro";
+@import "components.mashshare/compact";
+@import "components.mashshare/side";

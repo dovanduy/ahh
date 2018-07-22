@@ -1,0 +1,20 @@
+/* Entry tags */
+.entry-tag {
+    display: inline-block;
+    margin-#{$right}: 8px;
+
+    font-size: 14px;
+    font-family: $meta_font_family;
+
+    letter-spacing: 0.05em;
+    font-weight: 400;
+
+    vertical-align: top;
+    text-transform: uppercase;
+
+    color: inherit;
+
+    &:before {
+        content: "#";
+    }
+}

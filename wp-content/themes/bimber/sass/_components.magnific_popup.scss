@@ -1,0 +1,17 @@
+/**
+ * Magnific Popup adjustments
+ */
+.mfp-close {
+    font-size: 0;
+
+    &:before {
+        font: 24px/44px "bimber";
+        content: "\e01b";
+    }
+
+    &:hover,
+    &:active {
+        top: 0;
+        @include box-shadow( none );
+    }
+}

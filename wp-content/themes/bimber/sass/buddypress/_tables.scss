@@ -1,0 +1,177 @@
+/* Base styles */
+#buddypress {
+    table.notifications {
+        td.notification-since {
+            font-size: 13px;
+            line-height: 1.25;
+        }
+
+        td.notification-actions {
+            font-size: 13px;
+            line-height: 1.25;
+        }
+    }
+
+    /* Messages */
+    table.messages-notices {
+        td.thread-options {
+            font-size: 13px;
+            line-height: 1.25;
+        }
+    }
+
+
+    .notifications-options-nav,
+    .messages-options-nav {
+        select,
+        input[type=submit] {
+            margin-#{$right}: 2px;
+            vertical-align: middle; // Inline form.
+        }
+    }
+}
+
+/* Mobile first */
+@media only screen and ( max-width: 600px ) {
+    #buddypress {
+        table.notifications {
+            // Forget table display
+            &,
+            tbody,
+            tr,
+            th,
+            td {
+                display: block;
+            }
+
+            tr {
+                position: relative;
+                padding-#{$left}: 30px;
+                margin-bottom: 1.5em;
+            }
+
+            th.bulk-select-all,
+            td.bulk-select-check {
+                width: 30px;
+                position: absolute;
+                #{$left}: 0;
+
+                text-align: $left;
+            }
+
+            th.date,
+            th.actions {
+                display: none;
+            }
+
+            td.notification-since {
+                margin-bottom: 0.75em;
+            }
+        }
+
+
+        table.profile-fields {
+            // Forget table display
+            &,
+            tbody,
+            tr,
+            td {
+                display: block;
+            }
+
+
+            td.label {
+                font-weight: bold;
+
+                &:after {
+                    content: ":";
+                }
+            }
+        }
+    }
+}
+
+/* Larger screens */
+@media only screen and ( min-width: 601px ) {
+    #buddypress {
+        table.notifications,
+        table.notification-settings,
+        table.profile-fields,
+        table.wp-profile-fields,
+        table.profile-settings,
+        table.messages-notices {
+            width: 100%;
+            margin-bottom: 1.5em;
+
+            & + table {
+                margin-top: 3em;
+            }
+
+            th {
+                padding: 0.5em 10px;
+                border-bottom: 3px solid #e6e6e6;
+
+                font: 400 14px/1.25 "Poppins", sans-serif;
+                text-transform: uppercase;
+            }
+
+            td {
+                padding: 0.5em 10px;
+                border-top: 1px solid #e6e6e6;
+            }
+        }
+
+        /* Profile fields */
+        table.wp-profile-fields,
+        table.profile-fields {
+            td.label {
+                width: 33.333%;
+            }
+        }
+
+        /* Profile visibility */
+        table.profile-settings {
+            th.title {
+                width: 80%;
+            }
+        }
+
+        /* Notification settings */
+        table.notification-settings {
+            th.icon,
+            td:first-child {
+                display: none;
+            }
+
+            .yes,
+            .no {
+                text-align: center;
+                width: 40px;
+            }
+        }
+
+        /* Notifications */
+        table.notifications {
+            th.icon,
+            td:first-child {
+                display: none;
+            }
+
+            td.notification-since {
+                padding-top: 0.83em;
+            }
+
+            td.notification-actions {
+                padding-top: 0.83em;
+            }
+        }
+
+
+        /* Messages */
+        table.messages-notices {
+            td.thread-options {
+                padding-top: 0.83em;
+            }
+        }
+    }
+}

@@ -1,0 +1,129 @@
+$_centered: 'music' == $stack;
+
+
+.entry-tpl-list-fancy {
+    width: 100%;
+    margin-bottom: 30px;
+
+    position: relative;
+
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    counter-increment: g1-collection-item-counter;
+
+    // Clearfix.
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .entry-featured-media {
+        margin: 0;
+    }
+
+    @if ( 'cards' == $stack ) {
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+
+        .entry-body {
+            padding: 10px 20px;
+        }
+    }
+
+    .entry-title {
+        padding-top: 0.75em;
+        margin-bottom: 0.75em;
+    }
+
+    @if ( 'music' == $stack ) {
+        .entry-counter {
+            margin-#{$left}: auto;
+            margin-#{$right}: auto;
+
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: 0;
+
+            text-align: center;
+        }
+    }
+}
+
+
+@media only screen and ( min-width: 601px ) {
+    .entry-tpl-list-fancy {
+        position: relative;
+
+        .entry-featured-media {
+            @if ( 'cards' == $stack ) {
+                margin: 0;
+            } @else {
+                margin: side-values( 0 20px 0 0 );
+            }
+
+            float: #{$left};
+            width: 50%;
+            // csstodo dynamic
+            max-width: 364px;
+        }
+
+
+        @if ( 'music' == $stack ) {
+            .entry-counter {
+                width: 50%;
+                // csstodo dynamic
+                max-width: 364px;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        } @else if ( 'top' == $badge_position ) {
+            .entry-counter {
+                position: absolute;
+
+                @if ( 'original-2018' == $stack or 'minimal' == $stack or 'original' == $stack or 'cards' == $stack or 'bunchy' == $stack ) {
+                    #{$left}: 10px;
+                } @else {
+                    #{$left}: 0;
+                }
+
+                margin-top: 0;
+            }
+        } @else {
+            .entry-counter {
+                position: absolute;
+                #{$left}: 0;
+                margin-top: 0;
+            }
+        }
+
+
+
+        .entry-body {
+            @if ( 'cards' == $stack ) {
+                padding-top: 15px;
+                padding-bottom: 10px;
+            }
+
+            overflow: hidden;
+        }
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-list-fancy {
+        @if ( 'cards' == $stack ) {
+            .entry-body {
+                padding: 15px 30px 10px;
+            }
+        } @else {
+            .entry-featured-media {
+                margin-#{$right}: 30px;
+            }
+        }
+    }
+}

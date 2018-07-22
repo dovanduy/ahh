@@ -1,0 +1,154 @@
+#sitewide-notice {
+    position: fixed;
+    #{$left}: 10px;
+    #{$right}: 10px;
+    top: 10px;
+    z-index: 9999;
+
+    &.admin-bar-on {
+        top: 42px;
+    }
+
+    strong {
+        display: block;
+        margin-bottom: -1em;
+    }
+
+    #close-notice {
+        display: block;
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+
+        position: absolute;
+        #{$right}: 20px;
+        #{$left}: auto;
+        top: 10px;
+
+        font: 17px/32px "bimber";
+        text-align: center;
+
+        color: inherit;
+
+        &:before {
+            display: block;
+            width: inherit;
+            content: "\e01b";
+        }
+    }
+}
+
+
+#buddypress #message,
+#sitewide-notice {
+    //border: 1px solid #cb2;
+    background-color: #ffd;
+    color: #440;
+
+    p {
+        padding: 15px 30px;
+        margin: 0 auto;
+    }
+}
+
+
+#buddypress {
+    #message {
+        clear: both;
+        margin: 0 0 1.5rem;
+
+        p {
+            max-width: 1152px;
+        }
+    }
+
+    #message.updated {
+        clear: both;
+        display: block;
+    }
+
+    #message.error {
+        background-color: #fdc;
+        //border: 1px solid #a00;
+
+        color: #800;
+    }
+
+    #message.warning {
+        background-color: #ffe0af;
+        color: #800;
+    }
+
+    #message.updated {
+        background-color: #efc;
+        //border: 1px solid #591;
+        color: #250;
+    }
+
+    .g1-row-notices {
+        #message {
+            margin-bottom: 0;
+        }
+    }
+
+    #pass-strength-result {
+        display: none;
+        max-width: 13em;
+        padding: 5px 0;
+        border-width: 4px 0 0;
+        margin: 5px 0;
+
+        font-size: 13px;
+        font-weight: 600;
+        text-align: $right;
+        border-style: dotted;
+
+        border-color: #ddd;
+
+        &.error,
+        &.bad {
+            display: block;
+
+            border-color: #ff853c;
+            color: #ff853c;
+        }
+        &.good {
+            display: block;
+
+            border-color: #ffc000;
+            color: #ffc000;
+        }
+        &.short {
+            display: block;
+
+            border-color: #ff0036;
+            color: #ff0036;
+        }
+        &.strong {
+            display: block;
+
+            border-color: #559911;
+            color: #559911;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+#buddypress .standard-form#signup_form div div.error {
+    background: #faa;
+    color: #a00;
+    margin: 0 0 10px 0;
+    padding: 6px;
+    width: 90%;
+}
+#buddypress div.accept,
+#buddypress div.reject {
+    float: $left;
+    margin-#{$left}: 10px;
+}

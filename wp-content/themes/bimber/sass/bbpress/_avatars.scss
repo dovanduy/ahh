@@ -1,0 +1,14 @@
+.bbp-author-avatar {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+
+    @include border-radius( 50% );
+
+    > .avatar {
+        vertical-align: middle;
+
+        @include border-radius( 50% );
+    }
+}

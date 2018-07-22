@@ -1,0 +1,36 @@
+.entry-comments-link {
+    display: inline-block;
+    vertical-align: top;
+    pointer-events: auto;
+
+    a {
+        display: inline-block;
+        position: relative;
+
+        &:before {
+            display: inline-block;
+            margin-#{$right}: 0.25em;
+
+            font: 16px/11px "bimber";
+            vertical-align: middle;
+
+            content: "\e010";
+
+            opacity: 0.333;
+        }
+
+        > span {
+            clip: rect(1px, 1px, 1px, 1px);
+            position: absolute;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+    }
+
+    a:hover {
+        &:before {
+            opacity: 0.999;
+        }
+    }
+}

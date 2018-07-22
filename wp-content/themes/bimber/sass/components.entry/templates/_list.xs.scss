@@ -1,0 +1,43 @@
+
+
+.entry-tpl-listxs {
+    width: 344px;
+
+    .entry-featured-media {
+        float: #{$left};
+        margin: side-values( 0 20px 0 0 );
+        max-width: 110px;
+    }
+
+    .entry-header {
+        padding: 20px 0 10px;
+
+        .entry-title {
+            clear: none;
+        }
+    }
+}
+
+
+.entry-tpl-listxxs {
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .entry-featured-media {
+        float: #{$left};
+        margin: side-values( 0 15px 0 0 );
+        width: 55px;
+    }
+
+    .entry-header {
+        overflow: hidden;
+
+        .entry-title {
+            margin-bottom: 0;
+        }
+    }
+}
+

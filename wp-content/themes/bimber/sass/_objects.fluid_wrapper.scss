@@ -1,0 +1,69 @@
+/* Fluid (responsive) wrapper for iframes, objects, embeds */
+.g1-fluid-wrapper {
+    max-width: 100%;
+    margin: 0 0 1.5em;
+}
+
+.g1-fluid-wrapper-inner {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; // ratio 16x9 by default
+
+    > iframe,
+    > object,
+    > embed {
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: auto;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.g1-fluid-wrapper-16x9 {
+    width: 9999px;
+}
+
+
+
+/* Vertical ads */
+.g1-fluid-wrapper-300x600 {
+    width: 300px;
+
+    > .g1-fluid-wrapper-inner {
+        padding-bottom: percentage( 600/300 );
+    }
+}
+
+
+
+/* Rectangle ads */
+.g1-fluid-wrapper-300x250 {
+    width: 300px;
+
+    > .g1-fluid-wrapper-inner {
+        padding-bottom: percentage( 250/300 );
+    }
+}
+
+
+
+/* Horizontal ads */
+.g1-fluid-wrapper-728x90 {
+    width: 728px;
+
+    > .g1-fluid-wrapper-inner {
+        padding-bottom: percentage( 90/728 );
+    }
+}
+
+.g1-fluid-wrapper-970x250 {
+    width: 970px;
+
+    > .g1-fluid-wrapper-inner {
+        padding-bottom: percentage( 250/970 );
+    }
+}
+

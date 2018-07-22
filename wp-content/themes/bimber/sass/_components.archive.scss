@@ -1,0 +1,51 @@
+.archive-icon {
+    float: $left;
+    margin-#{$right}: 20px;
+}
+
+.archive-body {
+    padding: 10px 0;
+
+    @if 'cards' == $stack {
+        > .g1-row-background {
+            background-color: #ededed !important;
+        }
+    }
+}
+
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .archive-body {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .archive-body {
+        padding-top: if-stack( 'miami', 60px, 30px );
+        padding-bottom: 30px;
+    }
+}
+
+
+.archive-body-stream {
+    text-align: center;
+
+    > .g1-row-inner {
+        > .g1-column {
+            text-align: $left;
+        }
+    }
+}
+
+
+
+body.tag {
+    .archive-title {
+        &:before {
+            content: "#";
+        }
+    }
+}

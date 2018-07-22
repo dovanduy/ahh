@@ -1,0 +1,18 @@
+.g1-mosaic-3-3-3 {
+    .g1-mosaic-item {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media only screen and ( min-width: 801px ) {
+    .g1-mosaic-3-3-3 {
+        height: 400px;
+
+        .g1-mosaic-item {
+            float: $left;
+            width: percentage(1/3);
+            height: 100%;
+        }
+    }
+}

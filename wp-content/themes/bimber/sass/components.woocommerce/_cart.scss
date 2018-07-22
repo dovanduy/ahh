@@ -1,0 +1,60 @@
+.g1-drop-the-cart .g1-drop-toggle-icon {
+    @include if-rtl() {
+        @include scaleX(-1);
+    }
+
+    &:before {
+        content: "\e026";
+    }
+}
+
+
+
+.widget_shopping_cart {
+    .total {
+        text-align: $right;
+        text-align: center;
+
+        strong {
+            font-weight: inherit;
+            opacity: 0.333;
+        }
+    }
+
+    .buttons {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+
+        margin: 0 -3px;
+
+        .button {
+            @include flex(1 1 auto);
+
+            margin: 0 3px;
+        }
+    }
+}
+
+
+
+.cart_totals {
+    padding: 30px 20px;
+    background-color: $skin_background_tone_color;
+
+    .checkout-button {
+        display: block;
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .cart_totals {
+        padding-#{$left}: 30px;
+        padding-#{$right}: 30px;
+    }
+}
+
+#shipping_method {
+    margin: 0 0 0.75rem;
+    list-style: none;
+}

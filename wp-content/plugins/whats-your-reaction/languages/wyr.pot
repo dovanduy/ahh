@@ -1,0 +1,256 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+msgctxt "ajax internal message"
+msgid "Icon id not set!"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "This is not an attachment!"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "Icon saved successfully."
+msgstr ""
+
+msgid "Some error occurred while voting. Please try again."
+msgstr ""
+
+msgctxt "taxonomy general name"
+msgid "Reactions"
+msgstr ""
+
+msgctxt "taxonomy singular name"
+msgid "Reaction"
+msgstr ""
+
+msgid "Search Reactions"
+msgstr ""
+
+msgid "All Reactions"
+msgstr ""
+
+msgid "Parent Reaction"
+msgstr ""
+
+msgid "Parent Reaction:"
+msgstr ""
+
+msgid "Edit Reaction"
+msgstr ""
+
+msgid "Update Reaction"
+msgstr ""
+
+msgid "Add New Reaction"
+msgstr ""
+
+msgid "New Reaction Name"
+msgstr ""
+
+msgid "Reactions"
+msgstr ""
+
+msgid "View Reaction"
+msgstr ""
+
+msgid "Could not insert new vote into the database!"
+msgstr ""
+
+msgid "Angry"
+msgstr ""
+
+msgid "Cute"
+msgstr ""
+
+msgid "Cry"
+msgstr ""
+
+msgid "Geeky"
+msgstr ""
+
+msgid "LOL"
+msgstr ""
+
+msgid "LOVE"
+msgstr ""
+
+msgid "OMG"
+msgstr ""
+
+msgid "WIN"
+msgstr ""
+
+msgid "WTF"
+msgstr ""
+
+msgid "Load more."
+msgstr ""
+
+msgid "Sorry. No data so far."
+msgstr ""
+
+msgid "What's your reaction?"
+msgstr ""
+
+msgid "%1$s on"
+msgstr ""
+
+msgid "View all reactions"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "Post id not set!"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "Invalid reaction type!"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "User has already voted for that reaction type!"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "Failed to vote for post with id %d"
+msgstr ""
+
+msgctxt "ajax internal message"
+msgid "Vote added successfully."
+msgstr ""
+
+msgid "Icon"
+msgstr ""
+
+msgctxt "label"
+msgid "+ Upload new icon"
+msgstr ""
+
+msgid "the recommended format is SVG"
+msgstr ""
+
+msgctxt "label"
+msgid "Order"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Icon type"
+msgstr ""
+
+msgctxt "icon type"
+msgid "Text"
+msgstr ""
+
+msgctxt "icon type"
+msgid "Visual"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Icon"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Icon text color"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Icon background color"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Order"
+msgstr ""
+
+msgctxt "term field label"
+msgid "Disabled"
+msgstr ""
+
+msgctxt "taxonomy column name"
+msgid "Order"
+msgstr ""
+
+msgctxt "taxonomy column name"
+msgid "Icon"
+msgstr ""
+
+msgctxt "taxonomy column name"
+msgid "Active?"
+msgstr ""
+
+msgid "Manage your reactions direclty in your profile."
+msgstr ""
+
+msgid "Latest Reactions"
+msgstr ""
+
+msgid "A list of latest reactions."
+msgstr ""
+
+msgid "Widget title"
+msgstr ""
+
+msgid "The max. number of entries to show"
+msgstr ""
+
+msgid "HTML id attribute (optional)"
+msgstr ""
+
+msgid "HTML class(es) attribute (optional)"
+msgstr ""
+
+msgid "Latest reactions"
+msgstr ""
+
+msgid "Fake Reactions"
+msgstr ""
+
+msgid "Fake reaction count"
+msgstr ""
+
+msgid "Leave empty to use global settings."
+msgstr ""
+
+msgid "Disable fakes for:"
+msgstr ""
+
+msgid "Nonce incorrect!"
+msgstr ""
+
+msgid "React to a post"
+msgstr ""
+
+msgid "Awards for reactions."
+msgstr ""
+
+msgid "Reacting to a post"
+msgstr ""
+
+msgid "Log template"
+msgstr ""
+
+msgid "required"
+msgstr ""
+
+msgid "What's Your Reaction?"
+msgstr ""
+
+msgid "Share your reaction to a post, using nice looking badges"
+msgstr ""
+
+msgid "bringthepixel"
+msgstr ""
+
+msgid "http://www.bringthepixel.com"
+msgstr ""

@@ -1,0 +1,18 @@
+.entry-views {
+    display: inline-block;
+    margin-#{$right}: 8px;
+    vertical-align: top;
+
+    &:before {
+        display: inline-block;
+        margin-#{$right}: 0.25em;
+
+        font: 16px/11px "bimber";
+
+        vertical-align: middle;
+
+        content: "\e014";
+
+        opacity: 0.5;
+    }
+}

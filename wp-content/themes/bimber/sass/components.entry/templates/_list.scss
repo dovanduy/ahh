@@ -1,0 +1,176 @@
+/**
+ * List template
+ */
+.entry-tpl-list {
+    width: 100%;
+    position: relative;
+
+    @if ( 'cards' == $stack ) {
+        margin-bottom: 10px;
+
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+    } @else {
+        margin-bottom: 30px;
+    }
+
+    // Clearfix.
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .entry-featured-media {
+        margin: 0;
+    }
+
+
+
+    .entry-flags {
+        @if ( 'miami' != $stack and 'hardcore' != $stack and 'music' != $stack ) {
+            padding: 0 10px;
+        }
+
+        margin: 0 0 10px;
+
+        @if ( 'bunchy' == $stack ) {
+            clear: $left;
+            float: $left;
+            width: 50%;
+            max-width: 364px;   
+        }
+
+        position: absolute;
+        z-index: 3;
+
+        @if ( 'bunchy' == $stack ) {
+            top: 10px;
+            #{$left}: auto;
+            #{$right}: 0;
+        } @else if ( 'miami' == $stack or 'hardcore' == $stack or 'music' == $stack ) {
+            top: 0;
+            #{$left}: 0;
+            #{$right}: auto;
+        } @else{
+            top: -10px;
+            #{$left}: -10px;
+            #{$right}: auto;
+        }
+    }
+
+    .entry-flags:first-child {
+        position: relative;
+    }
+
+    @if ( 'cards' == $stack ) {
+        background-color: $skin_background_color;
+
+        .entry-body {
+            padding: 0 10px 1px;
+        }
+    }
+
+    .entry-title {
+        padding-top: 0.75em;
+        margin-bottom: 0.75em;
+    }
+
+    .g1-button {
+        float: $right;
+        margin-bottom: 15px;
+    }
+}
+
+// Grid on smaller screens.
+@media only screen and ( max-width: 600px ) {
+    .entry-tpl-list {
+        .entry-header {
+            position: relative;
+        }
+
+        .entry-featured-media ~ .entry-body .entry-header .entry-before-title {
+            position: absolute;
+
+            #{$left}: if-stack( 'cards', -10px, 0 );
+            #{$right}: auto;
+            bottom: 100%;
+
+            @if ( 'cards' == $stack ) {
+                padding-#{$left}: 10px;
+                background-color: $skin_background_color;
+            }
+        }
+    }
+}
+
+// Switch to list on bigger screens.
+@media only screen and ( min-width: 601px ) {
+    .entry-tpl-list {
+        position: relative;
+
+        .entry-featured-media {
+            float: #{$left};
+            width: 50%;
+            max-width: 364px;
+            margin: if-stack('cards', 0, side-values( 0 20px 0 0 ) );
+        }
+
+        @if ( 'top' == $badge_position ) {
+            .entry-flags {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        } @else {
+            .entry-flags {
+                margin-top: 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+
+                @include translateY(0);
+            }
+        }
+
+        .entry-body {
+            @if ( 'cards' == $stack ) {
+                padding-top: 15px;
+                padding-bottom: 10px;
+            }
+
+            overflow: hidden;
+        }
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    @if ( 'cards' == $stack ) {
+        .entry-tpl-list {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Adjust spacing on large screens.
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-list {
+        @if ( 'cards' == $stack ) {
+            margin-bottom: 30px;
+
+            .entry-body {
+                padding: 15px 30px 10px;
+            }
+        } @else {
+            .entry-featured-media {
+                margin-#{$right}: 30px;
+            }
+        }
+
+
+    }
+}

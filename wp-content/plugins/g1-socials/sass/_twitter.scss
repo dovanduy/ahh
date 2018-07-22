@@ -1,0 +1,39 @@
+
+// Twitter
+.g1-twitter-items {
+    margin-#{$left}: 0;
+    list-style: none;
+}
+
+.g1-tweet {
+    &:after {
+        clear: both;
+        display: table;
+        content: "";
+    }
+}
+
+.g1-tweet-text {
+    margin-bottom: 0.75rem;
+}
+
+.g1-tweet-meta {
+    float: $left;
+
+    time {
+        &:before {
+            margin-right: 7px;
+
+            font-size: 24px;
+            font-family: FontAwesome;
+
+            vertical-align: middle;
+
+            content: "\f099";
+        }
+    }
+}
+
+.g1-tweet-intents {
+    float: $right;
+}

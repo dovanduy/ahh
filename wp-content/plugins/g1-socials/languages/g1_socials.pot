@@ -1,0 +1,362 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+msgid "label"
+msgstr ""
+
+msgid "caption"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Caption"
+msgstr ""
+
+msgid "Link"
+msgstr ""
+
+msgid "label&hellip;"
+msgstr ""
+
+msgid "caption&hellip;"
+msgstr ""
+
+msgid "link&hellip;"
+msgstr ""
+
+msgid "G1 Socials"
+msgstr ""
+
+msgid "You do not have sufficient permissions to access this page."
+msgstr ""
+
+msgid "Socials"
+msgstr ""
+
+msgid "G1 Socials Options"
+msgstr ""
+
+msgid ""
+"Here is place for some type of description. Something for user that can "
+"modify socials."
+msgstr ""
+
+msgid "Like my blog?"
+msgstr ""
+
+msgid "Donate via Patreon to&nbsp;support me.<br />Thank You!"
+msgstr ""
+
+msgid "Social media"
+msgstr ""
+
+msgid "Subscribe"
+msgstr ""
+
+msgid "G1 Facebook Page"
+msgstr ""
+
+msgid "Easily embed and promote any Facebook Page on your website."
+msgstr ""
+
+msgid "Find us on Facebook"
+msgstr ""
+
+msgid "Loading..."
+msgstr ""
+
+msgid "Widget title"
+msgstr ""
+
+msgid "Facebook page url"
+msgstr ""
+
+msgid "Small header"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "Hide cover"
+msgstr ""
+
+msgid "Show facepile"
+msgstr ""
+
+msgid "Show posts"
+msgstr ""
+
+msgid "Delay load"
+msgstr ""
+
+msgid "HTML id attribute (optional)"
+msgstr ""
+
+msgid "HTML class attribute (optional)"
+msgstr ""
+
+msgid "Instagram did not return any data."
+msgstr ""
+
+msgid "Unable to communicate with Instagram."
+msgstr ""
+
+msgid "Instagram did not return a 200."
+msgstr ""
+
+msgid "Instagram has returned invalid data."
+msgstr ""
+
+msgid "Instagram has returned invalid JSON."
+msgstr ""
+
+msgid "Instagram data is not an array."
+msgstr ""
+
+msgid "list-vertical"
+msgstr ""
+
+msgid "list-horizontal"
+msgstr ""
+
+msgid "G1 Socials Snapchat"
+msgstr ""
+
+msgid "Display Snapcode, an easy way to gain followers on Snapchat"
+msgstr ""
+
+msgid "Find me on Snapchat"
+msgstr ""
+
+msgid "Title:"
+msgstr ""
+
+msgid "Display name:"
+msgstr ""
+
+msgid "Username:"
+msgstr ""
+
+msgid "Avatar:"
+msgstr ""
+
+msgid "Avatar HDPI:"
+msgstr ""
+
+msgid "User snapcode."
+msgstr ""
+
+msgid "Reply"
+msgstr ""
+
+msgid "Retweet"
+msgstr ""
+
+msgid "Like"
+msgstr ""
+
+msgctxt "Twitter Popup Window"
+msgid "Twitter"
+msgstr ""
+
+msgid "Twitter"
+msgstr ""
+
+msgid ""
+"In order to get the Twitter feed working you need to provide access API keys "
+"and tokens."
+msgstr ""
+
+msgid "To get your API keys and tokens please do as follows:"
+msgstr ""
+
+msgid "Go to the %s (log in if necessary)"
+msgstr ""
+
+msgid "Enter all required fields"
+msgstr ""
+
+msgid "Accept the Terms of Service and submit the form"
+msgstr ""
+
+msgid "Your keys will be in the Keys and Access Tokens tab"
+msgstr ""
+
+msgid "A Socials Widget"
+msgstr ""
+
+msgid "Widget Title"
+msgstr ""
+
+msgid "Include (optional)"
+msgstr ""
+
+msgid ""
+"Include only specified icons (eg. facebook,twitter). Leave empty to include "
+"all."
+msgstr ""
+
+msgid "Exclude (optional)"
+msgstr ""
+
+msgid "Exclude specified icons (eg. facebook,twitter)."
+msgstr ""
+
+msgid "Template"
+msgstr ""
+
+msgid "grid"
+msgstr ""
+
+msgid "Icon size"
+msgstr ""
+
+msgid "32px"
+msgstr ""
+
+msgid "48px"
+msgstr ""
+
+msgid "64px"
+msgstr ""
+
+msgid "Icon color"
+msgstr ""
+
+msgid "original"
+msgstr ""
+
+msgid "text"
+msgstr ""
+
+msgid "YouTube"
+msgstr ""
+
+msgid "Follow"
+msgstr ""
+
+msgid "G1 Socials Instagram"
+msgstr ""
+
+msgid "Promote your Instagram."
+msgstr ""
+
+msgid "Instagram"
+msgstr ""
+
+msgid "@username or #tag"
+msgstr ""
+
+msgid "Number of photos"
+msgstr ""
+
+msgid "Photo size"
+msgstr ""
+
+msgid "Thumbnail"
+msgstr ""
+
+msgid "Small"
+msgstr ""
+
+msgid "Large"
+msgstr ""
+
+msgid "Original"
+msgstr ""
+
+msgid "Open links in"
+msgstr ""
+
+msgid "Current window"
+msgstr ""
+
+msgid "New window"
+msgstr ""
+
+msgid "Link text"
+msgstr ""
+
+msgid "Cache time (in minutes)"
+msgstr ""
+
+msgid "Please fill the username field"
+msgstr ""
+
+msgid ""
+"Feed is empty. Please check if the %s Instagram channel is still available."
+msgstr ""
+
+msgid "G1 Twitter"
+msgstr ""
+
+msgid "Display recent tweets."
+msgstr ""
+
+msgid "Recent Tweets"
+msgstr ""
+
+msgid "Please fill the username and %s."
+msgstr ""
+
+msgid "Twitter access keys and tokens"
+msgstr ""
+
+msgid ""
+"Your Twitter access keys and tokens are not set. Please enter them on the %s"
+msgstr ""
+
+msgid "Twitter settings page"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Number of Tweets to Show"
+msgstr ""
+
+msgid "Exclude Replies"
+msgstr ""
+
+msgid "G1 Socials YouTube"
+msgstr ""
+
+msgid "Displays YouTube profile overview."
+msgstr ""
+
+msgid "Find me on YouTube"
+msgstr ""
+
+msgid "Channel Name:"
+msgstr ""
+
+msgid "Channel Id:"
+msgstr ""
+
+msgid "Create icon links to your social channels."
+msgstr ""
+
+msgid "http://www.bringthepixel.com"
+msgstr ""
+
+msgid "bringthepixel"
+msgstr ""

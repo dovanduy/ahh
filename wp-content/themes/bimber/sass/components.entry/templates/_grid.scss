@@ -1,0 +1,197 @@
+$_centered: 'music' == $stack;
+
+.entry-tpl-grid {
+    width: 100%;
+    position: relative;
+
+    @if( 'miami' == $stack ) {
+        margin-bottom: 60px;
+    } @else {
+        margin-bottom: 30px;
+    }
+
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    .entry-featured-media {
+        @if ( 'bunchy' == $stack or 'music' == $stack ) {
+            margin-bottom: 12px;
+        } @else{
+            margin-bottom: 0;
+        }
+    }
+
+    @if ( 'top' == $badge_position ) {
+        .entry-flags {
+            padding: 0 10px;
+            margin-bottom: 10px;
+
+            position: absolute;
+            z-index: 3;
+            @if ( 'bunchy' == $stack ) {
+                #{$left}: auto;
+                #{$right}: 0;
+                top: 10px;
+            } @else if( 'music' == $stack ) {
+                #{$left}: -10px;
+                #{$right}: auto;
+                top: 0;
+            } @else{
+                top: -10px;
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        }
+
+        .entry-flags:first-child {
+            position: relative;
+        }
+
+    } @else {
+        .entry-flags {
+            position: absolute;
+            z-index: 3;
+            @include translateY(-100%);
+            margin-bottom: 0;
+        }
+    }
+
+    .entry-header {
+        position: relative;
+    }
+
+    .entry-before-title {
+        @include box-sizing( border-box );
+        font-size: 0;
+    }
+
+    .entry-featured-media ~ .entry-body .entry-before-title {
+        @include box-sizing( border-box );
+
+        @if ( 'bunchy' != $stack and 'music' != $stack ) {
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: 0;
+            bottom: 100%;
+        }
+    }
+
+    @if ( 'bottom' == $badge_position ) {
+        .entry-featured-media + .entry-flags + .entry-body .entry-before-title {
+            padding-#{$left}: $badge_size;
+        }
+    }
+
+    .entry-stats {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .entry-categories {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .entry-title {
+        @if ( 'music' == $stack ) {
+            padding-top: 8px;
+            margin-bottom: 0.75em;
+        } @else {
+            padding-top: 0.75em;
+            margin-bottom: 0.75em;
+        }
+    }
+
+    .g1-button {
+        float: $right;
+        margin-bottom: 15px;
+    }
+
+    @if ( $_centered ) {
+        .entry-byline {
+            .entry-author,
+            .entry-date {
+                margin-#{$left}: 5px;
+                margin-#{$right}: 5px;
+            }
+        }
+
+        .entry-byline-with-avatar {
+            padding-top: 36px;
+            position: relative;
+
+            .avatar {
+                margin: 0 auto;
+
+                position: absolute;
+                top: 0;
+                #{$left}: 0;
+                #{$right}: 0;
+
+            }
+        }
+    }
+}
+
+
+
+
+
+// Cards.
+@if ( 'cards' == $stack ) {
+    .entry-tpl-grid {
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+
+        background-color: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+
+        .entry-header,
+        .entry-summary,
+        footer {
+            padding-#{$left}: 10px;
+            padding-#{$right}: 10px;
+        }
+    }
+
+    @media only screen and (min-width: $mobile_breakpoint + 1px) {
+        .entry-tpl-grid {
+            margin-bottom: 20px;
+
+            .entry-header,
+            .entry-summary,
+            footer {
+                padding-#{$left}: 20px;
+                padding-#{$right}: 20px;
+            }
+
+            .entry-before-title {
+                .entry-stats {
+                    padding-#{$left}: 20px;
+                }
+            }
+        }
+    }
+
+    @media only screen and ( min-width: 1025px ) {
+        .entry-tpl-grid {
+            margin-bottom: 30px;
+
+            .entry-header,
+            .entry-summary,
+            footer {
+                padding-#{$left}: 30px;
+                padding-#{$right}: 30px;
+            }
+
+            .entry-before-title {
+                .entry-stats {
+                    padding-#{$left}: 30px;
+                }
+            }
+        }
+    }
+}

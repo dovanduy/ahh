@@ -1,0 +1,431 @@
+/**
+ * The whole CSS/SASS structure is based on the Inverted Triangle CSS methodology.
+ *
+ * All CSS rules are grouped by type as follows:
+ * Display & Box Model
+ *      display
+ *      box-sizing
+ *      clear
+ *      float
+ *      overflow
+ *      width
+ *      height
+ *      padding
+ *      margin
+ *      border-width
+ *
+ * Positioning
+ *      position
+ *      z-index
+ *      left
+ *      right
+ *      top
+ *      bottom
+ *
+ * Text
+ *      font-size
+ *      line-height
+ *      font-family
+ *      font-weight
+ *      text-align
+ *      vertical-align
+ *      text-shadow
+ *
+ * Stylistic
+ *      border-style
+ *      border-radius
+ *      box-shadow
+ *      cursor
+ *
+ * Other
+ *      content
+ *
+ * Colors, backgrounds
+ *      border-color
+ *      background-color
+ *      color
+ *      opacity
+ *
+ *
+ * TABLE OF CONTENTS
+ *
+ *  1. Settings
+ *      1.1 Global
+ *
+ *  2. Tools
+ *      2.1 Functions
+ *      2.2 Mixins
+ *
+ *  3. Generic
+ *       3.1 Reset
+ *
+ *  4. Elements
+ *      4.1 Default
+ *      4.2 Forms
+ *
+ *  5. Objects
+ *      5.1 Grid
+ *      5.2 Fluid wrapper
+ *
+ *  6. Components
+ */
+
+
+
+
+
+
+
+
+@import "compass/css3";
+@import "tools.functions";
+@import "tools.mixins";
+
+
+
+/* 1.1 Reset
+----------------------------------------------------------------------------- */
+@import "generic.reset";
+
+
+
+/* 1.2 Default
+----------------------------------------------------------------------------- */
+@import "elements.default";
+@import "elements.forms";
+@import "elements.forms.bunchy";
+
+
+
+
+/*  Grid System
+----------------------------------------------------------------------------- */
+@import "objects.grid";
+@import "objects.fluid_wrapper";
+
+#g1-breakpoint-desktop {
+    min-width: 1024px;
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------
+
+3 . ELEMENTS
+
+----------------------------------------------------------------------------- */
+
+@import "components.typography";
+
+@import "components.buttons";
+@import "components.buttons.bunchy";
+@import "components.arrows";
+@import "components.arrows.bunchy";
+
+@import "components.forms";
+@import "components.forms.search";
+@import "components.forms.password";
+@import "components.forms.contact";
+
+
+
+
+@import "components.quotes";
+@import "components.quotes.bunchy";
+
+
+@import "components.messages";
+
+@import "components.avatars";
+
+
+@import "components.audio";
+@import "components.video";
+@import "components.gallery";
+
+
+
+
+@import "components.breadcrumbs";
+@import "components.pagination";
+
+@import "components.tables";
+@import "components.mailchimp";
+
+@import "components.back_to_top";
+
+
+
+/* ----------------------------------------------------------------------------
+
+4 . MODULES
+
+----------------------------------------------------------------------------- */
+
+
+@import "components.entry.base";
+@import "components.entry/templates/grid";
+@import "components.entry/templates/grid.fancy";
+@import "components.entry/templates/grid.xs";
+@import "components.entry/templates/list";
+@import "components.entry/templates/list.fancy";
+@import "components.entry/templates/list.xs";
+@import "components.entry/templates/tile";
+@import "components.entry/templates/classic";
+@import "components.entry/templates/classic-v2";
+@import "components.entry/templates/classic-v3";
+@import "components.entry/templates/index";
+@import "components.entry/templates/stream";
+@import "components.entry/templates/bunchy";
+@import "components.entry/templates/carmania";
+
+@import "components.entry.collections";
+@import "components.collections/narrow";
+@import "components.collections/masonry";
+
+@import "components.featured";
+@import "components.mosaics";
+
+
+@import "components.widgets";
+@import "components.widgets.bunchy";
+
+@import "components.comments";
+@import "components.comments.bunchy";
+
+@import "components.author_info";
+
+@import "components.single_nav";
+@import "components.teasers";
+
+@import "components.pages";
+@import "components.archive";
+
+@import "components.images";
+@import "components.images.gifs";
+@import "components.boxes";
+
+@import "components.mashshare";
+
+@import "components.menu.base";
+@import "components.menu.canvas";
+@import "components.menu.primary";
+@import "components.menu.secondary";
+@import "components.menu.quick";
+@import "components.menu.quick.bunchy";
+@import "components.menu.footer";
+
+@import "components.drops";
+@import "components.ads";
+
+
+@import "components.icons";
+
+@import "components.sharebar";
+
+@import "components.404";
+
+// Sections
+@import "components.sections/base";
+
+
+@media only screen and ( min-width: 1025px ) {
+    #page {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include flex-direction(column);
+
+        min-height: 100vh;
+
+        body.admin-bar & {
+            min-height: calc( 100vh - 32px );
+        }
+
+        > #primary.g1-primary-max {
+            @include flex(1 1 auto);
+        }
+    }
+}
+
+/* 5.3 Header - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_02_header";
+
+
+/* 5.5 Content - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_04_content";
+
+
+/* 5.7 Footer - Theme Area
+----------------------------------------------------------------------------- */
+@import "components.ta_06_footer";
+
+@import "components.embeds";
+@import "components.magnific_popup";
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import "components.links";
+
+
+@import "trumps.utilities";
+@import "trumps.print";
+
+
+
+@import "components.nsfw";
+@import "components.nsfw.templates";
+
+
+
+
+
+
+@if 'cards' == $stack {
+    .g1-related-entries-row,
+    .g1-dont-miss-row {
+        background: #ededed;
+        margin-#{$left}: calc((100% - 100vw)/2);
+        margin-#{$right}: calc((100% - 100vw)/2);
+        padding-#{$left}: calc((100vw - 100%)/2);
+        padding-#{$right}: calc((100vw - 100%)/2);
+    }
+}
+
+
+
+
+@import "components.tabs";
+
+@import "components.reactions";
+@import "components.facebook";
+@import "components.wpml";
+@import "components.g1-socials";
+@import "components.my-cred";
+@import "components.rcp";
+@import "components.coupons";
+//Popup
+@import "components.popup/base";
+//Slideup
+@import "components.slideup/base";
+
+
+
+
+
+
+
+
+.g1-title-align-center {
+    text-align: center;
+}
+
+
+.g1-dark {
+    .g1-current-background {
+        background-color: $skin_dark_background_color;
+    }
+}
+
+
+
+
+
+// Spin animation.
+@-webkit-keyframes g1-anim-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes g1-anim-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+
+
+
+.g1-divider {
+    margin: 3em 0;
+
+    &:before,
+    &:after {
+        display: block;
+
+        height: 4px;
+        border-width: 4px 0;
+        margin-bottom: 4px;
+
+        border-style: dotted;
+
+        content: "";
+
+        opacity: 0.3;
+    }
+}
+
+
+
+//csstodo
+@if ( 'music' == $stack ) {
+    .g1-body-inner {
+        .g1-primary-nav-menu {
+            > .menu-item {
+                > a:before {
+                    display: block;
+                    width: 100%;
+                    border-width: 2px 0 0;
+
+                    position: absolute;
+                    z-index: 1;
+                    bottom: 0;
+                    #{$left}: 0;
+                    #{$right}: 0;
+
+                    border-style: solid;
+
+                    content: "";
+
+                    border-color: transparent;
+
+                    opacity: 0.5;
+                }
+
+            }
+
+            > .current-menu-item {
+                > a:before {
+                    border-color: currentColor;
+                }
+            }
+        }
+    }
+}
+
+.g1-sticky-widget {
+    position: -webkit-sticky;
+    position: sticky;
+}

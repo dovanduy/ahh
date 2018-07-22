@@ -1,0 +1,304 @@
+@import "compass/css3";
+@import "tools.functions";
+@import "tools.mixins";
+
+
+/*--------------------------------------------------------------
+Hello, this is the BuddyPress Legacy stylesheet.
+
+----------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+1.0 - Navigation
+	1.1 - Pagination
+2.0 - WordPress
+	2.1 - Images
+3.0 - BuddyPress
+	3.1 - Activity
+		3.1.1 - Activity Listing
+		3.1.2 - Activity Comments
+	3.2 - Toolbar
+	3.3 - Directories - Members, Groups, Blogs, Forums
+	3.4 - Error / Success Messages
+	3.5 - Forms
+	3.6 - Ajax Loading
+	3.7 - Topics and Tables - Forums and General
+	3.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums
+		3.8.1 - Cover Image
+	3.9 - Private Messaging Threads
+	3.10 - Extended Profiles
+	3.11 - Widgets
+4.0 - Media Queries
+	4.1 - Smartphones Landscape
+	4.2 - Smartphones Portrait
+	4.3 - Smartphones - smaller screen sizes
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+1 - Navigation
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+1.1 - Pagination
+--------------------------------------------------------------*/
+@import "buddypress/pagination";
+
+
+/*--------------------------------------------------------------
+2 - WordPress
+--------------------------------------------------------------*/
+#buddypress .clear {
+    clear: #{$left};
+}
+
+/*--------------------------------------------------------------
+3.0 - BuddyPress
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+3.1 - Activity
+--------------------------------------------------------------*/
+@import "buddypress/activity";
+
+/*--------------------------------------------------------------
+3.1.1 - Activity Listing
+--------------------------------------------------------------*/
+@import "buddypress/activity.listing";
+
+
+/*--------------------------------------------------------------
+3.1.2 - Activity Comments
+--------------------------------------------------------------*/
+@import "buddypress/activity.comments";
+
+/*--------------------------------------------------------------
+3.3 - Directories - Members, Groups, Blogs, Forums
+--------------------------------------------------------------*/
+@import "buddypress/directories";
+
+/*--------------------------------------------------------------
+3.4 - Errors / Success Messages
+--------------------------------------------------------------*/
+@import "buddypress/messages";
+
+/*--------------------------------------------------------------
+3.5 - Forms
+--------------------------------------------------------------*/
+@import "buddypress/forms";
+
+/*--------------------------------------------------------------
+3.6 - Ajax Loading
+--------------------------------------------------------------*/
+@import "buddypress/ajax";
+
+/*--------------------------------------------------------------
+3.7 - Tables and Topics
+--------------------------------------------------------------*/
+@import "buddypress/tables";
+
+
+
+/*-------------------------------------------------------------------------
+3.8 - Headers, Lists and Tabs - Activity, Groups, Blogs, Forums, Profiles
+-------------------------------------------------------------------------*/
+@import "buddypress/item.base";
+@import "buddypress/headers_lists_tabs";
+@import "components.tabs";
+@import "buddypress/item.list_tabs";
+
+
+
+/*--------------------------------------------------------------
+3.8.1 - Cover Image
+--------------------------------------------------------------*/
+@import "buddypress/cover";
+
+
+/*--------------------------------------------------------------
+3.9 - Private Messaging Threads
+--------------------------------------------------------------*/
+@import "buddypress/pms";
+
+
+/*--------------------------------------------------------------
+3.10 - Extended Profiles
+--------------------------------------------------------------*/
+@import "buddypress/xprofiles";
+
+/*--------------------------------------------------------------
+3.11 - Widgets
+--------------------------------------------------------------*/
+@import "buddypress/widgets";
+
+
+
+
+
+
+
+/**
+ * BuddyPress
+ */
+.field-visibility-settings-notoggle {
+    font-size: 0.83em;
+}
+
+.avatar-block {
+    font-size: 0;
+    text-align: center;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .item-avatar {
+        display: inline-block;
+        margin-#{$right}: 5px;
+        margin-bottom: 5px;
+
+        vertical-align: top;
+        font-size: 1rem;
+
+        > a {
+            display: block;
+        }
+
+        img.avatar {
+            display: block;
+
+            //override legacy
+            width: 40px !important;
+            height: 40px !important;
+            float: none !important;
+            margin: 0 !important;
+        }
+    }
+}
+
+
+
+/* bp-core/css/avatar.css */
+.bp-avatar-nav ul.avatar-nav-items {
+    li .bp-avatar-nav-item {
+        padding: 6px 20px;
+
+        font-family: "Poppins", "Roboto", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+
+        color: inherit;
+    }
+
+    li.current {
+        @include border-radius( $ui_border_radius $ui_border_radius 0 0 );
+    }
+}
+
+#drag-drop-area {
+    border-width: 2px;
+}
+
+
+
+
+
+
+#group-admins,
+#group-mods {
+    margin-#{$left}: 0;
+    list-style: none;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    li {
+        float: $left;
+        margin: side-values( 0 5px 5px 0 );
+    }
+}
+
+#item-header-content {
+    .activity {
+        display: block;
+        margin-bottom: 1.5rem;
+
+        font-size: 0.83em;
+
+        color: #999;
+    }
+}
+
+
+
+#item-header {
+    border-width: 0 0 1px;
+    //margin-bottom: 1.5rem;
+
+    text-align: center;
+    border-style: solid;
+
+    border-color: #e6e6e6;
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    #item-header {
+        margin-bottom: 0;
+        border-width: 0;
+        text-align: $left;
+    }
+}
+
+
+
+#item-buttons {
+    @include display(flex);
+    @include flex-wrap(wrap);
+
+    margin-#{$left}: -5px;
+    margin-bottom: 1.5rem;
+
+    &:empty {
+        margin: 0;
+    }
+
+    .generic-button {
+        @include flex-grow(1);
+        margin-top: 5px;
+        margin-#{$left}: 5px;
+
+
+        .g1-button {
+            display: block;
+        }
+    }
+
+    .friendship-button {
+        width: 100%;
+    }
+}
+
+#buddypress {
+    .button-nav {
+        margin-#{$left}: 0;
+        list-style: none;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        li {
+            float: $left;
+            margin: side-values( 0 10px 10px 0 );
+        }
+
+        li.current a {
+            font-weight: bold;
+        }
+    }
+}

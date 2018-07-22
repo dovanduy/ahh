@@ -1,0 +1,273 @@
+.g1-preheader {
+    clear: both;
+    position: relative;
+    z-index: 70;
+
+    margin: 0 auto;
+
+    > .g1-row-background {
+        border-bottom: 1px solid transparent;
+    }
+
+    .g1-drop {
+        display: none;
+        float: $right;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .g1-drop-toggle {
+        color: inherit;
+    }
+
+    .g1-drop-toggle-icon {
+        width: 20px;
+        height: 32px;
+
+        &:before {
+            font-size: 16px;
+        }
+    }
+
+    .g1-socials-items {
+        display: none;
+        float: $right;
+        margin: side-values( 0 0 0 20px );
+    }
+
+    .wpml-ls {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .g1-preheader {
+        .g1-drop,
+        .g1-socials-items,
+        .wpml-ls {
+            display: block;
+        }
+    }
+}
+
+.g1-header {
+    clear: both;
+    position: relative;
+    z-index: 60;
+
+    margin: 0 auto;
+
+    // So the margin-top of the logo can work
+    &:before {
+        display: table;
+        content: "";
+    }
+
+    > .g1-row-inner,
+    > .g1-row-inner > .g1-column {
+        position: static;
+    }
+
+    > .g1-row-background {
+        border-bottom: 1px solid transparent;
+
+        @if ( 'minimal' == $stack ) {
+            -webkit-backface-visibility: hidden;
+            @include box-shadow( 0 0px 60px rgba( 0,0,0, 0.12 ) );
+        }
+    }
+
+    .g1-drop .g1-socials-item-link { color: $skin_regular_text_color; }
+    .g1-drop .g1-socials-item-link:hover { color: $skin_important_text_color; }
+}
+
+
+
+.g1-sticky-top-wrapper {
+    clear: both;
+    position: static;
+    position: -webkit-sticky;
+    position: sticky;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: 0;
+
+    body.admin-bar & {
+        top: 32px;
+    }
+}
+
+@media only screen and (max-width: 601px) {
+    body.admin-bar .g1-sticky-top-wrapper{
+        top:0px;
+    }
+}
+
+
+@import "components.header/id";
+
+@if ( 'bunchy' == $stack ) {
+    .g1-header .g1-drop-toggle {
+        &:before {
+            display: block;
+            position: absolute;
+            z-index: -1;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            background-color: currentColor;
+            opacity: 0.08333;
+
+            content: "";
+        }
+    }
+}
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 1025px ) {
+    .g1-header {
+        .g1-id {
+            float: $left;
+        }
+    }
+}
+
+$_bar_height: 50px;
+
+.g1-hb-row {
+    position: relative;
+    z-index: 50;
+
+    @include box-sizing(border-box);
+    width: 100%;
+    //min-height: 50px;
+
+    & > .g1-row-inner {
+        position: static;
+
+        > .g1-column {
+            position: static;
+        }
+
+        // Clearfix
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+    }
+
+    .g1-hamburger {
+        margin-#{$right}: 10px;
+    }
+
+    .g1-drop {
+        margin-bottom: 0;
+    }
+
+    .g1-drop-toggle-badge {
+        top: 6px;
+    }
+
+    .g1-socials-items {
+        margin: side-values( 0 0 0 20px );
+    }
+
+    .g1-drop .g1-socials-item-link { color: $skin_regular_text_color; }
+    .g1-drop .g1-socials-item-link:hover { color: $skin_important_text_color; }
+
+    .g1-quick-nav {
+        float: none;
+    }
+}
+
+.g1-navbar + .g1-header,
+.g1-navbar + .g1-sticky-top-wrapper {
+    z-index: 40;
+}
+
+
+
+
+.g1-body-inner {
+
+    .g1-primary-nav,
+    .g1-secondary-nav {
+        margin-bottom: 0;
+    }
+
+    .g1-primary-nav-menu {
+        > .menu-item {
+            display: inline-block;
+            vertical-align: top;
+
+            > a {
+                padding: 7px 10px;
+                line-height: 16px;
+            }
+        }
+    }
+
+
+    .g1-secondary-nav-menu {
+        > .menu-item {
+            display: inline-block;
+            vertical-align: top;
+
+            > a {
+                padding: 8px 0;
+                margin-#{$right}: 12px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1024px ) {
+    body.g1-has-mobile-logo {
+        .g1-header,
+        .g1-navbar {
+            .g1-id {
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media only screen and (min-width: 961px) {
+    .g1-navbar {
+        .g1-primary-nav {
+            display: block;
+        }
+
+        .g1-hamburger {
+            display: none;
+        }
+    }
+}
+
+.g1-socials {
+    position: relative;
+
+    .g1-socials-items {
+        display: inline-block;
+        margin-bottom: 0;
+    }
+}
+
+.g1-hb-row{
+    .g1-drop-create{
+        order:unset;
+    }
+}
+
+
+@import "components.header/builder";

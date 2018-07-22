@@ -1,0 +1,189 @@
+/*
+ * RCP - Base Styles.
+ */
+//.rcp_restricted{
+//	position: relative;
+//	display: block;
+//}
+.g1-rcp-message {
+	display: block;
+	margin-bottom: 2rem;
+
+	position: relative;
+
+	text-align: center;
+}
+
+.g1-rcp-actions {
+	@include display(flex);
+	@include flex-wrap(wrap);
+	padding: side-values( 1.5rem 1.25rem 1.5rem 1.25rem );
+
+	position: relative;
+
+	background-color: $skin_background_tone_color;
+}
+.g1-rcp-action {
+	@include box-sizing( border-box );
+	width: 100%;
+	padding: side-values( 1.5rem 1.25rem 1.5rem 1.25rem );
+
+	i {
+		display: block;
+		margin-bottom: 1rem;
+
+		font-size: 40px;
+		line-height: 24px;
+
+		color: $skin_important_text_color;
+	}
+
+	.g1-gamma {
+		margin-bottom: 1rem;
+	}
+}
+
+.g1-rcp-action-icon {
+	font: 32px/1 "bimber";
+
+	.g1-rcp-action-register	&:before { content: "\e013"; }
+	.g1-rcp-action-login	&:before { content: "\e037"; }
+}
+
+
+
+
+.g1-rcp-action-buttons {
+	margin-bottom: 0;
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+	.g1-rcp-action {
+		width: 50%;
+	}
+}
+//@if ( $is_amp != true ) {
+	#rcp_registration_form.rcp_form{
+		padding: side-values(0);
+		.rcp_login_link{
+			display: block;
+		}
+		.rcp_user_fieldset{
+			position: relative;
+			display: block;
+			margin-bottom: 1rem;
+			& > p{
+				display: block;
+				float: #{$left};
+				width: 50%;
+				@include box-sizing( border-box );
+				&:nth-child(odd){
+					padding-#{$right}: 10px;
+				}
+				&:nth-child(even){
+					padding-#{$left}: 10px;
+				}
+			}
+			input{
+				width: 100%;
+			}
+		}
+
+		.rcp_registration_total_details{
+			width: 100%;
+		}
+	}
+
+	#rcp_subscription_levels{
+		position: relative;
+		display: block;
+		margin-bottom: 1rem;
+		.rcp_subscription_level{
+			position: relative;
+			display: block;
+			padding: side-values(20px);
+			background-color: $skin_background_tone_color;
+			input{
+				position: relative;
+				display: block;
+				float: #{$left};
+				margin: side-values(3px 28px 0 0);
+			}
+			label{
+				position: relative;
+				display: inline-block;
+				width: calc(100% - 40px );
+				text-transform: none;
+				.rcp_subscription_level_name{
+					display: block;
+					font-size: 1.5em;
+					margin-bottom: 0.5rem;
+					font-family: $important_font_family;
+					font-weight: 700;
+				}
+				& > .rcp_separator{
+					display: none;
+				}
+				.rcp_level_description{
+					display: block;
+					padding: side-values(0);
+					margin-top: 0.5rem;
+					font-family: $regular_font_family;
+					font-weight: 400;
+					font-size: 14px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+
+
+	#rcp_login_form.rcp_form{
+		.rcp_login_data{
+			position: relative;
+			display: block;
+			margin-bottom: 1rem;
+			& > p{
+				display: block;
+				float: #{$left};
+				width: 50%;
+				@include box-sizing( border-box );
+				&:nth-child(1){
+					padding-#{$right}: 10px;
+				}
+				&:nth-child(2){
+					padding-#{$left}: 10px;
+				}
+				&:nth-child(3),
+				&:nth-child(4){
+					width: 100%;
+				}
+			}
+			.rcp_user_remember{
+				float: #{$left};
+				margin: side-values(3px 8px 0 0);
+			}
+			input[type=password],
+			input[type=text]{
+				width: 100%;
+			}
+		}
+	}
+
+	//p + .rcp_restricted,
+	p + .g1-rcp-message {
+		&:before{
+			display: block;
+			width: 100%;
+			height: 7.5rem;
+			margin-top: -7.5rem;
+
+			position: relative;
+			top: -1.5rem;
+
+			content: "";
+
+			background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0, #fff 100%);
+		}
+	}
+//}

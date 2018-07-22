@@ -1,0 +1,182 @@
+$_centered: 'music' == $stack;
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .archive-body-stream {
+        > .g1-row-inner {
+            @include justify-content(center);
+
+            > .g1-column {
+                margin-#{$left}: 0;
+                margin-#{$right}: 0;
+            }
+
+            > .g1-column-2of3 {
+                max-width: 608px;
+            }
+        }
+    }
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .archive-body-stream {
+        > .g1-row-inner {
+            > .g1-column-1of6 {
+                display: none;
+            }
+        }
+    }
+}
+
+
+.entry-tpl-stream {
+    @include box-sizing( border-box );
+    max-width: 608px;
+    width: 100%;
+    margin: 0 auto 10px;
+
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    .entry-categories,
+    .entry-flags {
+        margin-bottom: 10px;
+    }
+
+    > .entry-header {
+        position: relative;
+
+        .entry-categories {
+            float: #{$left};
+        }
+
+        .entry-title {
+            clear: both;
+        }
+    }
+
+    > .entry-footer {
+        @include display(flex);
+        @include flex-wrap(wrap);
+        @include align-items(center);
+
+        border-top: 1px solid $skin_border_color;
+
+        .mashsb-compact {
+            display: inline-block;
+            padding: 0;
+            border: 0;
+            margin-#{$left}: auto;
+        }
+
+        .entry-stats {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .snax-voting {
+            .snax-voting-score {
+                font-size: 0 !important; //csstodo
+
+                strong {
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .price {
+            margin-#{$right}: 10px;
+            @include order(-1);
+        }
+
+        .g1-button {
+            margin: side-values( 10px 0 10px auto);
+        }
+    }
+
+    .entry-byline {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .snax-voting-upvote:before,
+    .snax-voting-downvote:before {
+        font-size: 21px;
+    }
+}
+
+
+.entry-footer {
+    .snax-voting {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .mashsb-compact {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .entry-tpl-stream {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-stream {
+        margin-bottom: 30px;
+    }
+}
+
+
+
+
+@if ( 'cards' == $stack ) {
+    .entry-tpl-stream {
+        background: $skin_background_color;
+        box-shadow: 0 1px 1px #ededed;
+
+        > .entry-header {
+            padding: 1.5rem 10px 1px;
+        }
+
+        > .entry-featured-media {
+            margin-bottom: 0;
+        }
+
+        > .entry-body {
+            padding: 0 10px;
+        }
+
+        > .entry-footer {
+            padding-#{$left}: 10px;
+            padding-#{$right}: 10px;
+        }
+    }
+
+    @media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+        .entry-tpl-stream {
+            > .entry-header,
+            > .entry-body,
+            > .entry-footer {
+                padding-#{$left}: 20px;
+                padding-#{$right}: 20px;
+            }
+        }
+    }
+
+    @media only screen and ( min-width: 1025px ) {
+        .entry-tpl-stream {
+            > .entry-header,
+            > .entry-body,
+            > .entry-footer {
+                padding-#{$left}: 30px;
+                padding-#{$right}: 30px;
+            }
+        }
+    }
+}

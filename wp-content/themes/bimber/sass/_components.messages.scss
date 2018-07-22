@@ -1,0 +1,110 @@
+$_icon_size:    32px;
+
+.g1-message {
+    @include box-sizing( border-box );
+    clear: both;
+
+    border-width: 1px;
+    margin-bottom: 1.5rem;
+
+    position: relative;
+
+    font-size: 14px;
+    line-height: 20px;
+
+    border-style: solid;
+    border-color: $skin_border_color;
+
+    &:before {
+        display: block;
+        width: 40px;
+        height: 40px;
+
+        position: absolute;
+        #{$left}: 10px;
+        #{$right}: auto;
+        top: 10px;
+
+        @include border-radius(50%);
+
+        content: "";
+    }
+
+    &:after {
+        display: block;
+
+        width: 40px;
+        height: 40px;
+
+        position: absolute;
+        top: 10px;
+        #{$left}: 10px;
+        #{$right}: auto;
+
+        text-align: center;
+        font: 24px/40px FontAwesome;
+
+        cursor: default;
+
+        color: #fff;
+    }
+}
+
+.g1-message-inner {
+    padding: side-values( 20px 20px 0 68px );
+    text-align: #{$left};
+
+    &:after {
+        display: block;
+        margin-top: 20px;
+
+        content: "";
+    }
+
+    p {
+        margin-bottom: 20px;
+    }
+}
+
+
+/* Color scheme */
+.g1-message-success {
+    &:before {
+        background-color: #2ecc71;
+    }
+
+    &:after {
+        content: "\f00c";
+    }
+}
+
+
+.g1-message-info {
+    &:before {
+        background-color: #22a7f0;
+    }
+
+    &:after {
+        content: "\f0eb";
+    }
+}
+
+.g1-message-warning {
+    &:before {
+        background-color: #f5ab35;
+    }
+
+    &:after {
+        content: "\f0a2";
+    }
+}
+
+.g1-message-error {
+    &:before {
+        background-color: #96281b;
+    }
+
+    &:after {
+        content: "\f0e7";
+    }
+}

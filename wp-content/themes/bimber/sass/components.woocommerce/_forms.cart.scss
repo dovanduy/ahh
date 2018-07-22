@@ -1,0 +1,100 @@
+form.cart {
+    margin-bottom: 1.5rem;
+
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+
+    div.quantity {
+        float: $left;
+        margin: side-values( 0 6px 0 0 );
+    }
+
+    table {
+        border-width: 0 0 1px 0;
+
+        td {
+            padding-#{$left}: 0;
+        }
+
+        div.quantity {
+            float: none;
+            margin: 0;
+        }
+
+        small.stock {
+            display: block;
+            float: none;
+        }
+    }
+
+    .variations {
+        margin-bottom: 1em;
+        border: 0;
+        width: 100%;
+
+        td,
+        th {
+            border: 0;
+            vertical-align: top;
+            line-height: 2em;
+        }
+
+        label {
+            font-weight: 700;
+        }
+
+        select {
+            max-width: 100%;
+            min-width: 75%;
+            display: inline-block;
+            margin-#{$right}: 1em;
+        }
+
+        td.label {
+            padding-#{$right}: 1em;
+        }
+    }
+
+    .woocommerce-variation-description {
+        p {
+            margin-bottom: 1em;
+        }
+    }
+
+    .reset_variations {
+        visibility: hidden;
+        font-size: 0.83em;
+    }
+
+    .wc-no-matching-variations {
+        display: none;
+    }
+
+    .button {
+        vertical-align: middle;
+        float: $left;
+    }
+
+    .group_table {
+        td.label {
+            padding-#{$right}: 1em;
+            padding-#{$left}: 1em;
+        }
+
+        td {
+            vertical-align: top;
+            padding-bottom: .5em;
+            border: 0;
+        }
+    }
+}
+
+.woocommerce-cart-form{
+    .coupon{
+        margin-bottom: 10px;
+    }
+}

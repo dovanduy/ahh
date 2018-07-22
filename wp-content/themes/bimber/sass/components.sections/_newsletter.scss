@@ -1,0 +1,107 @@
+/*
+ * Sections - Newsletter. Loads all specific sections.
+ */
+.g1-section-newsletter{
+    margin: side-values(20px 0);
+	padding: side-values(90px 40px 20px 40px);
+	.g1-section-body{
+		position: relative;
+		display: block;
+		margin-bottom: 20px;
+		margin-top:40px;
+		text-align: center;
+		.g1-mega + .g1-delta, .g1-alpha + .g1-delta{
+			margin-top:0;
+		}
+	}
+	.g1-section-form-wrap{
+		position: relative;
+		display: block;
+		text-align: center;
+		&.g1-newsletter-section-standard{
+			min-width: auto;
+			p{
+				margin-bottom: 0;
+			}
+		}
+		&.g1-newsletter-section-large{
+			margin: side-values(0 auto);
+			max-width: 560px;
+			min-width: auto;
+		}
+	}
+	form{
+		position: relative;
+		.mc4wp-form-fields{
+			@include display(flex);
+			@include flex-flow(column);
+			[type=text],
+			[type=email] {
+				text-align: $left;
+			}
+			p{
+				&:first-child{
+					@include flex(1 1 auto);
+				}
+			}
+		}
+	}
+	&.g1-section-large{
+		padding: side-values(10px 0px);
+		.g1-section-icon{
+			display: none;
+		}
+		.g1-section-body{
+			display: block;
+			float: none;
+			text-align: center;
+		}
+		.g1-section-title{
+			text-align: center;
+		}
+		.g1-section-form-wrap{
+			display: block;
+			margin-top: 20px;
+			float: none;
+			text-align: center;
+		}
+        .g1-newsletter-privacy{
+			text-align: center;
+			margin-top:10px;
+        }
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 101px ){
+	.g1-section-newsletter{
+		padding: side-values(20px 40px 20px 120px);
+		.g1-section-icon{
+			top: 50%;
+			width: 80px;
+			height: 60px;
+			margin-top: -30px;
+			#{$left}: 0;
+			margin-#{$left}: 0;
+			&:after{
+				bottom: 0px;
+				#{$right}: -10px;
+				border-width: 30px 0 30px 10px;
+				border-color: transparent transparent transparent $skin_background_color;
+			}
+		}
+		.g1-section-body{
+			float:  #{$left};
+			margin-bottom: 20px;
+			text-align: #{$left};
+		}
+		.g1-section-form-wrap{
+			float:  #{$right};
+		}
+		form{
+			position: relative;
+			.mc4wp-form-fields{
+				@include flex-flow(row);
+			}
+		}
+	}
+}

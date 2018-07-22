@@ -1,0 +1,21 @@
+$_centered: 'music' == $stack;
+
+
+.entry-header-01 {
+    @if ( $_centered ) {
+        text-align: center;
+    }
+
+    .entry-title {
+        clear: both;
+    }
+}
+
+.entry-tpl-classic-nosidebar {
+    > .entry-header {
+        @if ( $_centered ) {
+            text-align: center;
+        }
+    }
+}
+

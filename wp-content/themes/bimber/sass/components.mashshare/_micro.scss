@@ -1,0 +1,126 @@
+
+
+
+$_microshare_toggle_width: 32px;
+$_microshare_toggle_height: 32px;
+
+$_microshare_icon_width: 48px;
+$_microshare_icon_height: 48px;
+
+.mashsb-micro {
+    position: absolute;
+    #{$left}: 6px;
+    #{$right}: auto;
+    top: 6px;
+
+    @media only screen and ( min-width: 1024px ) {
+        #{$right}: 100%;
+        #{$left}: auto;
+        top: 0;
+        padding-#{$right}: 6px;
+    }
+
+    .mashsb-micro-toggle {
+        display: block;
+
+        width: $_microshare_toggle_width;
+        height: $_microshare_toggle_height;
+        cursor: pointer;
+
+        text-align: center;
+        font-size: 18px;
+        line-height: $_microshare_toggle_height;
+
+        @include border-radius( $ui_border_radius );
+
+        border-color: $skin_border_color;
+        background-color: $skin_border_color;
+        color: $skin_meta_text_color;
+
+        &:before {
+            font-family: "bimber";
+            font-weight: normal;
+            content: "\e011";
+        }
+    }
+
+    .mashsb-buttons {
+        display: none;
+        overflow:  hidden;
+        width: 48px;
+
+        @include border-radius( $ui_border_radius );
+
+        a {
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+
+            @include border-radius( 0 );
+
+            .icon {
+                display: block;
+                width: $_microshare_icon_width;
+                height: $_microshare_icon_height;
+                margin: 0;
+
+                text-align: center;
+
+                &:before {
+                    float: none;
+                    margin: 0;
+                    line-height: $_microshare_icon_height;
+                }
+            }
+        }
+
+        .text {
+            display: none;
+        }
+    }
+}
+
+.g1-wrapper-with-stickies {
+    .mashsb-micro {
+        #{$left}: 6px;
+        #{$right}: auto;
+        top: 6px;
+    }
+}
+
+
+
+
+
+.g1-img-wrap {
+    display: block;
+    position: relative;
+}
+
+
+.mashsb-micro-wrapper {
+    display: block;
+    position: relative;
+
+    .onoffswitch,
+    .onoffswitch2 {
+        position: absolute;
+        clip: rect(1px, 1px, 1px, 1px);
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+    }
+}
+
+.g1-hoverable .mashsb-micro-wrapper:hover,
+.mashsb-micro-wrapper-expanded {
+    .mashsb-micro {
+        .mashsb-micro-toggle {
+            display: none;
+        }
+
+        .mashsb-buttons {
+            display: block;
+        }
+    }
+}

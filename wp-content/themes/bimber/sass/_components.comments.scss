@@ -1,0 +1,402 @@
+$_centered: 'original-2018' == $stack or 'music';
+
+
+@if ( 'bunchy' != $stack ) {
+
+    .bypostauthor {
+        /* By post author */
+    }
+
+
+
+    //csstodo
+    .g1-comments {
+        margin: 0 auto;
+
+        .g1-tabs {
+            margin-bottom: 10px;
+
+            @if ( $_centered ) {
+                text-align: center;
+            }
+
+        }
+
+        .g1-tab {
+            .count {
+                display: none;
+            }
+        }
+    }
+
+    .g1-comments-with-tabs {
+        @if ( $_centered ) {
+            .comments-title {
+                margin-bottom: 0.75rem;
+
+                > span {
+                    padding-bottom: 0;
+
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    #comments {
+        @include box-sizing(border-box);
+        margin: side-values( 0 auto 4.5em );
+    }
+
+    //csstodo: classname?
+    .g1-comment-form-anchor {
+        width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+
+    .comment-list {
+        clear: both;
+        margin: side-values( 0 0 1.5rem );
+        list-style: none;
+
+        .children {
+            margin: 0;
+            list-style: none;
+        }
+
+
+    }
+
+    .comment {
+        position: relative;
+    }
+
+    .comment-body {
+        padding: side-values( 0.75em 0 1.5em );
+    }
+
+    .comment-meta {
+        margin-bottom: 0.25em;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: $important_font_family;
+
+        .says {
+            display: none;
+        }
+
+        b {
+            font-weight: 600;
+
+            > a {
+                color: $skin_important_text_color;
+            }
+        }
+
+        color: $skin_meta_text_color;
+
+        a {
+            color: $skin_regular_text_color;
+        }
+    }
+
+    .comment-author {
+        display: block;
+        margin-#{$right}: 0.75em;
+
+        .g1-epsilon {
+            font-size: 16px;
+        }
+
+        text-align: #{$left};
+
+        > .avatar {
+            display: block;
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: auto;
+            top: 0;
+        }
+    }
+
+
+
+    .comment-metadata {
+        display: inline-block;
+
+        text-align: #{$left};
+    }
+
+    .comment-edit-link{
+        margin-#{$left}: 1.5em;
+    }
+
+    .comment {
+        .reply {
+            margin-top: -1.25em;
+        }
+    }
+
+    .comment-list {
+        .children {
+            margin-#{$left}: 10px;
+
+            .comment-author {
+                .g1-epsilon {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+
+
+
+    .comment-form {
+        .g1-fake-avatar{
+            display: none;
+            position: relative;
+            overflow: hidden;
+            width: 40px;
+            height: 40px;
+            margin-bottom: 20px;
+
+            cursor: default;
+
+            text-align: center;
+
+            @include border-radius( 50% );
+
+            &:before {
+                display: block;
+                position: absolute;
+                z-index: 1;
+                #{$left}: 0;
+                #{$right}: auto;
+                top: 0;
+                width: 100%;
+                height: 100%;
+
+                content: "";
+
+                background: currentColor;
+                opacity: 0.1666;
+            }
+
+            &:after {
+                display: inline-block;
+                position: relative;
+                z-index: 2;
+                #{$left}: 1px;
+                #{$right}: auto;
+                top: 5px;
+
+
+                text-align: center;
+                font: 40px/1 "bimber";
+
+                content: "\e013";
+                opacity: 0.333;
+            }
+        }
+
+
+        label {
+            display: block;
+        }
+
+
+        > p {
+            margin-bottom: 20px;
+        }
+
+        #author,
+        #email,
+        #url {
+            width: 100%;
+        }
+
+        .comment-form-author label,
+        .comment-form-email label,
+        .comment-form-url label,
+        .comment-form-comment label {
+            clip: rect( 1px, 1px, 1px, 1px);
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    }
+
+    @media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+        .comment-form {
+            position: relative;
+            padding-#{$left}: 55px;
+
+            > .g1-fake-avatar,
+            > .avatar {
+                display: block;
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+            }
+
+            #author,
+            #email,
+            #url {
+                width: auto;
+                min-width: 50%;
+            }
+        }
+    }
+
+
+
+
+
+
+    @media only screen and ( max-width: $mobile_breakpoint ) {
+        .comment-meta {
+            position: relative;
+            min-height: 40px;
+            padding-#{$left}: 50px;
+        }
+
+        .children {
+            .comment-meta {
+                padding-#{$left}: 40px;
+            }
+        }
+    }
+
+
+    @media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+        @if ( not($_centered) ) {
+            .comments-title {
+                float: #{$left};
+            }
+        }
+
+
+        .g1-comment-form-anchor {
+            width: auto;
+            float: #{$right};
+        }
+
+        .comment {
+            padding-#{$left}: 40px + 15px;
+        }
+
+        .comment-author {
+            display: inline-block;
+
+            .avatar {
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        }
+
+        .comment-list {
+            .children {
+                margin-#{$left}: 0;
+
+                .comment {
+                    padding-#{$left}: 30px + 10px;
+                }
+
+                .comment-meta {
+                    padding-#{$left}: 0;
+                }
+            }
+        }
+    }
+
+
+
+    /**
+    * Add some empty space before the target element.
+    *
+    * This way sticky elements won't cover it
+    */
+    #comments:target:before {
+        display: block;
+        height: 120px;
+
+        content: "";
+    }
+
+
+
+    #respond {
+        .snax-wpsl {
+            .wp-social-login-connect-with {
+                position: absolute;
+                clip: rect(1px, 1px, 1px, 1px);
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            }
+        }
+    }
+
+    // Helper used to handle FB and Disqus comments
+    .g1-comment-count {
+        display: none;
+    }
+
+    .g1-notice-loading {
+        display: none;
+        text-align: center;
+    }
+
+    .g1-comment-type.g1-loading {
+        .g1-notice-loading {
+            display: block;
+        }
+    }
+
+
+
+
+    /**
+    * Add some empty space before the target element.
+    *
+    * This way sticky elements won't cover it
+    */
+    #comments:target:before {
+        display: block;
+        height: 120px;
+
+        content: "";
+    }
+}
+
+.g1-tab-item-fb a:before {
+    display: inline-block;
+
+    margin-#{$right}: 5px;
+
+    vertical-align: middle;
+
+    font: 16px/12px "bimber";
+
+    content: "\e040";
+}
+
+.g1-tab-item-dsq a:before {
+    display: inline-block;
+
+    margin-#{$right}: 5px;
+
+    vertical-align: middle;
+
+    font: 16px/12px "bimber";
+
+    content: "\e043";
+}

@@ -1,0 +1,37 @@
+$_badge_m_size: 40px;
+$_badge_m_font_size: 18px;
+
+.entry-counter {
+    @if ( 'top' == $badge_position ) {
+        position: absolute;
+        z-index: 3;
+        top: -10px;
+        #{$left}: 10px;
+        #{$right}: auto;
+    } @else {
+        margin-top: -$badge_size;
+        position: relative;
+        z-index: 3;
+    }
+
+    line-height: $badge_size;
+    font-size: $entry_counter_font_size;
+    font-family: $entry_counter_font_family;
+    font-weight: $entry_counter_font_weight;
+
+    text-align: $left;
+
+    pointer-events: none;
+
+    &:before {
+        display: inline-block;
+        width: $badge_size;
+        height: $badge_size;
+
+        text-align: center;
+
+        @include border-radius( $entry_counter_border_radius );
+
+        content: counter(g1-collection-item-counter);
+    }
+}

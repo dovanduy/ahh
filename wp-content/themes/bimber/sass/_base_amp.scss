@@ -1,0 +1,200 @@
+$has_mq_1025: false;
+
+@import "compass/css3";
+@import "tools.functions";
+@import "tools.mixins";
+
+
+
+
+
+
+.amp-wp-enforced-sizes {
+    // Our sizes fallback is 100vw, and we have a padding on the container; the max-width here prevents the element from overflowing.
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.amp-wp-unknown-size img {
+    // Worst case scenario when we can't figure out dimensions for an image.
+    // Force the image into a box of fixed dimensions and use object-fit to scale.
+    object-fit: contain;
+}
+
+amp-carousel,
+amp-iframe,
+amp-youtube,
+amp-instagram,
+amp-vine {
+    margin: 0 0 1.5rem;
+
+    background-color: $skin_background_tone_color;
+}
+
+.amp-wp-article-content amp-carousel amp-img {
+    border: none;
+}
+
+amp-carousel > amp-img > img {
+    object-fit: contain;
+}
+
+.amp-wp-iframe-placeholder {
+    background-color: $skin_background_color;
+    background-repeat: no-repeat;
+    background-position: center 40%;
+    background-size: 48px 48px;
+    min-height: 48px;
+}
+
+
+
+
+
+
+@import "generic.reset";
+@import "elements.default";
+
+@import "components.typography";
+
+
+
+@import "objects.grid";
+.g1-row-inner {
+    max-width: 758px + 20px;
+}
+
+
+
+@import "components.avatars";
+
+
+
+@import "components.entry.collections";
+@import "components.entry.base.amp";
+@import "components.entry/templates/classic";
+@import "components.entry/templates/grid";
+@import "components.entry/templates/list";
+@import "components.nsfw";
+
+
+
+@import "components.buttons";
+
+@import "components.single_nav";
+
+@import "components.author_info";
+
+
+
+.g1-header {
+    > .g1-row-inner {
+        > .g1-column {
+            padding-#{$left}: 50px;
+            padding-#{$right}: 50px;
+        }
+    }
+}
+
+@import "components.menu/hamburger";
+.g1-hamburger {
+    position: absolute;
+    #{$left}: 10px;
+    #{$right}: auto;
+    top: 50%;
+
+    @include translateY(-50%);
+}
+
+@import "components.header/id";
+.g1-id {}
+
+
+
+.g1-header {
+    .g1-logo {
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+    }
+}
+
+
+
+
+
+
+
+@import "components.quotes";
+
+@import "components.images.captions";
+
+
+.mashsb-stretched .mashsb-buttons {
+    @include display(flex);
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+
+    a {
+        @include flex(1 1 auto);
+        min-width: 0;
+
+        @include border-radius( $button_border_radius );
+    }
+
+    .secondary-shares {
+        display: none;
+    }
+}
+
+.entry-content {
+    max-width: 662px;
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 10;
+}
+
+.g1-switch-to-non-amp {
+    text-align: center;
+}
+
+.g1-footer {
+    padding-top: 3rem;
+
+    .g1-column {
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+#g1-canvas {
+    @include box-sizing( border-box );
+    width: 300px;
+    padding: 30px 15px;
+
+    background-color: $skin_background_color;
+}
+
+.g1-primary-nav-menu {
+    margin: 0;
+    list-style: none;
+}
+
+.g1-primary-nav {
+    margin: 0 0 3rem;
+
+    .menu-item {
+        > a {
+            color: inherit;
+        }
+    }
+
+    .sub-menu {
+        margin: side-values( 0 0 0 15px );
+        list-style: none;
+    }
+}

@@ -1,0 +1,61 @@
+.adace-coupon-wrap{
+	border-width: 2px;
+	border-style: dashed;
+	border-color: #e6e6e6;
+	padding: 1.5rem;
+	text-align: center;
+	margin-bottom: 1.5rem;
+	&:before {
+		content: "\e041";
+		position: absolute;
+		display: block;
+	    font-family: "bimber";
+	    font-weight: normal;
+		font-style: normal;
+		font-size: 40px;
+		line-height: 40px;
+		left: 20px;
+		top: -20px;
+	}
+	.adace-coupon{
+		.coupon-thumbnail{
+			max-width: 170px;
+			margin: 0 auto 1.5rem auto;
+			img{
+				vertical-align: bottom;
+			}
+		}
+		.coupon-title{
+			margin-bottom: 0;
+		}
+		.coupon-copy-wrap{
+			.coupon-copy{
+				overflow: hidden;
+				margin: 0 auto;
+				@include align-items(center);
+				@include justify-content(space-between);
+				border-width: 2px;
+				border-style: solid;
+				border-color: #000;
+				line-height: 0;
+				box-shadow: none;
+				padding: 2px;
+				@include transition(0.375s);
+				.coupon-code{
+					padding: 0 3rem;
+					line-height: 32px;
+					vertical-align: middle;
+				}
+				.coupon-action{
+					padding: 0 0.5rem;
+					height: 32px;
+					line-height: 32px;
+					vertical-align: middle;
+				}
+				&.blink{
+					@include opacity(0);
+				}
+			}
+		}
+	}
+}

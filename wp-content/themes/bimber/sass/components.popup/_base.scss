@@ -1,0 +1,119 @@
+/*
+ * Popup styles. Loads all specific popups.
+ */
+.g1-popup {
+	display: block;
+	visibility: hidden;
+
+	position: fixed;
+	z-index: 1050;
+	#{$left}: 0;
+	#{$right}: 0;
+	top: 0;
+	bottom: 0;
+}
+
+
+.g1-popup-overlay {
+	display: block;
+	visibility: hidden;
+
+	position: absolute;
+	z-index: 1;
+	#{$left}: 0;
+	#{$right}: 0;
+	top: 0;
+	bottom: 0;
+
+	background-color: rgba(0, 0, 0, 0.4);
+	@include opacity(0);
+
+	@include transition(
+		visibility 0s 0.375s,
+		opacity 0.375s ease-in-out,
+		transform 0.375s ease-in-out
+	);
+}
+.g1-popup-inner {
+	display: block;
+	visibility: hidden;
+
+	position: fixed;
+	z-index: 1050;
+	max-width: 80%;
+	#{$left}: 50%;
+	top: 50%;
+
+	background-color: $skin_background_color;
+	@include opacity(0);
+	@include transform( translate(if-ltr(-50%, 50%), -50%) scale(0.85) );
+
+	@include transition(
+		visibility 0s 0.375s,
+		opacity 0.375s ease-in-out,
+		transform 0.375s ease-in-out
+	);
+}
+
+.g1-popup-closer {
+	display: block;
+	padding: side-values(10px);
+
+	position: absolute;
+	#{$right}: 5px;
+	#{$left}: auto;
+	top: 5px;
+
+	font-size: 16px;
+	line-height: 1;
+
+	border-radius: 50%;
+
+	border-color: $skin_background_tone_color;
+	background-color: $skin_background_tone_color;
+	color: $skin_important_text_color;
+
+	@include transition(
+		border-color 0.375s ease-in-out,
+		background-color 0.375s ease-in-out,
+		color 0.375s ease-in-out
+	);
+
+	&:before {
+		display: block;
+
+		font-family:  "bimber";
+
+		content: "\e01b";
+	}
+
+	&:hover {
+		border-color: $skin_reverse_background_color;
+		background-color: $skin_reverse_background_color;
+		color: $skin_reverse_important_text_color;
+	}
+}
+
+
+@media only screen and ( min-width: 1025px ) {
+	html.g1-popup-visible{
+		overflow: hidden;
+
+		.g1-popup,
+		.g1-popup-overlay,
+		.g1-popup-inner {
+			visibility: visible;
+			@include opacity(1);
+
+			@include transition(
+				visibility 0s,
+				opacity 0.375s ease-in-out,
+				transform 0.375s ease-in-out
+			);
+		}
+		.g1-popup-inner {
+			@include transform( translate(if-ltr(-50%, 50%), -50%) scale(1) );
+		}
+	}
+}
+@import "newsletter";

@@ -1,0 +1,129 @@
+    // Variables
+    $_avatar_size:          68px;
+    $_avatar_border_width:  4px;
+    $_avatar_overlap_size:  8px;
+
+
+    .author-info {
+        @include box-sizing( border-box );
+
+        padding: 30px 0 0;
+        margin: 0 auto 30px;
+
+        position: relative;
+
+        @if $box_border_radius {
+            border-radius: $box_border_radius;
+        }
+
+
+        @if ( 'original-2018' == $stack or 'original' == $stack or 'minimal' == $stack or 'music' == $stack ) {
+            background: $skin_background_tone_color;
+        }
+
+        @if ( 'bunchy' == $stack ) {
+            background: $skin_background_tone_color;
+            text-align: center;
+        }
+
+
+        @if 'cards' == $stack {
+            background-color: #ededed;
+        }
+
+        @if ( 'miami' == $stack ) {
+            background-color: $skin_background_tone_color;
+        }
+
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        .author-info-inner {
+            position: relative;
+        }
+
+        .author-avatar {
+            position: absolute;
+            #{$left}: 10px;
+            #{$right}: auto;
+            top: 0;
+
+            width: 40px;
+            height: 40px;
+            margin: 0;
+        }
+
+        .author-overview {
+            padding-#{$left}: 60px;
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(center);
+        }
+
+        .author-title {
+            @include flex-basis(100%);
+            @include order(1);
+
+            .g1-delta {
+                margin-bottom: 0.76rem;
+            }
+        }
+
+        .g1-socials-items{
+            order:4;
+            @include flex-grow(1);
+           text-align: right;
+           margin-bottom: .5rem;
+            .g1-socials-item-icon{
+                font-size:21px;
+            }
+        }
+
+        .author-avatar{
+            a{
+                position: relative;
+            }
+            .author-info-rank{
+                position: absolute;
+                max-height:40px;
+                right:-40px;
+                bottom:0px;
+                display:none;
+            }
+        }
+
+        .author-bio{
+            @include flex-basis(100%);
+            order:2;
+        }
+
+    }
+
+    .g1-row .author-info {
+        margin-#{$left}: auto;
+        margin-#{$right}: auto;
+    }
+
+    @media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+        .author-info {
+            padding: 30px 30px 0;
+
+            .author-avatar {
+                #{$left}: 0;
+                width: auto;
+                height: auto;
+            }
+
+            .author-overview {
+                min-height: 100px;
+                padding-#{$left}: 120px;
+            }
+            .author-avatar .author-info-rank{
+                display:block;
+            }
+        }
+    }

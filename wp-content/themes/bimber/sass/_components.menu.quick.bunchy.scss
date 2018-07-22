@@ -1,0 +1,104 @@
+.g1-preheader-bunchy{
+        .g1-quick-nav {
+            clear: both;
+        }
+
+        .g1-quick-nav-menu {
+
+            > .menu-item {
+                margin: 0;
+
+                // We need "0%" instead of "0" to fix IE10, IE11
+                @include flex(1 0 0%);
+
+                > a {
+                    display: block;
+                    padding: 5px 5px;
+                    text-transform: none;
+
+                    font-size: 13px;
+                    line-height: 14px;
+
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 400;
+
+                    color: inherit;
+
+                    &:before {
+                        display: block;
+                        margin-bottom: 0.1em;
+
+                        font: 17px/1 "bimber";
+                        opacity: 0.666;
+
+                        @include transition( opacity 0.375s ease-in-out );
+                    }
+                }
+            }
+
+            > .current-menu-item,
+            > .menu-item:hover {
+                > a {
+                    &:before {
+                        opacity: 1;
+                    }
+                }
+
+            }
+        }
+
+        .menu-item-type-g1-latest > a:before {
+            // Pixel-perfect mentality
+            position: relative;
+            top: -1px;
+
+            content: "\e017";
+        }
+        .menu-item-type-g1-popular > a:before {
+            // Pixel-perfect mentality
+            position: relative;
+            top: -2px;
+
+            content: "\e015";
+        }
+        .menu-item-type-g1-hot > a:before {
+            content: "\e01c";
+        }
+        .menu-item-type-g1-trending > a:before {
+            content: "\e030";
+        }
+
+        @media only screen and ( min-width: 1025px ) {
+            .g1-quick-nav {
+                display: block;
+                clear: none;
+                float: #{$left};
+                margin-#{$left}: -10px;
+                margin-top: 0px;
+                margin-bottom: 0px;
+
+                .g1-quick-nav-menu {
+                    display: block;
+
+                    > .menu-item {
+                        > a {
+                            padding: 9px 10px;
+
+                            font-size: 14px;
+
+                            &:before {
+                                display: inline-block;
+                                margin-#{$right}: 0.5em;
+                                margin-bottom: 0;
+
+                                font-size: 18px;
+                                line-height: 1px;
+
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }

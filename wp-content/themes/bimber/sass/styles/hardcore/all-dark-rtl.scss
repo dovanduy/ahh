@@ -1,0 +1,16 @@
+$skin: 'dark';
+
+@import "../../settings";
+@import "settings";
+
+
+$support_media_queries: true;
+$use_mobile_first: true;
+$stack: 'hardcore';
+
+
+// Set RTL (Right to Left) direction
+$dir: rtl;
+@import "../../lib.directional";
+
+@import "../../base";

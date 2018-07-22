@@ -1,0 +1,211 @@
+/**
+ * Adace Front CSS
+ */
+
+ @import "compass/css3";
+// Adace slots styles.
+.adace-slot-wrapper{
+	.adace-slot{
+		img{
+			vertical-align: bottom;
+		}
+	}
+	&.adace-background{
+		position: fixed;
+		display: block;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-position: 50%;
+		background-position-x: 50%;
+		background-position-y: 50%;
+		background-repeat: no-repeat;
+	}
+}
+.adace-align-left-wrap{
+    float:left;
+    margin:10px;
+}
+.adace-align-right-wrap{
+    float:right;
+    margin:10px;
+}
+// Adace sponsors styles.
+.adace-sponsors-box{
+	display: block;
+}
+.adace-sponsor{
+	display: block;
+	overflow: hidden;
+	margin-bottom: 1.5rem;
+}
+.adace-sponsor-logo-wrap{
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+.adace-sponsor-logo{
+	position: relative;
+	padding: 0 15px 1rem;
+	img{
+		max-height: 48px;
+		width: auto;
+	}
+}
+.adace-sponsor-label{
+	position: relative;
+	padding: 0 15px 1rem;
+	white-space: nowrap;
+}
+.adace-sponsor-label:last-child{
+	visibility: hidden;
+}
+.adace-sponsor-name{
+	text-align: center;
+}
+.adace-sponsor-desc{
+	text-align: center;
+	font-size: 18px;
+	line-height: 1.555;
+}
+
+.adace-after-x-bbpress-topics,
+.adace-after-x-bbpress-replies {
+  clear: both;
+}
+
+.adace-slideup-slot-wrap{
+	position: fixed;
+	display: block;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 900;
+	background-color: rgba( 0, 0, 0, 0.4);
+	@include transition(0.375s);
+	&.animate-in{
+	  -webkit-animation-name: slideInUp;
+	  animation-name: slideInUp;
+	  -webkit-animation-duration: 1s;
+	  animation-duration: 1s;
+	  -webkit-animation-fill-mode: both;
+	  animation-fill-mode: both;
+	}
+	&.hidden{
+		pointer-events: none;
+		@include opacity(0);
+		@include translate(0%, 100%);
+	}
+}
+
+@-webkit-keyframes slideInUp {
+	0% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+@keyframes slideInUp {
+	0% {
+		-webkit-transform: translateY(100%);
+		transform: translateY(100%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+}
+
+.adace-slideup-slot{
+	position: relative;
+	display: block;
+}
+
+
+.adace-slideup-slot-closer{
+	display: block;
+
+	padding: 0px 8px;
+
+	position: absolute;
+
+	top: auto;
+bottom: 100%;
+		   right: 0;
+left: auto;
+
+cursor: pointer;
+
+color: #fff;
+background-color: rgba( 0, 0, 0, 0.5);
+
+&:before{
+	display: inline-block;
+
+	padding: 0 2px;
+
+	font-size: 12px;
+	line-height: 20px;
+	vertical-align: middle;
+}
+.closer-label{
+	display: inline-block;
+	padding: 0 2px;
+
+	font-size: 12px;
+	line-height: 20px;
+}
+}
+
+
+.widget_adace_ads_widget{
+	text-align: center;
+}
+
+.adace-coupon-wrap{
+	position: relative;
+	display: block;
+
+	.adace-coupon{
+		position: relative;
+		display: block;
+		.coupon-thumbnail{
+			position: relative;
+			display: block;
+		}
+		.coupon-title{
+		}
+		.coupon-copy-wrap{
+			position: relative;
+			display: block;
+			.coupon-copy{
+				position: relative;
+				display: inline-block;
+				.coupon-code{
+					position: relative;
+					display: inline-block;
+				}
+				.coupon-action{
+					position: relative;
+					display: inline-block;
+				}
+			}
+		}
+	}
+}
+
+.adace-transparent{
+	visibility: hidden;
+}
+
+
+
+@import "shop_the_post";

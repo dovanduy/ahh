@@ -1,0 +1,32 @@
+/**
+ * What's Your Reaction plugin customisations.
+ */
+
+.wyr-reaction-track {
+    @include border-radius($button_border_radius);
+}
+
+.wyr-reaction-button {
+    @include border-radius($button_border_radius);
+}
+
+.wyr-load-more{
+    display: block;
+    padding: 10px 15px;
+
+    font-size: 14px;
+    font-weight: 700;
+    font-family: $ui_font_family;
+    text-transform: uppercase;
+    text-align: center;
+
+
+    background: #f2f2f2;
+    color: inherit;
+
+    @include border-radius( $ui_border_radius );
+}
+
+.wyr-more-results{
+    text-align:right;
+}

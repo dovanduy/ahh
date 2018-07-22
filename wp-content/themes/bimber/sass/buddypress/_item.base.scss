@@ -1,0 +1,107 @@
+#buddypress {
+    // Group or member header
+    #item-header {
+        padding-top: 1.5rem;
+        text-align: center;
+
+        background-color: #f2f2f2;
+    }
+
+    #item-header-content {
+        padding-top: 1.5rem;
+        //padding-bottom: 1.5rem;
+    }
+
+    // Group meta, like "Private Group active 1 month, 2 weeks ago"
+    #item-meta {
+    }
+
+    // Container for #group-admins and #group-mods
+    #item-actions {
+    }
+}
+
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    #item-wrapper {
+        > .g1-row-inner {
+
+            &:after {
+                clear: both;
+                display: table;
+                content: "";
+            }
+        }
+    }
+
+    #item-header {
+        float: $left;
+
+        @include display(flex);
+        @include flex-direction(column);
+        @include align-items(center);
+        @include justify-content(center);
+        @include order(-1);
+
+        padding-#{$left}: 30px;
+        padding-#{$right}: 30px;
+    }
+
+    #cover-image-container {
+        float: $right;
+    }
+
+    #item-header-content {
+        clear: $left;
+        float: $left;
+        padding-#{$left}: 30px;
+        padding-#{$right}: 30px;
+    }
+
+    #item-content {
+        //clear: $right;
+        //float: $right;
+        //display: block;
+        padding-top: 1.5rem;
+        padding-bottom: 3rem;
+        margin: 0 0 auto auto;
+    }
+
+    #item-wrapper.item-wrapper-with-cover-image {
+        > .g1-row-inner {
+            @include display(flex);
+            @include flex-wrap(wrap);
+            @include align-items(stretch);
+        }
+    }
+}
+
+.buddypress-home{
+    .g1-collection-items{
+        @include display(flex);
+        @include flex-wrap(wrap);
+    }
+    .g1-collection-item{
+        @include display(flex);
+        @include flex-wrap(wrap);
+        padding: 15px;
+    }
+
+    // @todo mateusz
+    // Change classname to "g1-buddypress-home-item"
+    .bimber-buddypress-home-item{
+        @include display(flex);
+        width: 100%;
+        padding: 25px;
+        border-width: 1px;
+
+        border-style: solid;
+
+        border-color: $skin_border_color;
+
+        aside {
+            width:100%;
+        }
+    }
+}

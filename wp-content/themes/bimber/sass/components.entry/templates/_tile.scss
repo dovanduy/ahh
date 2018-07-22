@@ -1,0 +1,129 @@
+.entry-tpl-tile {
+    position: relative;
+
+    @if ( 'cards' == $stack ) {
+        margin-bottom: 10px;
+    } @elseif( 'miami' == $stack ) {
+        margin-bottom: 60px;
+    } @else {
+        margin-bottom: 30px;
+    }
+
+    background: #000;
+
+    .entry-featured-media {
+        position: relative;
+        width: 100%;
+        margin: 0;
+
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @if ( 'minimal' == $stack ) {
+            .g1-frame {
+                background-color: rgba(0,0,0, 0.3);
+            }
+        }
+    }
+
+    .entry-before-title {
+        margin-bottom: if-stack( 'hardcore', 4px, 0.5rem );
+
+
+        @if( 'hardcore'  == $stack ) {
+            .g1-meta {
+                color: #999;
+
+                a {
+                    color: #000;
+                }
+            }
+        } @else {
+            .g1-meta {
+                text-shadow: 1px 1px 0 rgba(0,0,0, 0.333);
+            }
+        }
+    }
+
+    @include if-stack( 'hardcore' ) {
+        .entry-stats {
+            padding-#{$left}: 15px;
+            margin-#{$left}: -15px;
+            background-color: #fff;
+        }
+    }
+
+    .entry-title {
+        margin-bottom: 0;
+
+        color: #fff;
+        text-shadow: 1px 1px 0 rgba(0,0,0, 0.333);
+
+        @if ( 'hardcore' == $stack ) {
+            display: inline;
+            box-decoration-break: clone;
+
+            background-color: #000;
+            box-shadow: 15px 0 0 #000, -15px 0 0 #000;
+        }
+
+        > a {
+            position: relative;
+        }
+    }
+
+
+
+    .entry-categories {
+        display: inline-block;
+    }
+
+    .entry-header {
+        @include box-sizing( border-box );
+        position: absolute;
+        z-index: 1;
+        #{$left}: 0;
+        #{$right}: auto;
+        bottom: 0;
+        width: 100%;
+        padding: 15px 10px;
+
+        pointer-events: none;
+
+        @if ( 'hardcore' != $stack and 'minimal' != $stack ) {
+            @include background-image( linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 0.75) 100%) );
+        }
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    @if ( 'cards' == $stack ) {
+        .entry-tpl-tile {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-tile {
+        @if ( 'cards' == $stack ) {
+            margin-bottom: 30px;
+        }
+
+        .entry-header {
+            @if ( 'hardcore' == $stack ) {
+                padding: 17px 30px;
+            } @else {
+                padding: 60px 30px 20px;
+            }
+        }
+    }
+}
+
+.entry-tpl-tile-xl .entry-featured-media .g1-frame-inner {
+    padding-bottom: percentage( 9/16);
+}

@@ -1,0 +1,322 @@
+$_drops_animation_duration: 0.375s;
+$_drops_animation_delay: 0.175s; // hover intent
+$_drops_animation_scale: 1;
+
+$_drops_animation_distance: 30px;
+
+$_link_toggle_size: 6px;
+
+
+// Sub-menu indicator.
+.g1-link-toggle {
+    display: none;
+    position: absolute;
+    #{$left}: 50%;
+    #{$right}: auto;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+    margin-#{$left}: -$_link_toggle_size;
+    border-width: $_link_toggle_size;;
+
+    border-style: solid;
+
+    border-color: transparent transparent currentColor transparent;
+
+    content: "";
+}
+
+@import "components.menu/hamburger";
+
+
+
+.menu-item {
+    position: relative;
+
+    > a {
+        display: block;
+        position: relative;
+
+        line-height: 1.25;
+
+        color: inherit;
+
+        @include transition(
+            border-color 0.375s ease-in-out,
+            background-color 0.375s ease-in-out,
+            color 0.375s ease-in-out
+        );
+
+        mark {
+            visibility: visible;
+            display: inline-block;
+            min-width: 1em;
+            padding: 2px 6px;
+            margin-#{$left}: 4px;
+
+            vertical-align: top;
+
+            font-size: 9px;
+            line-height: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+
+            text-align: center;
+
+            @include border-radius(10px);
+
+            border-color: #000000;
+            background-color: #000000;
+            color: #ffffff;
+        }
+    }
+}
+
+.menu-item-has-children > a mark{
+    right: -3px;
+}
+.menu-item-has-children > a:after {
+    display: inline-block;
+    margin-#{$left}: 4px;
+    vertical-align: middle;
+
+    font-size: 14px;
+    line-height: 1;
+    font-weight: normal;
+
+    font-family: "bimber";
+    content: "\e000";
+}
+
+.menu-item-g1-standard .sub-menu .menu-item-has-children > a:after {
+    position: absolute;
+    margin-#{$left}: 0;
+    #{$left}: calc( 100% - #{$submenu_padding_horizontal} - 6px );
+    #{$right}: auto;
+
+    content: if-ltr( "\e001", "\e01a" );
+}
+
+.menu-item-g1-mega .sub-menu .menu-item-has-children > a:after {
+    display: none;
+}
+
+
+
+.mtm-drop-expanded {
+    > a {
+        &:after {
+            content: "\e002";
+        }
+    }
+}
+
+.g1-menu-item-helper {
+    margin-bottom: 6px;
+
+    > .mtm-link {
+        font-size: 13px;
+        line-height: 15px;
+        font-family: $meta_font_family;
+        font-weight: normal;
+
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+
+        opacity: 0.666;
+    }
+
+    .menu-item-g1-mega & {
+        //csstodo
+        display: none !important;
+    }
+}
+
+
+
+
+.sub-menu {
+    margin: 0;
+    padding: 15px 0;
+    list-style: none;
+
+    .menu-item > a {
+        display: block;
+    }
+
+    > li {
+        > a {
+            padding: 4px $submenu_padding_horizontal;
+            padding-#{$right}: $submenu_padding_horizontal + 6px;
+
+            font-size: $submenu_font_size;
+            font-family: $submenu_font_family;
+            font-weight: $submenu_font_weight;
+            text-transform: $submenu_text_transform;
+            letter-spacing: $submenu_letter_spacing;
+        }
+    }
+}
+
+.g1-canvas {
+    .sub-menu {
+        display: none;
+    }
+}
+
+
+
+
+
+
+.menu-item-g1-mega {
+    position: static;
+}
+
+
+
+
+
+
+
+
+
+.g1-dropable .menu-item-g1-standard {
+    .sub-menu {
+        display: none;
+        @include box-sizing( border-box );
+
+        position: absolute;
+        z-index: 10;
+        #{$left}: 0;
+        #{$right}: auto;
+        //top: 100%;
+
+        width: 240px;
+        padding: 20px 0;
+
+        @include box-shadow( 0 15px 45px 15px rgba(0,0,0, 0.07) );
+
+        .sub-menu {
+            #{$left}: 100%;
+            #{$right}: auto;
+            top: -20px;
+        }
+    }
+}
+
+.g1-dropable .menu-item-g1-mega {
+    > a {
+        .g1-link-toggle {
+            border-color: transparent transparent $skin_background_color;
+        }
+    }
+
+    .sub-menu-wrapper {
+        display: none;
+
+        max-width: 100%;
+        width: $grid_width + $grid_gutter_width;
+        margin: 0 auto;
+
+        position: absolute;
+        z-index: 10;
+        #{$left}: 0;
+        #{$right}: 0;
+
+        background-color: $skin_background_color;
+        @include box-shadow( 0 15px 45px 15px rgba(0,0,0, 0.07) );
+
+        > .sub-menu {
+            max-width: $grid_width;
+            margin-#{$left}: auto;
+            margin-#{$right}: auto;
+
+            font-size: 0;
+
+            > .menu-item {
+                display: inline-block;
+                width: 25%;
+
+                vertical-align: top;
+
+                font-size: 1rem;
+
+                > a {
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+
+.sub-menu-wrapper {
+    .g1-collection-items {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+}
+
+
+
+.g1-hoverable .g1-dropable .menu-item:hover,
+.mtm-drop-expanded {
+    z-index: 1;
+
+    > .sub-menu,
+    > .sub-menu-wrapper {
+        display: block;
+    }
+}
+
+.g1-hoverable .g1-dropable .menu-item:hover {
+    > a > .g1-link-toggle {
+        display: block;
+    }
+ }
+
+
+
+
+/* CSS3 animations */
+$_visibility_delay: $_drops_animation_duration/$_drops_animation_scale+$_drops_animation_delay/$_drops_animation_scale;
+$_duration: $_drops_animation_duration/$_drops_animation_scale;
+$_delay: $_drops_animation_delay/$_drops_animation_scale;
+
+.g1-dropable .menu-item-g1-standard .sub-menu,
+.g1-dropable .menu-item-g1-mega .sub-menu-wrapper,
+.g1-dropable .menu-item > a > .g1-link-toggle {
+    display: block;
+    visibility: hidden;
+    @include opacity( 0 );
+    @include translate( 0px, $_drops_animation_distance );
+    @include transition(
+            visibility 0s $_visibility_delay,
+            opacity $_duration ease-in-out $_delay,
+            transform $_duration ease-in-out $_delay
+    );
+
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+}
+
+
+.g1-hoverable .g1-dropable .menu-item-g1-standard:hover > .sub-menu,
+.g1-hoverable .g1-dropable .menu-item-g1-standard .menu-item:hover > .sub-menu,
+.g1-hoverable .g1-dropable .menu-item:hover > .sub-menu-wrapper,
+.g1-hoverable .g1-dropable .menu-item:hover > a > .g1-link-toggle,
+.g1-dropable .mtm-drop-expanded > .sub-menu,
+.g1-dropable .mtm-drop-expanded > .sub-menu-wrapper,
+.g1-dropable .mtm-drop-expanded > a > .g1-link-toggle {
+    visibility: visible;
+    @include opacity(1);
+    @include translate(0px, 0px);
+    @include transition(
+            visibility 0s ease-in-out $_drops_animation_delay,
+            opacity $_drops_animation_duration ease-in-out $_drops_animation_delay,
+            transform $_drops_animation_duration ease-in-out $_drops_animation_delay
+    );
+}
+
+

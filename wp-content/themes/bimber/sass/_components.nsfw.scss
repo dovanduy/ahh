@@ -1,0 +1,70 @@
+.entry-media-nsfw {
+    position: relative;
+}
+
+.g1-nsfw {
+    overflow: hidden;
+
+    position: absolute;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: 0;
+    bottom: 0;
+
+
+    text-align: center;
+    line-height: 1.125;
+
+    background: #000;
+    color: #fff;
+}
+
+.g1-nsfw-inner {
+    position: absolute;
+    #{$left}: 0;
+    #{$right}: 0;
+    top: 50%;
+
+    padding: 0 20px;
+
+    @include translateY(-50%);
+}
+
+.g1-nsfw-icon {
+    display: block;
+    width: 1.333em;
+    height: 1.333em;
+    margin: 0 auto;
+
+    position: relative;
+
+    font-size: 32px;
+    line-height: 1.333;
+    font-weight: 400;
+    font-style: normal;
+
+    color: #ff0036;
+
+    &:before {
+        font-family: "bimber";
+
+        content: "\e022";
+    }
+}
+
+.g1-nsfw-title {
+    font-size: 1.17em;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.025em;
+}
+
+.g1-nsfw-desc {
+    font-size: 0.83em;
+    font-family: "Poppins", sans-serif;
+    color: #ccc;
+}
+
+.entry-media-nsfw-embed > *:first-child{
+    visibility: hidden;
+}

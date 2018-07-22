@@ -1,0 +1,114 @@
+$_teaser_arrow_width: 48px;
+$_teaser_article_width: 400px;
+$_teaser_height: 80px;
+
+
+
+.g1-teaser {
+    @include box-sizing( border-box );
+    overflow: hidden;
+    display: none;
+    width: $_teaser_arrow_width;
+    min-height: $_teaser_height;
+
+    position: fixed;
+    z-index: 99;
+    #{$left}: 0;
+    #{$right}: auto;
+    top: 50%;
+    margin-top: -$_teaser_height/2;
+
+    @include box-shadow(0 0 20px rgba(0,0,0,.2));
+
+    @include transition(
+        width 0.375s ease-in-out
+    );
+
+    background: $skin_background_color;
+    color: $skin_regular_text_color;
+
+    .entry-tpl-listxxs {
+        @include box-sizing(border-box);
+        @include display(flex);
+        @include align-items(center);
+
+        width: $_teaser_article_width;
+        min-height: $_teaser_height;
+        padding-#{$right}: 15px;
+
+
+        position: absolute;
+        #{$left}: auto;
+        #{$right}: 0;
+        top: 0;
+
+        .entry-featured-media {
+            @include flex(1 0 auto);
+            width: $_teaser_height;
+        }
+    }
+}
+
+.g1-teaser:hover {
+    width: $_teaser_arrow_width + $_teaser_article_width;
+}
+
+.g1-teaser-arrow {
+    display: block;
+    width: $_teaser_arrow_width;
+
+    position: absolute;
+    z-index: 2;
+    #{$left}: 0;
+    #{$right}: auto;
+    top: 0;
+    bottom: 0;
+
+    text-align: center;
+    cursor: pointer;
+
+    background-color: inherit;
+
+    &:before {
+        display: block;
+
+        position: absolute;
+        top: 50%;
+        #{$left}: 0;
+        #{$right}: 0;
+
+        margin-top: -0.5em;
+
+        font-size: 32px;
+        line-height: 1;
+        font-family: "bimber";
+
+        content: if-ltr( "\e00d", "\e00b" );
+    }
+}
+
+
+.g1-teaser-next {
+    #{$right}: 0;
+    #{$left}: auto;
+
+    .g1-teaser-arrow {
+        #{$right}: 0;
+        #{$left}: auto;
+
+        &:before {
+            content: if-ltr( "\e00b", "\e00d" );
+        }
+    }
+
+    .entry-tpl-listxxs {
+        #{$left}: 0;
+        #{$right}: auto;
+    }
+}
+
+@media only screen and ( min-width: $grid_width + 2*$_teaser_arrow_width) {
+    .g1-teaser {
+        display: block;
+    }
+}

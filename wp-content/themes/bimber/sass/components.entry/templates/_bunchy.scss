@@ -1,0 +1,70 @@
+
+/**
+ * Index entry template.
+ */
+.entry-tpl-index-stickies {
+    .snax-bar {
+        margin-bottom: 0;
+    }
+
+    .entry-flags {
+        margin-top: 10px;
+        padding: 0 10px;
+
+        text-align: $right;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .entry-flags + .entry-featured-media {
+        margin-top: -60px;
+    }
+
+    // Edge to edge images.
+    @media only screen and ( max-width: 600px ) {
+        .entry-featured-media {
+            margin-#{$left}: -10px;
+            margin-#{$right}: -10px;
+        }
+    }
+
+    .entry-actions {
+        border-width: 1px 0 0;
+        border-style: solid;
+        border-color: #e6e6e6;
+    }
+}
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-index-stickies {
+        padding-#{$left}: 120px;
+    }
+
+    .entry-tpl-index-stickies {
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        .entry-box {
+            width: 100%;
+            float: $right;
+        }
+
+        .entry-actions {
+            position: -webkit-sticky;
+            position: sticky;
+            float: #{$left};
+
+            width: 110px;
+            border-width: 0;
+            margin-#{$left}: -120px;
+
+            top: 10px
+        }
+    }
+}

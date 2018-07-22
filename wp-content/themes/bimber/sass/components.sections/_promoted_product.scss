@@ -1,0 +1,47 @@
+/*
+ * Promoted Product - Base Styles.
+ */
+.g1-section-promoted-product{
+	display: block;
+	margin: side-values(60px 0);
+	padding: side-values(70px 40px 0px 40px);
+	.g1-section-thumbnail{
+		position: absolute;
+		display: block;
+		#{$left}: 50%;
+		top: -50px;
+		width: 100px;
+		height: 100px;
+		@include box-shadow(4px 4px 8px rgba(0, 0, 0, 0.1));
+		background-color: $skin_background_color;
+		@include if-rtl() {
+			@include transform( rotate(5deg) translate(50%, 0%));
+	    }
+		@include if-ltr() {
+			@include transform( rotate(-5deg) translate(-50%, 0%));
+	    }
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 101px ){
+	.g1-section-promoted-product{
+		margin: side-values(40px 0);
+		padding: side-values(20px 40px 0px 140px);
+		.g1-section-thumbnail{
+			#{$left}: 20px;
+			top: -5px;
+			@include if-rtl() {
+				@include transform( rotate(5deg) translate(0%, 0%));
+		    }
+			@include if-ltr() {
+				@include transform( rotate(-5deg) translate(0%, 0%));
+		    }
+		}
+		.g1-section-body{
+			float: left;
+		}
+		.g1-section-btn-wrap{
+			float: right;
+		}
+	}
+}

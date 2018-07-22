@@ -1,0 +1,52 @@
+.g1-primary-nav {
+    margin-bottom: 1.5rem;
+    //z-index: 0;
+}
+
+.g1-primary-nav-menu {
+    margin: 0;
+    list-style: none;
+
+    > .menu-item {
+        display: block;
+        font-size: 1rem;
+        text-align: $left;
+
+        > a {
+            display: block;
+            padding: 4px 0;
+
+            font-size: $menu_font_size;
+            line-height: 1;
+            font-family: $menu_font_family;
+            font-weight: $menu_font_weight;
+
+            text-transform: uppercase;
+            letter-spacing: $menu_letter_spacing;
+
+            > strong {
+                position: relative;
+                top: 0.0833em;
+
+                font-size: 1.5em;
+                line-height: 0.01em;
+                font-family: if-stack( 'miami', #{"Rubik", sans-serif}, inherit );
+                font-weight: if-stack( 'miami', 500, inherit );
+                letter-spacing: -0.05em;
+            }
+        }
+    }
+
+    > .menu-item-object-post_tag {
+        > a {
+            text-transform: none !important;
+            font-weight: 400 !important;
+
+            &:before {
+                font-weight: 700;
+
+                content: "#";
+            }
+        }
+    }
+}

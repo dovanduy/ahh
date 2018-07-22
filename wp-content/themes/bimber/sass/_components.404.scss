@@ -1,0 +1,23 @@
+$_centered: 'original-2018' == $stack or 'music';
+
+
+.g1-404-icon {
+    @if ( $_centered ) {
+        display: table;
+        margin: 0 auto 0.2em;
+    } @else {
+        display: inline-block;
+        margin-bottom: 0.2em;
+    }
+
+    font-size: 64px;
+    line-height: 1;
+    font-family: bimber;
+    font-style: normal;
+
+    opacity: 0.2;
+}
+
+.g1-404-search  .g1-404-icon:before { content: "\e016"; }
+.g1-404-report  .g1-404-icon:before { content: "\e012"; }
+.g1-404-back    .g1-404-icon:before { content: "\e019"; }

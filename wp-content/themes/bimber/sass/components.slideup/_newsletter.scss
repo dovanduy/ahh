@@ -1,0 +1,67 @@
+/*
+ * slideup newsletter. Loads all specific slideups.
+ */
+.g1-slideup-newsletter{
+	display: block;
+	position: relative;
+	max-width: 728px;
+	width: 100%;
+	margin: side-values(0 auto);
+ 	background-color: #fff;
+	padding: side-values(20px 20px 0 20px);
+	@include box-shadow(0px 5px 20px rgba(0, 0, 0, .1));
+	.g1-newsletter-privacy{
+		text-align: #{$right};
+	}
+}
+.g1-slideup-newsletter-avatar{
+	position: absolute;
+	display: block;
+	overflow: hidden;
+ 	z-index: 1055;
+	top: 0px;
+	left: 50%;
+	width: 80px;
+	height: 80px;
+ 	@include translate(-50%, -30%);
+	@include border-radius(100%);
+}
+.g1-slideup-newsletter-body{
+	position: relative;
+	display: block;
+	text-align: center;
+	padding: side-values(60px 40px 1px 40px);
+	@include box-sizing( border-box );
+	background: $color_sections_bg;
+}
+.g1-slideup-newsletter-closer{
+	padding: side-values(18px);
+
+    position: absolute;
+	top: 40px;
+    #{$right}: 0px;
+    bottom: 150px;
+
+    font-size: 24px;
+    line-height: 16px;
+
+	color: #fff;
+	&:before {
+		font-family: "bimber";
+		content: "\e01b";
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ){
+	.g1-slideup-newsletter-body{
+		.mc4wp-form-fields{
+			@include display(flex);
+			p:first-child{
+				@include flex(1 1 auto);
+			}
+			input[type=email]{
+				text-align: #{$left};
+			}
+		}
+	}
+}

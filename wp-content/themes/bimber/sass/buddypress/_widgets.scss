@@ -1,0 +1,249 @@
+.widget.buddypress {
+    .item-list {
+        margin-#{$left}: 0;
+        padding-#{$left}: 0;
+        list-style: none;
+
+        > li {
+            clear: both;
+        }
+    }
+
+
+
+    .item-avatar {
+        img.avatar {
+            float: #{$left};
+            width: 40px;
+            height: 40px;
+            margin: side-values( 0 10px 15px 0 );
+        }
+    }
+
+    // It should be called .item-body rather
+    .item{
+        margin: side-values( 0 0 15px 0 );
+
+        .item-meta,
+        .item-content {
+            margin-#{$left}: 50px;
+            font-size: 13px;
+            line-height: 1.25;
+        }
+
+        .item-meta {
+            font-family: $meta_font_family;
+        }
+    }
+
+    // Item nav, like "newest|active|popular"
+    .item-options {
+        font-size: 13px;
+        font-family: $meta_font_family;
+        margin: 0 0 1.5em;
+
+        // PP
+        & > a:not( .selected ) {
+            color: inherit;
+        }
+    }
+}
+
+
+
+
+/* Login Widget */
+.widget.buddypress #bp-login-widget-form {
+    label {
+        display: block;
+        margin: 1em 0 .125em;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+    }
+
+    .forgetmenot {
+        margin: 0 0 1em;
+    }
+
+    #bp-login-widget-submit {
+        margin-#{$right}: 10px;
+    }
+
+    .bp-login-widget-register-link {
+        font-size: 14px;
+        font-family: $ui_font_family;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+    }
+}
+
+
+.widget_bp_core_login_widget {
+    .bp-login-widget-user-avatar {
+        float: $left;
+
+        img.avatar {
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+    .bp-login-widget-user-links {
+        & > div {
+            //margin-bottom: .5rem;
+            padding-#{$left}: 50px;
+        }
+
+        > div.bp-login-widget-user-link a {
+            font-weight: bold;
+        }
+    }
+}
+
+
+.widget_bimber_featured_author_widget{
+    padding:15px;
+    border:none;
+    @include display(flex);
+    @include flex-direction(column);
+
+    .g1-members-item{
+        @include display(flex);
+        @include flex-direction(column);
+        @include flex(auto);
+        border-width: 1px;
+
+        text-align:center;
+
+        border-style: solid;
+
+        border-color: $skin_border_color;
+
+        .item{
+            @include display(flex);
+            @include flex-direction(column);
+            @include flex(auto);
+        }
+        .item-cover {
+            width:100%;
+            height:145px;
+            background: #808080;
+            background-size:auto 100%;
+            background-position:center;
+        }
+        .item-avatar{
+            float:none;
+            margin:0 auto;
+            margin-top:-45px;
+            display:inline-block;
+            background:white;
+            border-radius:100px;
+            padding:5px;
+            width: 80px;
+            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.1); 
+            position: relative;
+            .avatar{
+                display:block;
+            }
+            .author-info-rank{
+                position: absolute;
+                max-height:40px;
+                right:-35px;
+                bottom:5px;
+            }
+        }
+        .item-title{
+            width:auto;
+            font-size:21px;
+            font-weight:600;
+            padding-left:30px;
+            padding-right:30px;
+            margin-top: 0.75rem;
+            a{
+                color:unset;
+            }
+        }
+        .item-desc{
+            margin:0;
+            width:auto;
+            font-size:16px;
+            padding-left:30px;
+            padding-right:30px;
+            @include flex(auto);
+        }
+        .row{
+            padding-left:30px;
+            padding-right:30px;  
+        }
+        .item-counters{
+            @include display(flex);
+            background: $skin_background_tone_color;
+            margin-top: 1rem;
+        }
+        .item-counters-counter{
+            @include flex-grow(1);
+            @include flex-shrink(1);
+            @include flex-basis(0);
+            text-align: center;
+            padding:10px 0;
+        }
+        .item-counters-counter-value{
+            font-size:18px;
+            font-weight:600;
+            font-family: "Poppins", "Roboto", sans-serif;
+            color: $skin_important_text_color;
+        }
+        .g1-socials-bp-profile-collection{
+            padding-left:30px;
+            padding-right:30px;
+
+            .g1-socials-item-icon{
+                margin-top: 16px;
+                margin-bottom: 16px;
+
+                font-size: 22px;
+
+                opacity: 0.333;
+
+                @include transition(
+                    opacity 0.375s ease-in-out
+                );
+
+                &:hover {
+                    opacity: 0.999;
+                }
+            }
+        }
+        #mycred-users-badges{
+            margin-top:16px;
+        }
+        .mycred-badge-image {
+            width:40px;
+            height:auto;
+            padding:0 3px;
+        }
+    }
+}
+
+#buddypress .bimber-buddypress-home-item{
+    .widget_bp_core_friends_widget{
+        .item-list li{
+            padding:5px 0 5px 0px;
+            border:none;
+            .item{
+                margin-bottom:0px;
+            }
+            .item-avatar img{
+                margin-top:0px;
+                margin-bottom:0px;
+            }
+            &:first-child {
+                padding-top:0;
+            }
+        }
+    }
+}

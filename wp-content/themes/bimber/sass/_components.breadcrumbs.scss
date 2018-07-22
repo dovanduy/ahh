@@ -1,0 +1,49 @@
+.g1-breadcrumbs {
+    margin-bottom: 0.75rem;
+
+    font-size: 13px;
+    line-height: 15px;
+    font-family: $meta_font_family;
+
+    ol {
+        margin: 0;
+        //overflow: hidden;
+        list-style: none;
+    }
+}
+
+.g1-breadcrumbs-label {
+    margin: 0;
+
+    /* assistive-text */
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+}
+
+
+.g1-breadcrumbs-item {
+    display: inline-block;
+    max-width: 10em;
+    margin-#{$right}: 0.333em;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    vertical-align: top;
+
+    & + &:before {
+        display: inline-block;
+        margin-#{$right}: inherit;
+        content: "\203a";
+    }
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .g1-breadcrumbs-item {
+        max-width: 20em;
+        margin-#{$right}: 0.666em;
+    }
+}
+
+

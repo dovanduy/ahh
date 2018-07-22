@@ -1,0 +1,26 @@
+.entry-media-row {
+    > .g1-row-inner {
+        > .g1-column-2of3 {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    > .g1-row-background {
+        > .g1-row-background-media {
+            margin: 0 auto;
+
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            background-color: #808080;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+
+        }
+    }
+}

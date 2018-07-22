@@ -1,0 +1,61 @@
+/**
+ * Shop The Post
+ */
+.adace-shop-the-post{
+	display: block;
+	@include box-sizing(border-box);
+	max-width: 728px;
+	margin: 0 auto 3rem auto;
+
+	position: relative;
+
+}
+
+.adace-shop-the-post-title{
+	text-align: center;
+}
+
+.adace-shop-the-post-desc{
+	text-align: center;
+}
+
+.adace-shop-the-post-wrap{
+	text-align: center;
+}
+
+.adace-shop-the-post-wrap.woocommerce ul.products li.product{
+	margin-bottom: 1rem;
+}
+
+.adace-shop-the-post-wrap img{
+	max-width: 80%;
+	margin: 0 auto 0.75em auto;
+}
+
+.adace-shop-the-post-wrap .product-title{
+	margin-bottom: 0;
+}
+
+.adace-shop-the-post-wrap .woocommerce-product-details__short-description{
+	p {
+		margin-bottom: 0;
+	}
+}
+
+.adace-shop-the-post-link{
+	position: relative;
+	text-align: right;
+}
+
+.adace-shop-the-post-wrap.carousel-wrap{
+	ul.products{
+		position: relative;
+		display: block;
+		li.product{
+			position: relative;
+			display: inline-block;
+			margin-bottom: 0;
+		}
+	}
+}
+

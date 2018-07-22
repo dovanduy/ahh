@@ -1,0 +1,263 @@
+#buddypress {
+    .standard-form {
+        label,
+        span.label {
+            display: block;
+            font-weight: bold;
+            margin: 15px 0 5px 0;
+            width: auto;
+        }
+
+        p label {
+            font-weight: normal;
+            margin: auto;
+        }
+
+        p.description {
+            font-size: 13px;
+            color: #999;
+        }
+
+        div.checkbox label:nth-child(n+2),
+        div.radio div label {
+            color: #888;
+            font-size: 100%;
+            font-weight: normal;
+            margin: 5px 0 0 0;
+        }
+
+        div.radio {
+            ul {
+                margin: 10px 0 15px 38px;
+                list-style: disc;
+
+                li {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+
+
+        a.clear-value {
+            display: block;
+            margin-top: 5px;
+            outline: none;
+        }
+
+        div.submit {
+            clear: both;
+            padding: 0.75em 0 0;
+        }
+
+        p.submit {
+            //margin-bottom: 0;
+            //padding: 15px 0 0 0;
+        }
+
+
+        .left-menu {
+            float: #{$left};
+            width: 33.333%;
+        }
+
+        .main-column {
+            width: 66.666%;
+            float: $left;
+        }
+    }
+}
+
+
+/* Sign up form */
+#buddypress .standard-form#signup_form  {
+    input[type=text],
+    input[type=email] {
+        width: 100%;
+    }
+
+    div.submit {
+        text-align: #{$right};
+    }
+    #profile-details-section fieldset{
+        display:block;
+    }
+}
+
+/* Sign up form */
+#buddypress {
+    #basic-details-section {
+        input[type=password] {
+            width: 50%;
+        }
+    }
+
+    #blog-details-section {
+        clear: #{$left};
+
+        input#signup_blog_url {
+            width: 50%;
+        }
+    }
+}
+
+@media only screen and ( min-width: 601px ) {
+    #buddypress {
+        #basic-details-section,
+        #profile-details-section,
+        #blog-details-section {
+            float: #{$left};
+            width: 48%;
+        }
+
+        #profile-details-section {
+            float: #{$right};
+        }
+    }
+}
+
+/* Activation form */
+#buddypress {
+    #activation-form {
+        input[type=text] {
+            width: 100%;
+        }
+    }
+}
+
+/* User settings form */
+#buddypress {
+    #settings-form {
+        #email {
+            width: 364px; // 1/3
+            margin-bottom: 1.5rem;
+        }
+
+        input[type=password] {
+            margin-bottom: 0.75em;
+        }
+    }
+}
+
+
+/* Notifications */
+#buddypress {
+    #notifications-bulk-management {
+        clear: both;
+    }
+}
+
+
+
+/* Send invites form */
+#buddypress {
+    #send-invite-form {
+
+        // column wrapper
+        .invite {
+            &:after {
+                display: table;
+                clear: both;
+                content: "";
+            }
+        }
+
+    }
+}
+
+
+
+/* Invitations */
+#buddypress {
+    #invite-list {
+        ul{
+            margin-#{$left}: 0;
+            list-style: none;
+        }
+
+        label {
+            margin: 0;
+            font-weight: normal;
+        }
+    }
+}
+
+
+
+/* Messages */
+#buddypress {
+    #send_message_form {
+
+        #subject {
+            width: 100%;
+        }
+    }
+
+    #search-message-form {
+        input {
+            vertical-align: top;
+        }
+
+        input[type=submit] {
+            margin-#{$left}: 6px; //plus white-space between ~4px
+        }
+    }
+}
+
+
+
+/* Groups */
+#buddypress {
+    input#group-name {
+        width: 100%;
+    }
+}
+
+.js #bp-login-widget-form {
+
+    //Hide labels, we will use placeholders instead
+    label[for="bp-login-widget-user-login"],
+    label[for="bp-login-widget-user-pass"] {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+
+        position: absolute;
+
+        clip: rect(1px,1px,1px,1px)
+    }
+
+    #bp-login-widget-user-login,
+    #bp-login-widget-user-pass {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+/* Form classes */
+.bp-screen-reader-text {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+    word-wrap: normal !important;
+}
+
+
+
+/* No JavaScript */
+body.no-js #buddypress {
+    #notifications-bulk-management #select-all-notifications,
+    label[for="message-type-select"],
+    #message-type-select,
+    #delete_inbox_messages,
+    #delete_sentbox_messages,
+    #messages-bulk-management #select-all-messages {
+        display: none;
+    }
+}

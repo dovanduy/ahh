@@ -1,0 +1,10 @@
+$skin: 'dark';
+
+@import "../../settings";
+@import "settings";
+
+$stack: 'minimal';
+
+@import "../../compass/css3";
+
+@import "../../buddypress-rtl";

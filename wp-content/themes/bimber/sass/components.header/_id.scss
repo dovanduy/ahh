@@ -1,0 +1,45 @@
+.site-title,
+.site-description {
+    margin-bottom: 0;
+}
+
+.g1-logo-wrapper {
+    display: block;
+    position: relative;
+
+    .g1-logo {
+        display: block;
+    }
+}
+
+.g1-id {
+    margin: 15px auto;
+
+    z-index: 1;
+}
+
+
+.g1-logo-small-wrapper {
+    display: none;
+    float: $left;
+    margin: 5px 0;
+
+    .g1-logo-small {
+        display: block;
+        max-height: 40px;
+        width: auto;
+    }
+}
+
+@media only screen and ( max-width: 1024px ) {
+    .g1-logo {
+        //max-height: 40px;
+        //width: auto;
+    }
+
+    body.g1-has-mobile-logo {
+        .g1-logo-small-wrapper {
+            display: block;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@media print {
+    .g1-quick-nav,
+    .g1-navbar,
+    .g1-featured-row {
+        display: none;
+    }
+
+    .mashsb-container,
+    .mashsb-micro,
+    .g1-advertisement,
+    .g1-newsletter {
+        display: none;
+    }
+
+    /* Hide content elements */
+    .g1-nav-single,
+    .g1-related-entries,
+    .g1-more-from,
+    .g1-dont-miss,
+    #secondary {
+        display: none;
+    }
+
+    /* Force a page-break before the comments */
+    #comments {
+        position: relative; // Chrome fix
+        page-break-before: always;
+    }
+
+    /* Hide comment elements */
+    .comments-title + .g1-button,
+    .comment-edit-link,
+    .comment-reply-link,
+    #respond {
+        display: none;
+    }
+
+    /* Hide footer */
+    .g1-prefooter,
+    .g1-footer {
+        display: none;
+    }
+}

@@ -1,0 +1,15 @@
+.wp-caption-text {
+    padding-top: 0.5em;
+    padding-#{$right}: 10px;
+
+    text-align: center;
+    font-size: $meta_font_size;
+    line-height: $meta_line_height;
+    font-family: $meta_font_family;
+
+    color: $skin_meta_text_color;
+
+    a {
+        color: $skin_important_text_color;
+    }
+}

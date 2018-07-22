@@ -1,0 +1,72 @@
+@media only screen and ( min-width: 601px ) {
+    .mashsb-side {
+        position: relative;
+        float: $left;
+        width: 66px;
+        padding-bottom: 48px;
+
+        .mashsb-count {
+            width: 100%;
+            padding: 10px 0;
+            margin: 0;
+
+            font-size: 30px;
+            font-family: $important_font_family;
+            font-weight: 700;
+
+            background-color: $skin_background_color;
+            color: $skin_important_text_color;
+        }
+
+        .mashsb-buttons {
+            clear: both;
+            position: static;
+            overflow: hidden;
+
+            @include border-radius($ui_border_radius);
+
+            a {
+                @include box-sizing( border-box );
+                min-width: 0;
+                width: 100%;
+                margin: 0;
+
+                text-align: center;
+
+                @include border-radius(0);
+            }
+
+            .onoffswitch,
+            .onoffswitch2 {
+                width: 100%;
+                margin-#{$left}: 0;
+
+                position: absolute;
+                bottom: 0;
+                #{$left}: 0;
+                #{$right}: 0;
+            }
+
+            .icon {
+                font-size: 28px !important;
+                line-height: 39px !important;
+
+                text-align: center !important;
+
+                &:before {
+                    display: inline-block;
+                    float: none !important;
+                    margin: 0 !important;
+                    font-size: 28px !important;
+                    line-height: 39px !important;
+
+                    text-align: center !important;
+                }
+            }
+
+            .text {
+                display: none !important;
+            }
+        }
+    }
+}

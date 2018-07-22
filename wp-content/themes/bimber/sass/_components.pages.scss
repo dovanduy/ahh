@@ -1,0 +1,112 @@
+$_centered: 'original-2018' == $stack or 'music' == $stack;
+
+.page-header {
+    padding-top: 20px;
+
+    > .g1-row-background {
+        @if ( 'hardcore' == $stack ) {
+            background-color: #ededed !important;
+        } @elseif ( 'minimal' == $stack ) {
+        } @elseif ( 'miami' == $stack ) {
+            background-color: $skin_background_tone_color !important;
+        } @else {
+            border-width: 0 0 1px 0;
+            border-style: solid;
+            border-color: $skin_border_color;
+        }
+    }
+
+    .g1-column {
+        overflow: hidden;
+    }
+}
+
+.page-title {
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    border-width: 0;
+
+    @if ( 'original-2018' == $stack ) {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+
+.page-subtitle {
+    margin-top: -20px;
+    margin-bottom: 20px;
+
+    text-align: inherit;
+}
+
+.g1-archive-featured-image img{
+    width: 80px;
+    height: 80px;
+    @include border-radius(50%);
+}
+
+.g1-archive-filter {
+    margin-bottom: 20px;
+}
+
+
+.page-header-01 {
+    @if ( $_centered ) {
+        text-align: center;
+    } @else {
+        text-align: $left;
+    }
+}
+
+.page-header-02 {
+    @if ( $_centered ) {
+        text-align: $left;
+    } @else {
+        text-align: center;
+    }
+}
+
+.page-header-03 {
+    text-align: center;
+
+    > .g1-row-inner {
+        @include box-sizing(border-box);
+        min-height: 360px;
+        padding-top: 70px;
+        padding-bottom: 70px;
+
+        @include display(flex);
+        @include align-items(center);
+    }
+}
+
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .page-header-01.archive-header-modifiable {
+        @if ( $_centered ) {
+
+        } @else {
+            .g1-column{
+                @include display(flex);
+                @include justify-content(space-between);
+                @include align-items(flex-end);
+            }
+        }
+    }
+
+    .page-header-02.archive-header-modifiable {
+        @if ( $_centered ) {
+            .g1-column{
+                @include display(flex);
+                @include justify-content(space-between);
+                @include align-items(flex-end);
+            }
+        } @else {
+
+        }
+    }
+}
+
+

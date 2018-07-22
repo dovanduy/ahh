@@ -1,0 +1,124 @@
+.entry-media-row-06 {
+    > .g1-row-inner {
+        max-width: none;
+
+        > .g1-column {
+            padding-#{$left}: 0;
+            padding-#{$right}: 0;
+        }
+    }
+
+    > .g1-row-background {
+        > .g1-row-background-media {
+            top: 0;
+            bottom: auto;
+            height: 400px;
+        }
+    }
+
+    .g1-row-1 {
+        height: 400px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin: 0 auto;
+
+        // Small gradient to add some bg/text contrast.
+        > .g1-row-background {
+            background-color: transparent;
+            @include background-image(linear-gradient(to bottom, rgba(0,0,0, 0.333), rgba(0,0,0, 0.0) 60px));
+        }
+    }
+
+    .g1-row-2 {
+        width: 100%;
+        max-width: $grid_width + $grid_gutter_width*2;
+        margin: 0 auto;
+
+        background-color: $skin_background_color;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        > .g1-row-inner,
+        > .g1-row-inner > .g1-column {
+            position: static;
+        }
+    }
+
+    .entry-header {
+        padding-top: 2.5rem;
+    }
+
+    .entry-before-title {
+        position: absolute;
+        bottom: 100%;
+        #{$left}: 0;
+        #{$right}: 0;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+    }
+
+    .entry-categories {
+        margin-bottom: 0;
+    }
+
+    @if ( 'music' == $stack ) {
+        .entry-category {
+            background-color: $skin_background_color;
+        }
+    }
+
+    // csstodo vars
+    .entry-categories:first-child {
+        .entry-category {
+            padding-#{$left}: 8px;
+        }
+    }
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    .entry-media-row-06 {
+        .g1-row-1 {
+            .g1-column-1of3 {
+                text-align: $right;
+            }
+        }
+    }
+}
+
+
+@media only screen and ( min-width: 1200px ) {
+    .entry-media-row-06 {
+        > .g1-row-inner {
+            min-height: 66vh;
+
+            > .g1-column {
+                position: static;
+            }
+        }
+
+        > .g1-row-background {
+            > .g1-row-background-media {
+                top: 0;
+                bottom: 0;
+                height: auto;
+            }
+        }
+
+        .g1-row-2 {
+            position: absolute;
+            z-index: 2;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: auto;
+            bottom: 0;
+        }
+    }
+}

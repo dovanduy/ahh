@@ -1,0 +1,87 @@
+$_indent: 40px;
+
+
+@if ( 'music' == $stack ) {
+    // Remove decorations
+    .archive-featured-title {
+        &:before,
+        &:after {
+            display: none;
+        }
+    }
+}
+
+
+.todo-music {
+    .archive-featured-title {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        #{$left}: 50%;
+        #{$right}: auto;
+
+        @include translateX(-50%);
+    }
+
+    .entry-tpl-tile {
+        height: 460px;
+        margin-bottom: 0;
+
+        > .entry-header {
+            padding-bottom: $_indent + 40px;
+
+            text-align: center;
+        }
+
+        .entry-before-title {
+            // csstodo
+            max-width: 758px;
+            margin-#{$left}: auto;
+            margin-#{$right}: auto;
+        }
+
+        .entry-title {
+            max-width: 600px;
+            margin-#{$left}: auto;
+            margin-#{$right}: auto;
+        }
+
+        > .entry-featured-media {
+            position: absolute;
+            #{$left}: 0;
+            #{$right}: 0;
+            top: 0;
+            bottom: 0;
+
+            .g1-frame {
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                top: 0;
+                bottom: 0;
+            }
+
+            img {
+                display: none;
+            }
+        }
+    }
+
+    .g1-collection {
+        margin-top: -$_indent;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    .g1-collection-items {
+        margin-bottom: 0;
+    }
+
+    .entry-tpl-grid {
+        .entry-featured-media {
+            background-color: $skin_background_tone_color;
+        }
+    }
+
+}

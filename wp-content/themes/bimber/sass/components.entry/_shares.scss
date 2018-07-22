@@ -1,0 +1,17 @@
+.entry-shares {
+    display: inline-block;
+    margin-#{$right}: 8px;
+    vertical-align: top;
+
+    &:before {
+        display: inline-block;
+
+        margin-#{$right}: 4px;
+
+        font: 16px/11px "bimber";
+
+        vertical-align: middle;
+
+        content: "\e011";
+    }
+}

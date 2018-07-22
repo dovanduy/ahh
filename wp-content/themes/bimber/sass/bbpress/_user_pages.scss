@@ -1,0 +1,34 @@
+.g1-precontent #bbp-user-avatar {
+    float: $left;
+    margin-#{$right}: 1.5em;
+}
+
+#bbp-user-wrapper {
+    clear: both;
+}
+
+.bbp-user-section {
+    overflow: auto;
+}
+
+//#bbp-user-body {
+//    //margin-left: 180px;
+//}
+
+
+/* =User Capabilities
+-------------------------------------------------------------- */
+dl.bbp-user-capabilities {
+    display: inline-block;
+    vertical-align: top;
+
+    dt {
+        margin: 0 0 10px;
+        text-transform: capitalize;
+    }
+
+    dd {
+        margin: 0;
+        padding: 0;
+    }
+}

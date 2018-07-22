@@ -1,0 +1,198 @@
+@if ( 'bunchy' != $stack ) {
+    // Remove the inner border and padding in Firefox.
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+        border: 0;
+        padding: 0;
+    }
+
+    /* Hide the clear button of a text input control */
+    input::-ms-clear {
+        display:none;
+    }
+
+
+
+    input,
+    select,
+    button,
+    textarea {
+        @include box-sizing( border-box );
+        max-width: 100%;
+
+        @if ( 'hardcore' == $stack ) {
+            padding: 7px;
+            border-width: 2px;
+        } @else {
+            padding: 8px;
+            border-width: 1px;
+        }
+
+        font-size: 1rem;
+
+        border-style: solid;
+
+
+        @if ( 'hardcore' == $stack ) {
+            border-color: currentColor;
+        } @else {
+            border-color: $skin_border_color;
+        }
+
+        background-color: transparent;
+        color: inherit;
+
+
+        @include border-radius( $ui_border_radius );
+
+        @include transition(
+            border-color 0.375s ease-in-out,
+            background-color 0.375s ease-in-out,
+            color 0.375s ease-in-out
+        );
+    }
+
+    [type="email"],
+    [type="number"],
+    [type="password"],
+    [type="reset"],
+    [type="search"],
+    [type="tel"],
+    [type="text"],
+    [type="url"] {
+        height: 40px;
+    }
+
+    [type=checkbox],
+    [type=radio] {
+        height: auto;
+    }
+
+    input[type=search] {
+        // Remove rounded buttons (iOS)
+        -webkit-appearance: none;
+    }
+
+    [type=submit],
+    [type=reset],
+    [type=button],
+    button {
+        width: auto;
+        padding: 7px 28px;
+        border-width: 2px;
+
+        cursor: pointer;
+
+        @include border-radius( $button_border_radius );
+
+        // Remove rounded buttons (iOS)
+        -webkit-appearance: none;
+        -moz-appearance: none;
+                appearance: none;
+    }
+
+
+
+    select {
+        padding: side-values( 8px 24px 8px 8px );
+
+        cursor: pointer;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+                appearance: none;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        // data URI
+        //background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAECAYAAACUY/8YAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADxJREFUeNpi+P//PwM2DAXyQHwPiP9jwfeh8gy4zACbQ8ACXJbADaeGBeiWoBhOLQtgluxFN5yQBQABBgDqaatIvFzXQwAAAABJRU5ErkJggg==);
+        //background-repeat: no-repeat;
+        //background-position: $right center;
+
+        background-image: linear-gradient(45deg, transparent 50%, currentColor 50%), linear-gradient(135deg, currentColor 50%, transparent 50%);
+        background-size: 4px 4px, 4px 4px;
+        background-position: calc(100% - 16px) center, calc(100% - 12px) center;
+        background-repeat: no-repeat;
+
+        &[multiple] {
+            -webkit-appearance: listbox;
+            -moz-appearance: listbox;
+            appearance: listbox;
+
+            background-image: none;
+            background-position: 0% 0%;
+        }
+    }
+
+    html.lt-ie10 {
+        select {
+            padding: 8px;
+            background-image: none;
+        }
+    }
+
+
+
+    optgroup {
+        font-weight: bold;
+    }
+
+
+
+    textarea {
+        width: 100%;
+    }
+
+
+
+    fieldset {
+        display: table-column;
+        min-width: inherit;
+    }
+
+
+    /* Focus */
+    input[type="email"],
+    input[type="number"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="url"],
+    select,
+    textarea {
+        &:focus {
+            border-color: currentColor;
+        }
+    }
+
+
+    /* Disabled */
+    button[disabled],
+    input[disabled] {
+        cursor: default;
+        opacity: 0.666;
+    }
+
+
+
+
+    /* Placeholder text - selectors need to be separate to work. */
+    ::-webkit-input-placeholder {
+        color: inherit;
+        opacity: 0.33;
+    }
+
+    ::-moz-placeholder {
+        color: inherit;
+        opacity: 0.33;
+    }
+
+    :-ms-input-placeholder {
+        color: inherit;
+        opacity: 0.33;
+    }
+
+}

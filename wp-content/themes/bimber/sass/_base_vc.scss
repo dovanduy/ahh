@@ -1,0 +1,15 @@
+@import "compass/css3";
+
+@import "settings";
+@import "styles/original/settings";
+
+.vc_row.g1-dark {
+    background-color: $skin_dark_background_color;
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+            .g1-column > .vc_row {
+        margin-#{$left}: -10px!important;
+        margin-#{$right}: -10px!important;
+    }
+}

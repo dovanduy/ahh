@@ -1,0 +1,75 @@
+#buddypress {
+    .pagination {
+        display: block;
+        padding: 0 0 10px;
+        border-width: 0 0 1px;
+        margin: 1.5em 0;
+
+        position: relative;
+
+        font-size: 13px;
+        font-family: "Poppins", sans-serif;
+        border-style: solid;
+
+        border-color: $skin_border_color;
+
+        // Clearfix
+        &:after {
+            display: table;
+            clear: both;
+            content: "";
+        }
+
+        .pag-count {
+            float: #{$left};
+            margin-#{$right}: 0.75em;
+        }
+
+        .pagination-links {
+            float: $right;
+            margin-#{$left}: 0.75em;
+
+            // The proper class name would probably be .pagination-link
+            .page-numbers {
+                display: inline-block;
+                padding: 0 5px;
+
+                vertical-align: middle;
+            }
+
+            .prev {
+                display: inline-block;
+                font-size: 0;
+
+                vertical-align: middle;
+
+                &:before {
+                    font: 18px/1 "bimber";
+
+                    content: if-ltr( "\e00d", "\e00b" );
+                }
+            }
+
+
+            .next {
+                display: inline-block;
+                font-size: 0;
+
+                vertical-align: middle;
+
+                &:after {
+                    font: 16px/1 "bimber";
+
+                    content: if-ltr( "\e00b", "\e00d" );
+                }
+            }
+        }
+    }
+
+    #pag-bottom {
+        padding-top: 10px;
+        padding-bottom: 0;
+        border-top-width: 0;
+        border-bottom-width: 0;
+    }
+}

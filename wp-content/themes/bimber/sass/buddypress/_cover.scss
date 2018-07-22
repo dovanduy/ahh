@@ -1,0 +1,358 @@
+$_cover_height: 360px;
+$_cover_avatar_size: 120px;
+$_cover_avatar_border: 5px;
+
+// The most outer container
+#cover-image-container.bp-layout-standard {
+    overflow: hidden;
+    @include box-sizing( border-box );
+
+    position: relative;
+    z-index: 0;
+    &:before {
+        @include background-image( linear-gradient(to bottom, rgba(0,0,0, 0), rgba(0,0,0, 1) 100%) );
+        width:100%;
+        height:50%;
+        position: absolute;
+        bottom:0px;
+        left:0px;
+        content:"";
+        z-index:2;
+        opacity:0.5;
+    }
+    .g1-bp-change-image {
+        display: inline-block;
+        position: absolute;
+        z-index: 2;
+        top:10px;
+        bottom:auto;
+        left:10px;
+
+        font-size: 0;
+
+        // No dynamic colors here
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0, 0.333);
+        color: #fff;
+
+        @include border-radius( 50% );
+
+        &:hover {
+            background: rgba(0,0,0, 0.666);
+        }
+
+        &:before {
+            display: block;
+            width: 30px;
+
+            text-align: center;
+            font: 16px/#{30px} "bimber";
+            content: "\e023";
+        }
+    }
+
+}
+
+.g1-bp-change-avatar {
+    display: block;
+    width: 30px;
+    margin-#{$left}: -15px;
+
+    position: absolute;
+    #{$left}: 50%;
+    #{$right}: auto;
+    bottom: 10px;
+
+    font-size: 0;
+
+    // No dynamic colors here
+    color: #fff;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.333);
+
+    @include border-radius( 50% );
+
+    &:hover {
+        background-color: rgba(0,0,0, 0.666);
+    }
+
+
+    &:after {
+        display: block;
+        font: 16px/#{30px} "bimber";
+        content: "\e023";
+    }
+}
+
+.bp-layout-standard{
+    #header-cover-image {
+        display: block;
+
+        position: absolute;
+        z-index: 1;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: 0;
+        bottom: 0;
+
+        background-color: #808080;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+#cover-image-container{
+    max-width:1920px;
+    height:360px;
+    margin:0 auto;
+    float:none;
+}
+
+#buddypress{
+    .member-header{
+        margin-top:-85px;
+        @include display(flex);
+        z-index:2;
+        #item-header{
+            @include flex-direction(row);
+            @include align-items(flex-start);
+            background-color: transparent;
+            padding:0px;
+        }
+        #item-header-avatar {
+            display: inline-block;
+            float: $left;
+            max-height:160px;
+            padding:5px;
+
+            position: relative;
+
+            @include border-radius(50%);
+
+            background: #fff;
+
+            @media only screen and ( min-width: $mobile_breakpoint ) {
+                margin-top: -40px;
+                margin-right: 40px;
+            }
+
+            @include box-shadow(0px 0px 5px 0px rgba(0, 0, 0, 0.1));
+
+            > a {
+                display: block;
+                position: relative;
+            }
+            .author-info-rank{
+                position: absolute;
+                max-height:80px;
+                max-width: 80px;
+                right: -40px;
+                bottom:5px;
+            }
+        }
+        .entry-title{
+            color:white;
+            font-size:30px;
+            text-transform:none;
+            font-weight:600;
+            margin:0px;
+            .author-info-rank{
+                max-width:20px;
+            }
+        }
+        .item-header-user-desc{
+            font-family:"Roboto", "Arial", sans-serif;
+            opacity:0.66;
+            font-size:16px;
+            color: white;
+            display:block;
+            max-width:420px;
+            overflow:hidden;
+            white-space: nowrap;
+            min-height: 24px;
+            @media only screen and ( max-width: $mobile_breakpoint ) {
+                min-height: 0;
+            }
+        }
+        .item-header-member-info{
+            float:left;
+            margin-left:20px;
+            margin-top:20px;
+            text-align: left;
+            .activity {
+                margin-top:20px;
+            }
+        }
+        #item-header-content{
+            @include display(flex);
+            padding-top:1rem;
+            padding-left:1rem;
+            @include flex-grow(1);
+        }
+        .mycred-badge-image {
+            width:40px;
+            height:auto;
+            padding:0 3px;
+        }
+        .g1-socials-bp-profile-header{
+            position:absolute;
+            right:0px;
+            top:32px;
+        }
+        .g1-socials-bp-profile-header .g1-socials-item-icon{
+            background:transparent;
+            font-size:22px;
+        }
+     }
+    .bp-layout-standard > .activity{
+        display:none;
+    }
+    .bimber-item-buttons{
+        position:absolute;
+        bottom:0px;
+        right:0px;
+        margin:0px;
+        @include flex-direction(row);
+        .generic-button{
+            width:auto;
+            margin:0px;
+            @include flex-grow(1);
+        }
+        .g1-drop{
+            margin:0px;
+            margin-left:10px;
+        }
+        .g1-drop-content{
+            z-index:1;
+            width:auto;
+            .generic-button{
+                margin:5px 0;
+                padding: 4px $submenu_padding_horizontal;
+                font-size: $submenu_font_size;
+                font-family: $submenu_font_family;
+                font-weight: $submenu_font_weight;
+                text-transform: uppercase;
+                letter-spacing: $submenu_letter_spacing;
+                white-space: nowrap;
+            }
+        }
+        .g1-drop-toggle{
+            border-radius:100px;
+            padding:18px 18px;
+            position:relative;
+            &:before{
+                font: 32px/40px "bimber";
+                content: "\e01f";
+                position:absolute;
+                top:0;bottom:0;left:0;right:0;
+            }
+        }
+    }
+
+    .bp-actions-placeholder{
+        z-index:100;
+    }
+    .member-header-wrapper{
+        z-index:2;
+    }
+   .g1-background-bp-profile{
+       display:none
+   }
+}
+
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    #cover-image-container.bp-layout-standard {
+        height: $_cover_height/2;
+    }
+
+    .bp-layout-standard {
+        #item-wrapper.item-wrapper-with-cover-image {
+            #item-header-avatar {
+                border-width: 6px;
+                margin-top: - 30px - 6px - 45px;
+
+                border-style: solid;
+
+                border-color: #f2f2f2;
+                border-color: #fff;
+            }
+        }
+    }
+    #buddypress{
+        .member-header{
+            @include flex-direction(column);
+            @include align-items(center);
+            margin-top:0px;
+            text-align:center;
+            max-width:none;
+            .item-header-member-info{
+                display:block;
+                float:none;
+                text-align:center;
+                margin:0px;
+                .activity{
+                    display:none;
+                }
+            }
+            .item-header-user-desc{
+                max-width:none;
+            }
+            #item-header{
+                display:block;
+                width:100%;
+                border:none;
+                padding-bottom:20px;
+            }
+            #item-header-avatar{
+                float:none;
+                margin-top:-80px;
+                margin-bottom:10px;
+            }
+            .entry-title{
+                margin-bottom:10px;
+            }
+            #item-header-content{
+                display:block;
+                padding:0;
+                background:#272727;
+                padding-bottom:20px;
+            }
+            #mycred-users-badges{
+                margin-bottom:20px;
+                @media only screen and ( max-width: $mobile_breakpoint ) {
+                    margin-bottom: 0;
+                }
+            }
+            .g1-socials-bp-profile-header{
+                position:relative;
+                right:auto;
+                top:auto;
+                opacity:0.5;
+            }
+        }
+        .bp-layout-standard .activity{
+            display:block;
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+        .bimber-item-buttons{
+            position:relative;
+            margin:10px;
+            .g1-drop{
+                margin-left:0px;
+            }
+           }
+        .g1-background-bp-profile{
+            display:block;
+            background:#272727;
+        }
+    }
+}
+
+.bimber-buddypress-profile{
+    #secondary{
+        padding-top: 1.5rem;
+    }
+}

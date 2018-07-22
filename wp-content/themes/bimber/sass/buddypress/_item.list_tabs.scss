@@ -1,0 +1,104 @@
+$_icon_size: 32px;
+#buddypress #item-nav {
+    .item-list-tabs#object-nav {
+        .g1-tabs > ul {
+            > li {
+                > a {
+                    &:before {
+                        display: block;
+                        text-align: center;
+
+                        font: #{$_icon_size}/40px "bimber";
+
+                        content: "\e001";
+
+                        @include transition(opacity 0.375s ease-in-out);
+                    }
+                }
+                > #user-xprofile:before         { content: "\e013"; }
+                > #user-notifications:before    { content: "\e027"; }
+                > #user-friends:before          { content: "\e028"; }
+                > #user-groups:before           { content: "\e029"; }
+                > #user-activity:before         { content: "\e02c"; }
+                > #user-settings:before         { content: "\e02a"; }
+                > #user-messages:before         { content: "\e012"; }
+                > #user-forums:before           { content: "\e010"; }
+                > #user-snax_votes:before       { content: "\e02b"; }
+                > #user-snax_posts:before       { content: "\e02d"; }
+                > #user-snax_items:before       { content: "\e02e"; }
+                > #user-mycred-history:before   { content: "\e033"; }
+                > #user-members-following:before   { content: "\e050"; }
+                > #user-members-followers:before   { content: "\e051"; }
+                > #user-reactions:before           { content: "\e035"; }
+                > #user-badges:before              { content: "\e036"; }
+            }
+            .g1-drop {
+                .g1-drop-toggle {
+                    &:before {
+                        content: "\e01f";
+                    }
+                }
+            }
+        }
+    }
+}
+
+#primary:not(.bimber-buddypress-profile),
+#primary.bimber-buddypress-profile #item-body {
+    .item-list-tabs:not(#subnav){
+        @extend .g1-tabs;
+        margin-bottom:10px;
+        ul {
+            @extend .g1-tab-items;
+            li{
+                @extend .g1-tab-item;
+                a{
+                    @extend .g1-tab;
+                }
+            }
+            .selected{
+                @extend .g1-tab-item-current;
+            }
+        }
+    }
+
+    .item-list-tabs#subnav {
+        padding-top: 6px;
+        margin-top: -10px;
+        margin-bottom: 3em;
+        text-transform: none;
+        font-family: $regular_font_family;
+        > ul {
+            list-style-type: none;
+            > li {
+                &.selected,
+                &.current,
+                &:hover {
+                    &:before{
+                        border:none;
+                    }
+                }
+                > a,
+                > span {
+                    padding-top: 2px;
+                    padding-bottom: 2px;
+                    font-size: 13px;
+                    text-transform: none;
+                    font-weight: 400;
+                }
+            }
+        }
+        label,
+        select {
+            font-size: 13px;
+        }
+        .last {
+            float: $right;
+
+            select {
+                max-width: 185px;
+            }
+        }
+    }
+}
+

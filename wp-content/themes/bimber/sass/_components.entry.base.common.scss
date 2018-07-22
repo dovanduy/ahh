@@ -1,0 +1,64 @@
+.sticky {
+    /* Sticky*/
+}
+
+@import "components.entry/media";
+@import "components.entry/author";
+@import "components.entry/categories";
+@import "components.entry/tags";
+
+@import "components.entry/date";
+@import "components.entry/comments_link";
+@import "components.entry/shares";
+@import "components.entry/views";
+@import "components.entry/counter";
+
+@import "components.entry/meta";
+@import "components.entry/flags";
+
+@import "components.entry/title";
+@import "components.entry/content";
+
+@if ( 'bunchy' == $stack ) {
+    .entry-badge {
+        display: inline-block;
+
+        padding: 3px 10px 4px;
+
+        position: relative;
+        z-index: 3;
+
+        vertical-align: top;
+        font-size: 13px;
+        line-height: 1;
+
+        font-family: "Roboto Condensed", sans-serif;
+
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-shadow: none;
+
+        &:after {
+            display: block;
+            border-width: 10px 6px;
+
+            position: absolute;
+            #{$left}: 100%;
+            top: 0;
+
+            border-style: solid;
+
+            border-#{$left}-color: inherit;
+            border-top-color: transparent;
+            border-#{$right}-color: transparent;
+            border-bottom-color: transparent;
+
+            content: "";
+        }
+    }
+    .entry-badge-open-list{
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: auto;
+    }
+}

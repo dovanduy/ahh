@@ -1,0 +1,282 @@
+/**
+ * Snax plugin integration
+ */
+
+ @import "../lib.flexbox";
+.snax {
+    //.snax-voting {
+    //    .snax-voting-score {
+    //        font-size: 13px;
+    //
+    //        color: $skin_meta_text_color;
+    //
+    //        strong {
+    //            color: $skin_important_text_color;
+    //        }
+    //    }
+    //}
+
+
+    //@media only screen and ( max-width: 1024px ) {
+    //    .snax-voting {
+    //        .snax-voting-score {
+    //            strong {
+    //                font-size: 16px;
+    //            }
+    //        }
+    //    }
+    //}
+
+    //.snax-voting-large {
+    //    .snax-voting-score {
+    //        strong {
+    //            display: block;
+    //        }
+    //    }
+    //}
+}
+
+
+
+
+
+
+
+
+
+
+
+// Unused?
+//.fixedsticky-on + .fixedsticky-dummy {
+//    display: none !important;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.snax {
+    $_arrow_size: 6px;
+    .snax-tabs-nav {
+        .snax-tabs-nav-item {
+            border-color: #e6e6e6;
+            border-bottom-color: #ccc;
+            background-color: #e6e6e6;
+            color: #999;
+
+
+            font-size: 14px;
+            font-family: "Roboto Condensed";
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+
+            &:first-child,
+            &:last-child {
+                @include border-radius( 0 );
+            }
+        }
+
+        .snax-tabs-nav-item-current {
+            position: relative;
+
+            border-color: #ccc;
+            border-bottom-color: transparent;
+            background-color: transparent;
+            color: #666;
+        }
+    }
+
+
+    .snax-item-embed-code {
+        // Fix the display of Twitter embed (before the JS is applied)
+        blockquote {
+            margin-#{$left}: 0;
+        }
+    }
+}
+
+
+.snax {
+    .snax-item-embed-code {
+        background: #f6f6f6;
+
+        iframe {
+            margin: 0 auto;
+        }
+
+        .twitter-tweet {
+            @include box-sizing( border-box );
+            width: 520px !important;
+            max-width: 100% !important;
+            margin-#{$left}: auto !important;
+            margin-#{$right}: auto !important;
+        }
+
+        .instagram-media,
+        .instagram-media-registered {
+            @include box-sizing( border-box );
+            box-shadow: none !important;
+            border-radius: 0 !important;
+        }
+
+        @media only screen and ( min-width: 520px ) {
+            .twitter-tweet,
+            .instagram-media,
+            .instagram-media-registered {
+                border-width: 10px !important;
+                border-style: solid !important;
+                border-color: #f6f6f6 !important;
+            }
+        }
+    }
+
+    .snax-format:hover {
+        .snax-format-label {
+            color: inherit;
+        }
+
+        .snax-format-desc {
+            color: inherit;
+            opacity: 0.75;
+        }
+    }
+
+
+    .snax-voting-container {
+        .snax-voting-container-title {
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .snax-items {
+        .snax-ad-location {
+            margin-#{$left}: 120px;
+        }
+    }
+}
+
+
+
+
+.entry-tpl-bunchy {
+    .snax-bar {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-width: 1px 0;
+        margin-bottom: 10px;
+
+        border-style: solid;
+
+        border-color: #e6e6e6;
+    }
+}
+
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-feat-stickies {
+        .snax-voting {
+            .snax-voting-score {
+                strong {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .entry-tpl-index-stickies {
+        .snax-voting {
+            .snax-voting-score {
+                strong {
+                    display: block;
+                }
+            }
+        }
+
+        .snax-item-share {
+            display: block;
+        }
+
+        .snax-voting + .snax-item-share {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            border-width: 1px 0;
+            border-style: solid;
+            border-color: #e6e6e6;
+
+            &:hover {
+                border-color: transparent;
+            }
+        }
+
+        .snax-item-actions {
+            .snax-actions {
+                margin-#{$left}: 0;
+                margin-#{$right}: 0;
+            }
+
+            .snax-actions:first-child {
+                margin-top: 0;
+            }
+
+            .snax-action-links {
+                #{$left}: 0;
+                #{$right}: auto;
+            }
+        }
+    }
+}
+
+
+.snax-cta-body {
+    &:before {
+        display: inline-block;
+        margin-bottom: 0.25em;
+
+        font-size: 51px;
+        line-height:1;
+        font-family: "bimber";
+
+        content: "\e032";
+    }
+}
+
+.snax-button-create {
+    &:before {
+        display: inline-block;
+        margin-#{$right}: 6px;
+
+        vertical-align: middle;
+        font: 17px/12px "bimber";
+
+        content: "\e021";
+    }
+}
+
+
+
+.quiz {
+    .g1-arrow {
+        width:100%;
+            border-width: 0px;
+
+        &:after{
+            border-width: 40px 20px;
+        }
+    }
+}

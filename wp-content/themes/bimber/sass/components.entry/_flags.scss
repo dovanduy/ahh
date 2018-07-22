@@ -1,0 +1,162 @@
+.entry-flag {
+    display: block;
+    @include box-sizing( border-box );
+
+    position: relative;
+    top: 0;
+
+    width: $badge_size;
+    height: $badge_size;
+    border-width: $badge_border_width;
+
+    vertical-align: top;
+
+    font-size: 0;
+    line-height: $badge_size - 2*$badge_border_width;
+    text-align: center;
+
+    border-style: solid;
+    @include border-radius( $badge_border_radius );
+
+    // Default colors.
+    border-color: #ff0036;
+    background-color: #ff0036;
+    color: #fff;
+
+    &:before {
+        display: block;
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: 50%;
+        margin-top: -0.5em;
+
+        text-align: center;
+
+        font-size: $badge_font_size;
+        line-height: 1;
+        font-family: "bimber";
+        font-weight: normal;
+
+        content: "";
+    }
+
+    > .wyr-reaction-icon {
+        width: inherit;
+        height: inherit;
+    }
+}
+
+.entry-flag-text {
+    font-size: 12px;
+}
+
+
+a.entry-flag {
+    pointer-events: auto;
+
+    @include transition( top 0.175s ease-in-out );
+
+    &:hover {
+        top: -5px;
+    }
+}
+
+.entry-flag-latest {
+    border-color: #808080;
+    background-color: #808080;
+    color: #fff;
+
+    &:before {
+        content: "\e017";
+    }
+}
+
+.entry-flag-popular {
+    border-color: #ff577b;
+    background-color: #ff577b;
+    color: #fff;
+
+    &:before {
+        content: "\e015";
+    }
+}
+
+.entry-flag-hot {
+    &:before {
+        content: "\e01c";
+    }
+}
+
+.entry-flag-top,
+.entry-flag-trending {
+    border-color: #bf0029;
+    background-color: #bf0029;
+    color: #fff;
+
+    &:before {
+        content: "\e00e";
+        content: "\e030";
+    }
+}
+
+.entry-flag-reaction {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+
+
+
+
+
+.entry-flags {
+    // Compensate single flag margin.
+    margin-#{$right}: -6px;
+
+    font-size: 0;
+    pointer-events: none;
+
+    .entry-flag {
+        // Not all flags are visible.
+        display: none;
+
+        margin-#{$right}: 6px;
+    }
+
+    // Visible flag logic.
+    .entry-flag:first-child,
+    .entry-flag:first-child + .entry-flag-reaction,
+    .entry-flag-trending + .entry-flag-reaction,
+    .entry-flag-hot + .entry-flag-reaction,
+    .entry-flag-popular + .entry-flag-reaction {
+        display: inline-block;
+    }
+}
+
+
+
+.entry-before-title {
+    .entry-flags {
+        margin-bottom: 10px;
+        float: $right;
+    }
+}
+
+
+
+
+
+
+.menu-item {
+    > a {
+        .entry-flag {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            margin: 0 auto 12px;
+
+            @include border-radius(50%);
+        }
+    }
+}

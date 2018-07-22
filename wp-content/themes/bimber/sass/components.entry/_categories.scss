@@ -1,0 +1,60 @@
+/* Entry categories */
+.entry-category {
+    display: inline-block;
+    position: relative;
+
+    padding: $categories_padding;
+    border-width: $categories_border_width;
+    //margin: side-values( 1px 1px 0 0 );
+
+    font-size: $categories_font_size;
+    line-height: $categories_line_height;
+
+    font-family: $categories_font_family;
+    font-weight: $categories_font_weight;
+    text-transform: $categories_text_transform;
+
+    pointer-events: auto;
+    border-style: solid;
+    text-shadow: none;
+
+    border-color: $categories_border_color;
+    background-color: $categories_background_color;
+    color: $categories_text_color;
+
+    @include transition(
+        border-color 0.375s ease-in-out,
+        background-color 0.375s ease-in-out,
+        color 0.375s ease-in-out
+    );
+}
+
+@if ( 'carmania' == $stack ) {
+    .g1-dark {
+        .entry-category {
+            border-color: $skin_reverse_important_text_color;
+            color: $skin_reverse_important_text_color;
+        }
+    }
+}
+
+@if ( 'original-2018' == $stack ) {
+    .entry-categories-l {
+        .entry-category {
+            font-size: $categories_font_size + 2px;
+            line-height: $categories_line_height + 2px;
+        }
+    }
+}
+
+
+.entry-categories {
+    display: inline-block;
+
+    margin: 0 0 16px; // Backward compatibility.
+    margin: 0 0 1rem;
+}
+
+.entry-categories-label {
+    display: none;
+}

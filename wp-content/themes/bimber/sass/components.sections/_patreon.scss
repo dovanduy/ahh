@@ -1,0 +1,75 @@
+/*
+ * Patreon - Base Styles.
+ */
+ .g1-section-patreon{
+	padding: side-values(90px 40px 20px 40px);
+	.g1-section-icon{
+		top: 0%;
+		#{$left}: 50%;
+		width: 120px;
+		height: 51px;
+		margin-#{$left}: -60px;
+		background-color: $skin_background_color;
+		background-image: url('../../../images/patreon.png');
+	    background-position: 50% 50%;
+	    background-size: 80%;
+	    background-repeat: no-repeat;
+		&:after{
+			content: '';
+			position: absolute;
+			display: block;
+			width: 0;
+			height: 0;
+			bottom: -10px;
+			border-style: solid;
+			border-width: 10px 60px 0px 60px;
+			border-color: $skin_background_color transparent transparent transparent;
+		}
+	}
+}
+.g1-section-boxed{
+	.g1-section-patreon{
+		margin: side-values(20px 0);
+	}
+}
+.g1-section-full{
+	.g1-section-patreon{
+	    margin: side-values(0);
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 101px ){
+	.g1-section-patreon{
+		padding: side-values(20px 40px 20px 180px);
+		.g1-section-icon{
+			position: absolute;
+			display: block;
+			top: 50%;
+			width: 140px;
+			height: 60px;
+			margin-top: -30px;
+			#{$left}: 0;
+			margin-#{$left}: 0;
+			&:after{
+				bottom: 0px;
+				#{$right}: -10px;
+				border-width: 30px 0 30px 10px;
+				border-color: transparent transparent transparent $skin_background_color;
+			}
+		}
+		.g1-section-body{
+			float:  #{$left};
+			margin-bottom: 0px;
+			text-align: #{$left};
+		}
+		.g1-section-btn-wrap{
+			float:  #{$right};
+		}
+	}
+	.g1-section-full{
+		.g1-section-patreon{
+		    margin: side-values(20px 0);
+			padding: side-values(0px 40px 0px 180px);
+		}
+	}
+}

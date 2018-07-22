@@ -1,0 +1,162 @@
+/* Tabs */
+
+.g1-tabs{
+    border-bottom: 1px solid $skin_border_color;
+}
+.g1-tab-items {
+    margin-#{$left}: 0;
+
+    list-style: none;
+    margin-bottom:0px;
+    font-size: 0;
+    color: $skin_important_text_color;
+
+    > .g1-tab-item {
+        display: inline-block;
+        position: relative;
+
+        border-bottom: 1px solid $skin_border_color;
+        margin-bottom: -1px;
+    
+        font-size: 1rem;
+
+        opacity:0.6;
+        vertical-align: top;
+
+        @if ( 'music' == $stack ) {
+            &:after {
+                display: block;
+                width: 100%;
+                border-width: 2px 0 0;
+
+                position: absolute;
+                #{$left}: 0;
+                #{$right}: 0;
+                bottom: 0;
+
+                border-style: solid;
+
+                content: "";
+
+                border-color: $skin_important_text_color;
+                opacity: 0;
+            }
+        }
+    }
+}
+
+
+
+.g1-subtab-items {
+    margin-#{$left}: 0;
+    list-style: none;
+    font-size: 0;
+    > .g1-subtab-item {
+        display: inline-block;
+        font-size: 13px;
+        vertical-align: top;
+    }
+    
+}
+
+.g1-tab {
+    display: block;
+    padding: 8px 10px;
+
+    position: relative;
+
+    font-size: $tabs_font_size;
+    line-height: $tabs_line_height;
+    font-family: $tabs_font_family;
+    font-weight: $tabs_font_weight;
+    text-transform: $tabs_text_transform;
+    letter-spacing: $tabs_letter_spacing;
+
+    color: inherit;
+
+
+    // Icon.
+    &:before {
+        margin-bottom: 4px;
+        opacity: 0.333;
+    }
+
+    .count {
+        display: inline-block;
+        min-width: 16px;
+        padding: 0;
+        margin-#{$left}: 0.25em;
+
+        font: 300 12px/16px "Poppins","Roboto",sans-serif;
+
+        text-align: center;
+        vertical-align: top;
+
+        border-radius: 8px;
+
+        background-color: $skin_border_color;
+        border-color: $skin_border_color;
+        color: $skin_regular_text_color;
+    }
+}
+
+.g1-subtab {
+    display: block;
+    padding: 8px 10px;
+
+    font-size: 14px;
+    line-height: 16px;
+    font-weight:normal;
+
+    opacity: 0.6;
+
+    color: $skin_important_text_color;
+}
+
+.g1-tab-pane {
+    display: none;
+}
+
+.g1-tab-pane-current {
+    display: block;
+}
+
+.g1-tab-items,
+.g1-subtab-items {
+    .g1-tab-item.active,
+    .g1-tab-item:hover,
+    .g1-tab-item-current,
+    .g1-subtab-item:hover,
+    .g1-subtab-item-current {
+        @if ( 'music' != $stack ) {
+            border-color: $skin_important_text_color;
+        }
+
+        color: $skin_important_text_color;
+        opacity: 1;
+
+        .g1-tab:before {
+            opacity: 0.99;
+        }
+
+        .g1-subtab {
+            opacity:1;
+        }
+
+        @if ( 'music' == $stack ) {
+            &:after {
+                opacity: 0.99;
+            }
+        }
+    }
+}
+$_icon_size: 32px;
+.g1-tab-item-icon{
+    &:before {
+        display: block;
+        text-align: center;
+        font: #{$_icon_size}/40px "bimber";
+        content: "\e001";
+        @include transition(opacity 0.375s ease-in-out);
+    }
+}

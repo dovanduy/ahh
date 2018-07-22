@@ -1,0 +1,179 @@
+/* --- Pagination, Page links ------------------------------------------------------------------ */
+.g1-pagination {
+    clear: both;
+    overflow: hidden; // prevent body overflow on iPhone.
+
+    margin-top: 2.25rem;
+    margin-bottom: 2.25rem;
+    position: relative;
+
+    font-size: 16px;
+    font-family:  $important_font_family;
+
+
+    ul {
+        position: relative;
+        margin: 0 -3px;
+        list-style: none;
+
+        text-align: center;
+
+        &:after {
+            display:table;
+            clear:both;
+            content:"";
+        }
+    }
+}
+
+.g1-pagination-label {
+    padding: 10px 0;
+    text-align: center;
+    font: 16px/20px $meta_font_family;
+}
+
+
+
+.g1-pagination-item {
+    display: inline-block;
+    margin: 0;
+    padding: 0 3px;
+
+    vertical-align: middle;
+
+    > a {
+        display: inline-block;
+        padding: 10px;
+
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    > span {
+        display: inline-block;
+        padding: 0.25rem 10px;
+    }
+}
+
+.g1-pagination-item-current {
+    display: inline-block;
+    vertical-align: middle;
+
+    > span {
+        padding: 10px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+
+
+
+.g1-pagination-item-prev {
+    @include box-sizing( border-box );
+    display: inline-block;
+
+    padding-#{$right}: 3px;
+
+    vertical-align: middle;
+}
+
+
+
+.g1-pagination-item-next {
+    @include box-sizing( border-box );
+    display: inline-block;
+
+    padding-#{$left}: 3px;
+
+    vertical-align: middle;
+}
+
+.g1-pagination-just-arrows {
+    .g1-arrow span,
+    .g1-link span {
+        display: none;
+    }
+}
+
+
+.g1-pagination-label-links {
+    display: none;
+}
+
+
+
+.g1-pagination-label-xofy {
+    margin-bottom: 10px;
+
+    & + ul {
+        .g1-pagination-item-prev {
+            width: 50%;
+            float: $left;
+        }
+
+        .g1-pagination-item-next {
+            width: 50%;
+            float: $right;
+        }
+
+        .g1-pagination-item,
+        .g1-pagination-item-current {
+            display: none;
+        }
+    }
+}
+
+@media only screen and ( min-width: 601px ) {
+    .g1-pagination-label-xofy {
+        width: 33.333%;
+        margin: 0 auto;
+
+        position: absolute;
+        #{$left}: 0;
+        #{$right}: 0;
+        top: 50%;
+
+        @include translateY(-50%);
+
+        & + ul {
+            .g1-pagination-item-prev {
+                width: 33.333%;
+                float: $left;
+            }
+
+            .g1-pagination-item-next {
+                width: 33.333%;
+                float: $right;
+            }
+        }
+    }
+}
+
+
+
+
+.g1-pagination-label-none {
+    display: none;
+
+    & + ul {
+        .g1-pagination-item-prev {
+            width: 50%;
+            float: $left;
+        }
+
+        .g1-pagination-item-next {
+            width: 50%;
+            float: $right;
+        }
+
+        .g1-pagination-item,
+        .g1-pagination-item-current {
+            display: none;
+        }
+    }
+}
+
+.g1-pagination-end {
+    display:none;
+    text-align:center;
+}

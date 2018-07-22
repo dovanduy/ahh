@@ -1,0 +1,22 @@
+/* Default Template - Sidebar on Right */
+#primary {
+    display: block;
+
+    font-size: 1rem;
+    text-align: #{$left};
+}
+
+#secondary {
+    display: block;
+
+    font-size: 1rem;
+    text-align: #{$left};
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 1px ) {
+    #primary,
+    #secondary {
+        display: inline-block;
+        vertical-align: top;
+    }
+}

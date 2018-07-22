@@ -1,0 +1,109 @@
+/*
+ * Sections - Base Styles. Loads all specific sections.
+ */
+
+.g1-section-row{
+}
+.g1-section-boxed{
+}
+.g1-section{
+	position: relative;
+	display: block;
+    @include box-sizing(border-box);
+	@extend .clearfix;
+
+	[type=text],
+	[type=email] {
+		border-color: transparent;
+	}
+}
+.g1-section-background{
+	background: $color_sections_bg;
+}
+.g1-dark-background{
+	background: $skin_reverse_background_color;
+	.g1-section-background{
+		background: $skin_reverse_background_color;
+	}
+}
+.g1-dark-background-tone{
+	background: $skin_reverse_background_tone_color;
+}
+.g1-section-icon{
+	position: absolute;
+	display: block;
+	background-color: $skin_background_color;
+	&:before{
+		position: absolute;
+		display: block;
+		top: 50%;
+		#{$left}: 50%;
+		color: $skin_important_text_color;
+		font-family: "bimber" !important;
+		font-size: 32px;
+		line-height: 32px;
+		@include if-ltr() {
+			@include translate(-50%, -50%);
+	    }
+		@include if-rtl() {
+			@include translate(50%, -50%);
+	    }
+	}
+	&:after{
+		content: '';
+		position: absolute;
+		display: block;
+		width: 0;
+		height: 0;
+	}
+}
+.g1-section-body{
+	position: relative;
+	display: block;
+	margin-bottom: 20px;
+}
+.g1-section-img{
+	position: relative;
+	display: block;
+	margin-bottom: 20px;
+	img{
+		max-width: 80px;
+		@include border-radius(128px);
+	}
+}
+.g1-section-label{
+	display: block;
+	margin-bottom: 2px;
+	text-align: center;
+}
+.g1-section-title{
+	display: block;
+	margin-bottom: 0;
+	text-align: center;
+	a{
+		color: inherit;
+	}
+}
+
+@media only screen and ( min-width: $mobile_breakpoint + 101px ){
+	.g1-section-label{
+		text-align: #{$left};
+	}
+	.g1-section-title{
+		text-align: #{$left};
+	}
+}
+.g1-section-btn-wrap{
+	position: relative;
+	display: block;
+	text-align: center;
+}
+.g1-section-btn{
+	position: relative;
+	display: inline-block;
+}
+// Load templates.
+@import "newsletter";
+@import "patreon";
+@import "instagram";
+@import "promoted_product";

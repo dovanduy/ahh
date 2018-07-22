@@ -1,0 +1,15 @@
+$skin: 'light';
+
+@import "../../settings";
+@import "settings";
+
+$support_media_queries: true;
+$use_mobile_first: true;
+$stack: 'original-2018';
+
+
+// Set RTL (Right to Left) direction
+$dir: rtl;
+@import "../../lib.directional";
+
+@import "../../base";

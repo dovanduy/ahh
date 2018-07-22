@@ -1,0 +1,208 @@
+body {
+    background-color: $skin_background_color;
+    color: $skin_regular_text_color;
+}
+
+ul {
+    margin-#{$left}: 2em;
+    list-style-type: circle;
+}
+
+ol {
+    margin-#{$left}: 2em;
+    list-style-type: decimal;
+}
+
+
+
+dl {
+    margin-bottom: 1.5em;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-bottom: 0.75em;
+}
+
+
+
+pre,
+code,
+kbd,
+samp {
+    font-family:"Lucida Console", Courier, "DejaVu Sans Mono", monospace, sans-serif;
+}
+pre {
+    overflow:auto;
+    white-space:pre;
+    white-space:pre-wrap;
+    word-wrap:break-word;
+}
+code {
+    font-family: monospace, serif;
+}
+pre code {
+    padding:0.75em;
+    display:block;
+    border-width:0;
+}
+
+
+blockquote {
+    min-height:32px;
+    padding:0 22px;
+}
+
+a {
+    cursor:pointer;
+    text-decoration:none;
+    border-width:0;
+    border-style:solid;
+}
+a:hover,
+a:active {
+    outline:none;
+}
+
+/* Avoid grey background in IE10 */
+//a:active {
+//    background:none;
+//}
+
+small {
+    font-size:11px;
+
+    h1 &,
+    h2 &,
+    h3 & {
+        font-size: 75%;
+    }
+}
+
+
+
+strong { font-weight:bold; }
+
+dfn,
+em,
+q,
+cite {
+    font-weight:normal;
+    font-style:italic;
+}
+
+del { text-decoration:line-through; }
+
+sub,
+sup {
+    position:relative;
+    font-size:75%;
+    line-height:0;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+
+h1, h2, h3 {
+    & sub {
+        font-size:50%;
+        bottom:0;
+    }
+
+    & sup {
+        font-size:50%;
+        top:-0.75em;
+    }
+}
+
+abbr,
+acronym {
+    text-transform:uppercase;
+}
+
+hr {
+    border-width: 1px 0 0;
+    margin: 1.5em 0;
+
+    border-style: solid;
+
+    opacity: 0.1667;
+}
+
+/* ----->>> IMAGES <<<-------------------------------------------------------------------------- */
+img {
+    max-width:100%;
+    height:auto;
+
+    #ie8 & { width:auto; }
+}
+
+
+video,
+embed,
+object,
+iframe {
+    max-width: 100%;
+}
+
+/* ----->>> TABLES <<<-------------------------------------------------------------------------- */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+    //
+    caption {
+        width:100%;
+        padding:6px 10px;
+    }
+}
+
+th {
+    font-weight:bold;
+    vertical-align:bottom;
+}
+td {
+    font-weight:normal;
+    vertical-align:top;
+}
+
+
+
+/* --- Text highlighting ----------------------------------------------------------------------- */
+ins {
+    color:#333;
+    background-color:#c1f7ff;
+}
+mark {
+    padding:0 0.33em;
+}
+
+
+
+
+
+figure {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+// clearifixes for extends in the ported code
+.clearfix {
+	font-size: 0;
+	line-height: 0;
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.clearfix-soft {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}

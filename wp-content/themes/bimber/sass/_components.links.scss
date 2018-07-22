@@ -1,0 +1,87 @@
+.g1-link{
+    font-size: $button_m_font_size;
+    font-family: $button_font_family;
+    font-weight: $button_font_weight;
+    letter-spacing: $button_letter_spacing;
+    text-transform: uppercase;
+
+    color: $skin_important_text_color;
+
+    @if ( 'bunchy' == $stack ) {
+        display: inline-block;
+
+        font: 600 13px "Roboto Condensed", sans-serif;
+        line-height: inherit;
+
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+
+        &:after {
+            display: inline-block;
+            font: 17px "bimber";
+            line-height: inherit;
+            vertical-align: middle;
+        }
+        &:before {
+            display: inline-block;
+            font: 17px "bimber";
+            line-height: inherit;
+            vertical-align: middle;
+        }
+    }
+}
+
+.g1-link-right {
+    &:after {
+        display: inline-block;
+        margin-#{$left}: 8px;
+        font-family: "bimber";
+
+        vertical-align: middle;
+
+        content: "\e00b";
+        @if ( 'bunchy' == $stack ) {
+            content: if-ltr( "\e001", "\e01a" );
+        } @else {
+            content: if-ltr( "\e00b", "\e01d" );
+        }
+    }
+}
+
+.g1-link-left {
+    &:before {
+        display: inline-block;
+        margin-#{$right}: 8px;
+        font-family: "bimber";
+
+        vertical-align: middle;
+
+        content: "\e00d";
+        @if ( 'bunchy' == $stack ) {
+            content: if-ltr( "\e01a", "\e001" );
+        } @else {
+            content: if-ltr( "\e00d", "\e01b" );
+        }
+    }
+}
+
+span.g1-link {
+    @if ( 'bunchy' != $stack ) {
+        opacity: 0.333;
+    }
+}
+
+
+
+.g1-link-xs{
+    font-size: $button_xs_font_size;
+}
+.g1-link-s{
+    font-size: $button_s_font_size;
+}
+.g1-link-l{
+    font-size: $button_l_font_size;
+}
+.g1-link-xl{
+    font-size: $button_xl_font_size;
+}

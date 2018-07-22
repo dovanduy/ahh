@@ -1,0 +1,1031 @@
+/**
+ * Snax plugin integration
+ */
+
+@import "../tools.functions";
+@import "../tools.mixins";
+
+body.snax-page-frontend-submission.g1-has-mobile-logo {
+    .g1-header {
+        display: none;
+    }
+
+    .g1-navbar,
+    .g1-hb-row {
+        .g1-logo-small-wrapper {
+            display: block;
+        }
+    }
+}
+
+.snax {
+    /* Formats */
+    .snax-format {
+        @include border-radius( $ui_border_radius );
+
+        .snax-format-desc {
+            opacity: 1;
+            font-family: $meta_font_family;
+            color: $skin_meta_text_color;
+        }
+    }
+
+    // More than 2 columns if possible
+    @media only screen and ( min-width: 769px ) {
+        .snax-formats-3 > li,
+        .snax-formats-5 > li,
+        .snax-formats-9 > li,
+        .snax-formats-6 > li {
+            width: percentage(1/3);
+        }
+
+        .snax-formats-4 > li,
+        .snax-formats-7 > li,
+        .snax-formats-8 > li,
+        .snax-formats-10 > li,
+        .snax-formats-11 > li,
+        .snax-formats-12 > li,
+        .snax-formats-13 > li,
+        .snax-formats-14 > li,
+        .snax-formats-15 > li {
+            width: percentage(1/4);
+        }
+    }
+
+    @media only screen and ( min-width: 1025px ) {
+        .snax-formats {
+            .snax-format {
+                padding-#{$left}: 30px;
+                padding-#{$right}: 30px;
+            }
+        }
+    }
+}
+
+
+.snax-xofy {
+    font-family: $meta_font_family;
+
+    .snax-xofy-x,
+    .snax-xofy-y {
+        font-weight: 700;
+    }
+}
+
+
+ul.tagit {
+    @include border-radius( $ui_border_radius );
+    padding-#{$left}: 8px;
+    padding-#{$right}: 8px;
+
+    li.tagit-new {
+        @include box-sizing( border-box );
+        width: 100%;
+        margin-#{$left}: 0;
+        margin-#{$right}: 0;
+    }
+}
+
+//ul.tagit {
+//    padding-#{$left}: 8px;
+//    padding-#{$right}: 8px;
+//
+//    border-color: #e6e6e6;
+//
+//    @include transition(
+//                    border-color 0.375s ease-in-out,
+//                    background-color 0.375s ease-in-out,
+//                    color 0.375s ease-in-out
+//    );
+//
+//    li.tagit-new {
+//        input {
+//            height: auto;
+//        }
+//    }
+//
+//    li.tagit-choice {
+//        @include border-radius( 4px );
+//
+//        border-color: #e6e6e6;
+//        background-color: #e6e6e6;
+//    }
+//
+//    li.tagit-choice:hover,
+//    li.tagit-choice.remove {
+//        background-color: #bbcef1;
+//        border-color: #bbcef1;
+//    }
+//}
+//
+//ul.tagit-focus {
+//    border-color: currentColor;
+//}
+
+
+.snax-tabs-nav {
+    font-family: "Poppins", sans-serif;
+}
+
+.snax-actions {
+    font-family: $meta_font_family;
+    font-size: 13px;
+}
+
+
+.snax-item-media {
+    .snax-item-media-meta {
+        font-size: 13px;
+    }
+}
+
+.snax-voting {
+    .snax-voting-upvote::before {
+        font-family: "bimber";
+        content: "\e006";
+    }
+
+    .snax-voting-downvote::before {
+        font-family: "bimber";
+        content: "\e003";
+    }
+
+    .snax-voting-score {
+        font-family: $meta_font_family;
+    }
+}
+
+.snax {
+    .snax-form-side {
+        #drag-drop-area {
+            input[type=button] {
+                padding: 3px 20px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+
+.snax-item {
+    position: relative;
+
+    .snax-referral-form {
+        float: $right;
+        margin-#{$left}: 10px;
+    }
+
+    .snax-item-parent {
+        margin-top: -1.25em;
+    }
+
+    .snax-item-meta {
+        font-family: $meta_font_family;
+        font-weight: 300;
+
+        strong {
+            font-weight: 500;
+        }
+
+        .snax-item-date {
+            font-size: 13px;
+        }
+    }
+
+    .snax-item-share {
+        text-align: center;
+    }
+
+
+    .snax-item-title {
+        margin-bottom: 1rem;
+
+        > a {
+            color: inherit;
+
+            &:after {
+                float: $right;
+                margin-#{$left}: 8px;
+
+                font: normal 25px "snaxicon";
+                line-height: inherit;
+
+                content: "\e002";
+
+                opacity: 0.2;
+            }
+
+            &:hover:after {
+                opacity: 0.999; // Don't do 1.0, because it can disable GPU and cause flickering
+            }
+        }
+    }
+}
+
+
+.snax-status-approved:before {
+    display: inline-block;
+    margin-#{$right}: 0.333em;
+
+    vertical-align: middle;
+
+    font: 16px/0.5 "bimber";
+    content: "\e031";
+
+    color: #6f9a37;
+}
+
+.snax-status-pending:before {
+    display: inline-block;
+    margin-#{$right}: 0.333em;
+
+    vertical-align: middle;
+
+    font: 16px/0.5 "bimber";
+    content: "\e031";
+}
+
+
+
+.snax {
+    // Make the frontend form prior media a little bit narrower
+    @media only screen and ( min-width: 820px ) {
+        .snax-form-frontend-without-media {
+            .snax-form-main {
+                width: percentage( 2/3 );
+                padding-#{$left}: 0;
+                padding-#{$right}: 0;
+                margin-#{$left}: auto;
+                margin-#{$right}: auto;
+            }
+        }
+    }
+
+
+
+    // There's no need for additional margin
+    .snax-object-container,
+    .snax-item-embed-code {
+        .g1-fluid-wrapper {
+            margin-bottom: 0;
+        }
+    }
+
+
+
+
+
+
+
+    // Make social login buttons look like other ones
+    .snax-wpsl {
+        .wp-social-login-provider-list {
+            @include display(flex);
+            @include flex-wrap(wrap);
+        }
+
+
+        .wp-social-login-provider {
+            @include flex(1 1 auto);
+            width: auto;
+
+            padding-top: 8px;
+            padding-bottom: 8px;
+            margin: 0 6px 6px 0;
+
+            text-transform: uppercase;
+            letter-spacing: normal;
+
+            font-family: $ui_font_family;
+            font-weight: 700;
+
+            @include border-radius( $ui_border_radius );
+        }
+    }
+
+
+    // Voting
+    .snax-voting {
+        .snax-voting-score {
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+
+    }
+
+    .snax-voting-container {
+        .snax-voting-container-title {
+            margin-bottom: 1rem;
+        }
+    }
+
+    .snax-voting-large {
+        @include border-radius( $ui_border_radius );
+
+        .snax-voting-score {
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+
+            strong {
+                display: block;
+            }
+        }
+
+        .snax-voting-upvote,
+        .snax-voting-downvote {
+            &:before {
+                font-size: 14px*3;
+            }
+        }
+    }
+
+
+
+    // Sharing
+    .snax-item-share-toggle {
+        font-family: $meta_font_family;
+        font-size: 13px;
+        font-weight: 300;
+
+        &:before {
+            font: 14px/1 "bimber", sans-serif;
+            content: "\e011";
+        }
+    }
+
+    .snax-item-media-meta {
+        font-family: $meta_font_family;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+
+
+    .snax-actions {
+        .snax-action-links {
+            border-width: 0;
+            @include box-shadow( 0 10px 30px 10px rgba(0,0,0, 0.07) );
+
+            .snax-action-link {
+                padding-top: 0.5em;
+                padding-bottom: 0.5em;
+                font-size: 13px;
+                line-height: 1.25;
+
+                opacity: 1;
+                color: inherit;
+            }
+        }
+    }
+
+    .snax-note-success {
+        padding-top: 2.5em;
+        padding-bottom: 1px;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        background-color: if-stack( 'bunchy', #8cbe4b, #70cc14 );
+        color: rgb(255,255,255);
+        color: rgba(255,255,255, 0.666);
+
+        // Purely for even margins
+        &:after {
+            display: block;
+            margin-top: 2.5em;
+            content: "";
+        }
+
+        .snax-note-icon {
+            background-color: #fff;
+            color: if-stack( 'bunchy', #8cbe4b, #70cc14 );
+        }
+
+        .snax-note-title {
+            color: #fff;
+            margin-bottom: 0.25em;
+        }
+
+        a {
+            color: #fff;
+        }
+    }
+}
+
+
+.snax {
+    .snax-edit-post-row-legal {
+        font-size: 13px;
+    }
+}
+
+
+.snax {
+    .snax-item-nav {
+        margin: 1.5em 0;
+    }
+
+    .snax-item-prev {
+        float: $left;
+        width: 49%;
+        margin: 0 0 0.5em;
+
+        width: calc( 50% - 5px - 10px );
+        margin-#{$left}: calc( 10px );
+
+        &:before {
+            margin-#{$right}: 0;
+            content: "";
+        }
+    }
+
+    .snax-item-next {
+        float: $right;
+        width: 49%;
+        margin: 0 0 0.5em;
+
+        width: calc( 50% - 5px - 10px );
+        margin-#{$right}: calc( 10px );
+
+        &:after {
+            margin-#{$left}: 0;
+            content: "";
+        }
+    }
+
+    .snax-item-back {
+        display: table;
+        clear: both;
+        margin: 0.5em auto;
+    }
+
+    span.snax-item-prev,
+    span.snax-item-next {
+        color: transparent;
+        opacity: 0.333;
+    }
+}
+
+
+
+.snax-item-box {
+    position: relative;
+
+    .bimber-microshare-item-share{
+        display:none;
+    }
+    .snax-item-actions{
+        .snax-item-share {
+            position: absolute;
+            #{$left}: auto;
+            #{$right}: 100%;
+            top: 0;
+            margin-#{$right}: 6px;
+            margin-top:0px;
+            @media only screen and ( max-width: 800px ) {
+                right: calc(100% - 48px);
+                top: 8px;
+            }
+
+            .snax-item-share-toggle {
+                display: block;
+                overflow: hidden;
+                width: 32px;
+                height: 32px;
+                font-size: 0;
+
+                text-align: center;
+
+                @include border-radius( $ui_border_radius );
+
+                border-color: #e6e6e6;
+                background-color: #e6e6e6;
+                color: #999;
+
+                &:before {
+                    margin: 0;
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+            }
+
+            .snax-item-share-content {
+                overflow: hidden;
+                #{$left}: auto;
+                #{$right}: 0;
+
+                @include border-radius( $ui_border_radius );
+            }
+        }
+    }
+}
+
+
+.g1-navbar,
+.g1-hb-row {
+    .snax-button-create.g1-button-m {
+        display: none;
+        float: $right;
+        margin: side-values( 6px 0 6px 20px );
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        font-size: 14px;
+        line-height: 1;
+
+        @media only screen and ( min-width: 601px ) {
+            & {
+                display: block;
+            }
+        }
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+.snax-button-create-dropdown{
+    display: none;
+    float: $right;
+    margin: side-values( 6px 0 6px 20px );
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    font-size: 14px;
+    line-height: 1;
+
+    @media only screen and ( min-width: 601px ) {
+        & {
+            display: block;
+        }
+    }
+
+    &:hover {
+        color: #fff;
+    }
+}
+
+.g1-drop-create{
+    order: 14;
+}
+
+.snax-widget-cta {
+    .g1-box-icon {
+        &:before {
+            content: "\e021";
+        }
+    }
+}
+
+
+
+
+
+.snax {
+    .snax-cta-text-before {
+
+    }
+}
+
+
+.snax .snax-item-actions .snax-voting {
+    margin-top: 10px;
+}
+
+
+#snax-popup-content {
+    @include border-radius( $ui_border_radius );
+}
+
+
+.snax {
+
+
+    //.snax-list-collection {
+    //    margin: 0;
+    //    padding: 0;
+    //    list-style: none;
+    //}
+
+    .snax-list-collection-item {
+        > div {
+            margin-bottom: 0;
+
+            > a {
+                float: none;
+                width: auto;
+                margin-#{$right}: 0;
+                margin-bottom: 0.75rem;
+            }
+        }
+    }
+}
+
+.wp-caption-text {
+    .snax-figure-source {
+        text-decoration: none;
+
+        &:before {
+            font-size: 13px;
+            text-decoration: underline;
+
+            content: attr(data-snax-placeholder);
+        }
+    }
+}
+
+.g1-canvas-content {
+    .snax-button-create {
+        display: block;
+        margin-bottom: 1.5rem;
+    }
+}
+
+
+
+
+.snax {
+    .snax-item-author {
+        > a {
+            color: #000;
+        }
+    }
+}
+
+
+.snax {
+    .snax-voting-simple {
+        margin-#{$right}: 15px;
+
+    }
+}
+
+.entry-tpl-stream {
+    .snax-voting-simple {
+        .snax-voting-upvote {
+            padding: 8px;
+            margin-#{$right}: 1px;
+            border-color: #e6e6e6;
+            background-color: #f2f2f2;
+            color: #999;
+
+
+            border-radius: side-values( $ui_border_radius 0 0 $ui_border_radius );
+
+            opacity: 1 !important;
+        }
+
+        .snax-voting-downvote {
+            padding: 8px;
+            margin-#{$left}: 0;
+            border-color: #e6e6e6;
+            background-color: #f2f2f2;
+            color: #999;
+
+            border-radius: side-values( 0 $ui_border_radius $ui_border_radius 0 );
+
+            opacity: 1 !important;
+        }
+    }
+}
+
+
+/* Quizzes */
+.snax {
+    .snax-quiz-result-score {
+         margin-top: 0;
+    }
+
+    .snax-quiz-result-title {
+        margin-top: -0.75rem;
+    }
+}
+
+@media only screen and ( max-width: $mobile_breakpoint ) {
+    .snax-quiz-button-start-quiz,
+    .snax-quiz-button-restart-quiz {
+        width: 90%;
+    }
+}
+
+
+
+
+/* Upload form */
+.snax{
+    .snax-media-upload-form{
+        .snax-load-image-from-url-area{
+            font-size: 13px;
+            line-height: 20px;
+            font-family: "Poppins", "Roboto", "Arial", sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding:1em 0;
+
+            input[type=button]{
+                margin-top:1em;
+            }
+        }
+
+        .g1-beta {
+            .snax-drag-drop-info{
+                font-size:inherit;
+                font-weight: inherit;
+            }
+        }
+
+        .snax-drag-drop-info-area + p{
+            opacity:0.666;
+            margin-bottom:10px;
+        }
+    }
+
+    .snax-tab-content-featured-image{
+        .snax-drag-drop-info{
+            &:before {
+                font-size: 38px;
+            }
+        }
+    }
+
+    .snax-edit-post-row-media-add-first{
+        display:none;
+        float:left;
+    }
+    .snax-form-frontend-without-media{
+        .snax-edit-post-row-media-add-first{
+            display:block;
+            position: absolute;
+        }
+    }
+
+    .snax-edit-post-row-tags{
+        input[type=text]{
+            height:auto;
+        }
+    }
+
+}
+
+
+.snax-item-comments{
+    .comment-form{
+        @include display(flex);
+        @include justify-content(flex-start);
+        margin-bottom: 20px;
+
+        .form-submit{
+            margin-bottom: 0px;
+
+            .submit{
+                border-top-#{$left}-radius: 0;
+                border-bottom-#{$left}-radius: 0;
+            }
+        }
+
+        textarea{
+            border-top-#{$right}-radius: 0;
+            border-bottom-#{$right}-radius: 0;
+        }
+    }
+    .snax-comment-form-extended{
+        display:block;
+        .form-submit{
+            .submit{
+                border-radius: 4px;
+            }
+        }
+        textarea{
+            border-radius: 4px;
+        }
+    }
+}
+
+
+
+.snax-item-embed-facebook { text-align: center; }
+
+.snax-max-upload-size{
+    margin-top:-0.75em;
+}
+
+
+
+
+
+$_badge_width: 100px;
+$_badge_height: 48px;
+$_badge_s_width: 100px;
+$_badge_s_height: 24px;
+$_badge_margin_right: 20px;
+
+
+.snax-bar {
+    display: block;
+    margin-bottom: 20px;
+
+    position: relative;
+    z-index: 1;
+
+    font-size: 16px;
+    line-height: 20px;
+
+    // clearfix
+    &:after {
+        display: table;
+        clear: both;
+        content: "";
+    }
+
+    .g1-arrow {
+        margin-#{$right}: $_badge_margin_right;
+    }
+
+    .snax-li-count-0 {
+        overflow: hidden;
+        width: 1px;
+        height: 1px;
+
+        position: absolute;
+        clip: rect( 1px, 1px, 1px, 1px );
+    }
+}
+
+
+.snax-bar-details {
+    display: block;
+    padding: 5px 0;
+}
+
+.snax-bar-details-top {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.snax-bar-details-bottom {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+
+.g1-drop-create {
+
+    .g1-drop-toggle-arrow{
+        bottom:-8px;
+    }
+
+    .g1-drop-content{
+        padding-top: 15px;
+
+        a {
+            display: block;
+            padding: 8px 12px;
+            margin: 5px 20px;
+            border: 1px solid $skin_border_color;
+            line-height:34px;
+
+            @include border-radius(5px);
+
+            &:hover {
+                border-color: $skin_background_tone_color;
+                background: $skin_background_tone_color;
+            }
+
+            .snax-format-icon {
+                display: inline;
+                margin: side-values( 0 20px 0 0);
+                font-size: 34px;
+                vertical-align: middle;
+
+                &:before{
+                    font-size: 34px;
+                }
+            }
+
+            span {
+                text-transform: none;
+            }
+        }
+        .bimber-snax-dropdown-view-all{
+            display: block;
+            padding: 4px 0;
+            margin: 20px 0 0;
+            border-width: 1px 0 0;
+
+            text-align:center;
+
+            @include border-radius(0);
+        }
+    }
+}
+
+
+@media only screen and ( min-width: 601px ) {
+    .snax-bar {
+        .g1-arrow {
+            float: #{$left};
+        }
+
+        .snax-bar-details {
+            overflow: hidden;
+        }
+    }
+}
+
+
+
+
+@media only screen and ( max-width: 600px ) {
+    .snax-media-upload-form {
+        .snax-drag-drop-buttons {
+            width:200px;
+            margin: 0 auto;
+            .g1-button{
+                width:100%;
+                display:block;
+                margin:0 auto;
+                margin-bottom:10px;
+            }
+        }
+    }
+}
+
+
+
+
+@media only screen and ( min-width: 1025px ) {
+    .entry-tpl-feat-stickies,
+    .entry-tpl-index-stickies {
+        .entry-actions,
+        .snax-item-actions {
+            border-top-width: 0;
+
+            @include flex-direction(column);
+
+            .snax-item-share {
+                width: 100%;
+            }
+
+            .snax-voting-simple {
+                display: block;
+                @include display(flex);
+                @include flex-direction(column);
+
+                margin-#{$right}: 0;
+
+                .snax-voting-upvote,
+                .snax-voting-downvote {
+                    display: block;
+                    max-width: 60px;
+                    width: 100%;
+
+                    margin: 0;
+                }
+
+                .snax-voting-score {
+                    display: block;
+
+                    @include order(3);
+
+                    margin: 0;
+
+                    strong {
+                        display: block;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+.entry-tpl-classic-v2,
+.entry-tpl-media-v2,
+.entry-tpl-background-stretched-v2,
+.entry-tpl-background-boxed-v2,
+.entry-tpl-overlay-stretched-v2,
+.entry-tpl-overlay-boxed-v2,
+{
+    .snax-item-box .snax-item-actions .snax-item-share,
+    .bimber-microshare-item-share{
+        left:10px;
+        top:10px;
+    }
+    .snax-item-box .snax-item-actions .snax-item-share .snax-item-share-content,
+    .bimber-microshare-item-share-content{
+    left:0;
+    }
+}
+
+.g1-post-preview .entry-views {
+    display:none;
+}
+.g1-post-preview  .mashsb-count{
+    display:none;
+}
+
+.snax-similar-memes{
+    margin-left:10px;
+}

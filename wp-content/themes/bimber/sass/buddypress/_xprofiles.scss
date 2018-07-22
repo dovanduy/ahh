@@ -1,0 +1,88 @@
+#buddypress {
+    // Wrapper for the "Who can see this field?" part - <div>
+    .field-visibility-settings {
+        display: none;
+        margin-top: 0.75em;
+
+        font: 300 1px/1.25 $meta_font_family;
+
+        // UL with radio buttons
+        .radio {
+            margin-#{$left}: 0;
+            list-style: none;
+
+            label {
+                margin: 0;
+                font-weight: normal;
+            }
+        }
+
+        select {
+            margin: 0;
+        }
+
+    }
+
+    // Wrapper for the "This field can be seen by: %s" part - <p>
+    .field-visibility-settings-toggle {
+    }
+
+    // Wrapper for the "This field can be seen by: %s" part - <p>,
+    // but without the "Change" link inside
+    .field-visibility-settings-notoggle {
+    }
+
+
+    .field-visibility-settings-toggle,
+    .field-visibility-settings-notoggle {
+        margin-top: 0.75em;
+        margin-bottom: 0.75em;
+
+        font: 300 13px/1 $meta_font_family;
+    }
+
+    // "Close" link
+    .field-visibility-settings-close {
+        display: inline-block;
+        margin-bottom: 1.5em;
+    }
+
+    .field-visibility-settings,
+    .field-visibility-settings-toggle,
+    .field-visibility-settings-notoggle {
+        color: #999;
+    }
+
+    // This field can be seen by: <span class="current-visibility-level">Everyone</span>
+    .current-visibility-level {
+        font-weight: 600;
+    }
+
+    .wp-editor-container {
+        border: 1px solid #e6e6e6;
+
+        .quicktags-toolbar {
+            input[type=button] {
+                font-weight: normal;
+                letter-spacing: normal;
+
+                border-color: currentColor;
+                color: inherit;
+            }
+        }
+    }
+}
+
+
+
+/* No JavaScript */
+body.no-js #buddypress {
+    .field-visibility-settings {
+        display: block;
+    }
+
+    .field-visibility-settings-toggle,
+    .field-visibility-settings-close {
+        display: none;
+    }
+}
